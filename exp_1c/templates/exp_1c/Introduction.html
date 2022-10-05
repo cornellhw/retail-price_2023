@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Procurement Manager Decision instructions:
+{% endblock %}
+
+{% block content %}
+
+    <p>
+                <p style="line-height: 2em;">
+
+For the next step, you would first play the role of a procurement manager who is endowed with 10 dollars for procurement. Using this information, you could make an offer less than 10 dollars to purchase one unit of the sample product from the supplier.<br>
+If the offer is above the actual suppliers’ cost, the offer will be accepted. Otherwise, it will be rejected.<br>
+The experiment will automatically calculate your potential payoffs as the procurement manager.<br>
+The payoffs are denoted in points. The points you earned in this step will be transferred into actual dollars.
+    </p>
+
+
+    {% next_button %}
+
+{% endblock %}

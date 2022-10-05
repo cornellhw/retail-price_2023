@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Your WTP and your payoff
+{% endblock %}
+
+{% block content %}
+    <p>
+                <p style="line-height: 2em;">
+
+        {% if player.purchase_success > 0  %}
+        Congratulations！Your offer is Accepted according to the suppliers’
+            actual cost c={{ player.C }}, Your current payoff is {{ payoff1 }} points.<br>
+        Click the "next" button for the following experiment!<br>
+
+        {% else %}
+        Your offer is Rejected according to the suppliers’ actual
+            cost c= {{ player.C }}, Your final payoff is the show up fee 10 dollars<br>
+        Click the "next" button to finish the post-experiment survey!<br>
+
+        {% endif %}
+    </p>
+
+    <p>{% next_button %}</p>
+
+
+{% endblock %}
