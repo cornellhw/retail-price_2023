@@ -2,20 +2,25 @@
 {% load otree %}
 
 {% block title %}
-    Marketing Manager Decision Instructions
+Congratulations! You have finished the experiment!
 {% endblock %}
 
 {% block content %}
-
     <p>
-                <p style="line-height: 2em;">
+            <p style="line-height: 2em;">
 
-Your offer is accepted, and now you would play the role of a marketing manager. The market manager receives the procurement manager’s offer to purchase and would decide the retail price (R) for the products.If the retail price is higher than the average consumers’ willingness to pay (P), the retail trade will be failed. If the retail price is lower or equal to the average consumers’ willingness to pay, the retail trade will occur.<br>
-The experiment will automatically calculate your potential payoffs as the marketing manager.<br>
-The payoffs are denoted in points. The points you earned in this step will be transferred into actual dollars.<br>
+        {% if player.purchase_success2 > 0  %}
+Congratulations！Your offer is <font color="red">Accepted</font>, and the retail price is <font color="red">Accepted</font> according to the consumer willingness to pay. You successfully sell the products to the customers!<br>
+Your final payoff is <font color="red"> {{ payoff2 }} dollars </font>. <br>
+
+        {% else %}
+     Your offer is <font color="red">Accepted</font>, but the retail price is <font color="red">Rejected</font> according to the consumer willingness to pay. <br>
+Your final payoff is </font>{{ payoff2 }} dollars </font>. <br>
+
+        {% endif %}
     </p>
 
+    <p>{% next_button %}</p>
 
-    {% next_button %}
 
 {% endblock %}

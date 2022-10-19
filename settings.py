@@ -16,7 +16,7 @@ SESSION_CONFIGS = [
             name='exp_1c',
             display_name='exp_1c',
             num_demo_participants=32,
-            app_sequence=['exp_1c']),
+            app_sequence=['exp_1c','survey']),
 ]
 
 # ISO-639 code

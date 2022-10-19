@@ -7,17 +7,15 @@ Congratulations! You have finished the experiment!
 
 {% block content %}
     <p>
-            <p style="line-height: 2em;">
+            <p class="keith">
 
         {% if player.purchase_success2 > 0  %}
-Congratulations！Your offer is Accepted, and the retail price is Accepted according to the consumer willingness to pay. You successfully sell the products to the customers!<br>
-Your final payoff is {{ payoff2 }} points <br>
-Click the "next" button to finish the post-experiment survey!<br>
+Congratulations！Your offer is <font color="red">Accepted</font>, and the retail price is <font color="red">Accepted</font> according to the consumer willingness to pay. You successfully sell the products to the customers!<br>
+Your final payoff is <font color="red"> {{ payoff2 }} dollars </font>. <br>
 
         {% else %}
-     Your offer is Accepted, but the retail price is Rejected according to the consumer willingness to pay. <br>
-Your final payoff is {{ payoff2 }} points <br>
-Click the "next" button to finish the post-experiment survey! <br>
+     Your offer is <font color="red">Accepted</font>, but the retail price is <font color="red">Rejected</font> according to the consumer willingness to pay. <br>
+Your final payoff is </font>{{ payoff2 }} dollars </font>. <br>
 
         {% endif %}
     </p>
@@ -26,3 +24,4 @@ Click the "next" button to finish the post-experiment survey! <br>
 
 
 {% endblock %}
+

@@ -7,22 +7,21 @@
 
 {% block content %}
     <p>
-                <p style="line-height: 2em;">
+                 <p class="keith">
 
         {% if player.purchase_success > 0  %}
-        Congratulations！Your offer is Accepted according to the suppliers’
-            actual cost c={{ player.C }}, Your current payoff is {{ payoff1 }} points.<br>
-        Click the "next" button for the following experiment!<br>
+        Congratulations！Your offer is <font color="red"> Accepted </font> according to the suppliers’actual cost
+            <font color="red"> c={{ player.C }}</font>, Your current payoff is <font color="red"> {{ payoff1 }} dollars </font> <br>
+
 
         {% else %}
-        Your offer is Rejected according to the suppliers’ actual
-            cost c= {{ player.C }}, Your final payoff is the show up fee 10 dollars<br>
-        Click the "next" button to finish the post-experiment survey!<br>
+        Your offer is <font color="red"> Rejected </font> according to the suppliers’ actual
+            cost c= {{ player.C }}, Your final payoff is the show up fee <font color="red"> 10 dollars </font> <br>
+
 
         {% endif %}
     </p>
 
     <p>{% next_button %}</p>
-
 
 {% endblock %}
