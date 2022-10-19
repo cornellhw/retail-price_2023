@@ -19,7 +19,7 @@ class Constants(BaseConstants):
     r1, r2 = 0.5, 0.7
 
     name_in_url = 'exp_1c'
-    players_per_group = 60
+    players_per_group = 32
     num_rounds = 1
 
 
@@ -67,21 +67,6 @@ class Player(BasePlayer):
         # initial='0'
     )
 
-    # survey
-    age = models.IntegerField(label="What is your age?", min=5, max=125)
-
-    gender = models.StringField(
-        choices=[['0', 'male'], ['1', 'female']],
-        label='What is your gender?',
-        widget=widgets.RadioSelect,
-    )
-    coffee = models.StringField(
-        choices=[['0', 'Never'], ['1', 'Once a week'], ['2', 'Two or three times a week'],
-                 ['3', 'Everyday']],
-        label='How often do you drink the coffee?',
-        widget=widgets.RadioSelect,
-        # initial='0'
-    )
 
 # Calculate the final profit pi; To see if the offer is higher than the suppliers' actual cost or not
     def price_check(self):

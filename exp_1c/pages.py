@@ -50,11 +50,6 @@ class PriceResults2(Page):
     def is_displayed(self):
         return self.player.purchase_success
 
-
-class Survey(Page):
-    form_model = 'player'
-    form_fields = ['age', 'gender', 'coffee']
-
 class End(Page):
     pass
 
@@ -67,6 +62,5 @@ page_sequence = [Welcome,
                  Introduction2,
                  SetPrice2,
                  PriceResults2,
-                 Survey,
                  End,
                  ]
