@@ -19,7 +19,7 @@ class Constants(BaseConstants):
     r1, r2 = 0.5, 0.7
 
     name_in_url = 'exp_1c'
-    players_per_group = 32
+    players_per_group = 60
     num_rounds = 1
 
 

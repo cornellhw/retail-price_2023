@@ -13,9 +13,9 @@ PARTICIPANT_FIELDS = ['score', 'distribution']
 
 SESSION_CONFIGS = [
         dict(
-            name='exp_1c',
+            name='experiment',
             display_name='exp_1c',
-            num_demo_participants=32,
+            num_demo_participants=60,
             app_sequence=['exp_1c','survey']),
 ]
 
