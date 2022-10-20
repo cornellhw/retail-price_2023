@@ -15,7 +15,7 @@ Simple survey
 
 class Constants(BaseConstants):
     name_in_url = 'survey'
-    players_per_group = 32
+    players_per_group = 60
     num_rounds = 1
 
 

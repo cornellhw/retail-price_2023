@@ -15,7 +15,7 @@ SESSION_CONFIGS = [
         dict(
             name='experiment',
             display_name='experiment',
-            num_demo_participants=32,
+            num_demo_participants=60,
             app_sequence=['exp_1c','survey']),
 ]
 
