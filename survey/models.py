@@ -12,7 +12,7 @@ doc = """
 Simple survey
 """
 
-
+  
 class Constants(BaseConstants):
     name_in_url = 'survey'
     players_per_group = 60
@@ -43,5 +43,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
         # initial='0'
     )
+
+
 
 
