@@ -17,7 +17,7 @@ class Constants(BaseConstants):
     F = 5
     X = 10
 
-    name_in_url = 'exp_1c'
+    name_in_url = 'exp_2'
     players_per_group = 60
     num_rounds = 1
 
