@@ -2,18 +2,25 @@
 {% load otree %}
 
 {% block title %}
-Make the offer as the procurement manager:
+    Procurement price setting
 {% endblock %}
 
 {% block content %}
-    <p>
-                <p class="keith">
-Research suggests that the suppliers’ average cost to produce (C) is <font color="red"> 6 dollars </font> per-unit. <br>
-    How much would like to set for one unit of coffee sample according to the average suppliers’ production cost (Make an offer less than your initial endowment 10 dollars)
 
-    </p>
-    <p>{% formfields  %}</p>
-    <p>{% next_button %}</p>
+What’s your choice of procurement price?<br><br>
 
+    {% formfield 'W' label="Enter W here" %}
+
+
+    <div class="controls">
+         <input type="radio"  name="lockin" value="0"> Test
+         <input type="radio"  name="lockin" value="1"> Lock in <br>
+    </div>
+
+    ● At this W, you offer will be  {{is_reject}} <br>
+    ● Your current bonus is {{ reward }} <br>
+
+
+    {% next_button %}
 
 {% endblock %}

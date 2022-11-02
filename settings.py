@@ -13,10 +13,10 @@ PARTICIPANT_FIELDS = ['score', 'distribution']
 
 SESSION_CONFIGS = [
         dict(
-            name='experiment',
-            display_name='experiment',
+            name='exp_1',
+            display_name='exp_1',
             num_demo_participants=60,
-            app_sequence=['exp_1c','survey']),
+            app_sequence=['exp_2']),
 ]
 
 # ISO-639 code

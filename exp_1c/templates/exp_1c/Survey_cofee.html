@@ -1,0 +1,44 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+What do you think about the coffee?-问卷问题设计
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+1. What is your most preferred option from five different types of coffee?
+<input type="text" name="coffee_like" ><br><br>
+            2. On a scale of 1 to 5, where 1 is <u> completely undrinkable </u> and 5 is <u>outstanding </u>, please <b>evaluate the quality of the coffee</b> you selected based on your tasting.
+<input type="text" name="coffee_quality" ><br><br>
+            3. On a scale of 1 to 5, where 1 is <u> extremely bitter </u> and 5 is <u> extremely sweet</u>, please evaluate <b> the sweetness of the coffee</b> you selected based on your tasting.
+<input type="text" name="coffee_sweetness" ><br><br>
+4. On a scale of 1 to 5, where 1 is <u> dislike extremely</u> and 5 is <u> like extremely</u>, please evaluate the <b>flavor of the coffee</b> you selected based on your tasting.
+<input type="text" name="coffee_flavor" ><br><br>
+5. On a scale of 1 to 5, where 1 is <u>poor</u> and 5 is <u> excellent</u>, please evaluate <b> the overall impression of the coffee</b> you selected based on its quality and complexity of its combined taste.
+<input type="text" name="coffee_impression" ><br><br>
+6. On a scale of 0 to 10, where 0 is <u> not at all likely <u>and 10 is <u> extremely likely</u>, how likely would you be to <b> Recommend this coffee to a friend or colleague</b>?
+<input type="text" name="coffee_recom" ><br><br>
+7. On a scale of 0 to 10, where 0 is <u> not at all likely</u> and 10 is <u>extremely likely</u>, how likely would you be to <b>Drink this coffee again</b>?
+<input type="text" name="coffee_drink" ><br><br>
+8.  On a scale of 0 to 10, where 0 is <u>not at all likely </u> and 10 is <u>extremely likely</u>, how likely would you be to <b>Serve this coffee to your guest</b>?
+<input type="text" name="coffee_serve" ><br><br>
+9. On a scale of 0 to 10, where 0 is <u>not at all likely </u> and 10 is <u>extremely likely</u>, how likely would you be to<b> Buy this coffee for personal consumption</b>?
+<input type="text" name="coffee_buy" ><br><br>
+        </p>
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

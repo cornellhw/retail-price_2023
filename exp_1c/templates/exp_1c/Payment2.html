@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+ Payment: Rejected Order
+{% endblock %}
+
+{% block content %}
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+            If the <u>Supplier</u> <b>rejects</b> your offer, you have no coffee to sell and your work today is  finished. <br><br>
+
+        </p>
+
+        <u><b>Your payoff in words</b></u>: “Your show up fee” <br>
+        <u><b>Your payoff in math</b></u>: $5<br> <br>
+    You will then be asked to carefully finish a post-experiment survey.
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

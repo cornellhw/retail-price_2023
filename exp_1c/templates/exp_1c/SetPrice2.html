@@ -2,18 +2,40 @@
 {% load otree %}
 
 {% block title %}
-Set the retail price as the marketing manager:
+Experiment: Summary of Decisions
 {% endblock %}
 
 {% block content %}
-    <p>
-                <p class="keith">
-Your offer is <font color="red"> Accepted </font>, and now you would play the role of a marketing manager. The market manager receives the procurement manager’s offer to purchase and would decide the retail price (R) for the products.<br>
-Research suggests that the consumers’ average willingness to pay (P) is <font color="red"> 14 dollars </font> per-unit. How much would like to set for one unit of coffee sample according to the consumers’ average willingness to pay (Set the retail price larger than your wholesale price)
+
+    <html>
+    <body>
 
 
-    </p>
-    <p>{% formfields  %}</p>
-    <p>{% next_button %}</p>
+        <p style="line-height: 2em;">
+        A visual summary of the steps of this experiment is included below<br>
+
+<h2>1. Coffee Selection Stage</h2>
+● Arrive<br>
+● Get Seated<br>
+● Provide you with a selection 5 different types of roasted coffee<br>
+● Taste and evaluate<br>
+● Select your most preferred option<br>
+● Answer some follow-up questions based on your tasting and choice<br><br>
+
+<h2>2. Coffee Sourcing Stage</h2>
+● Make the suppler a wholesale price offer (W) for one pound your selected coffee<br>
+● See the result of your offer<br><br>
+
+        <h2>3. Coffee Selling Stage</h2>
+● Set the retail price (R) for one 8oz cup of brewed coffee using your preferred coffee as the input<br>
+● See the results of your retail price choice, and learn your final payoff<br><br>
+        </p>
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
 
 {% endblock %}
