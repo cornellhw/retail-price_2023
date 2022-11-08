@@ -2,6 +2,10 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+class Consent(Page):
+    form_model = 'player'
+    form_fields = ['consent']
+
 class Welcome(Page):
     def vars_for_template(self):
         self.group.init_setting()
@@ -12,11 +16,38 @@ class Info(Page):
 class Summary(Page):
     pass
 
-class Survey_coffee(Page):
+
+
+class Survey_coffee1(Page):
     form_model = 'player'
-    form_fields = ['coffee_like', 'coffee_quality', 'coffee_sweetness',
-                   'coffee_flavor', 'coffee_impression', 'coffee_recom',
-                   'coffee_serve', 'coffee_buy', 'coffee_drink']
+    form_fields = ['coffee_like']
+
+class Survey_coffee2(Page):
+    form_model = 'player'
+    form_fields = ['coffee_quality']
+class Survey_coffee3(Page):
+    form_model = 'player'
+    form_fields = ['coffee_sweetness']
+class Survey_coffee4(Page):
+    form_model = 'player'
+    form_fields = ['coffee_flavor']
+class Survey_coffee5(Page):
+    form_model = 'player'
+    form_fields = ['coffee_impression']
+class Survey_coffee6(Page):
+    form_model = 'player'
+    form_fields = ['coffee_recom']
+class Survey_coffee7(Page):
+    form_model = 'player'
+    form_fields = ['coffee_drink']
+class Survey_coffee8(Page):
+    form_model = 'player'
+    form_fields = ['coffee_serve']
+class Survey_coffee9(Page):
+    form_model = 'player'
+    form_fields = ['coffee_buy']
+
+
 class Payment(Page):
     pass
 
@@ -28,10 +59,10 @@ class SetPrice(Page):
     form_fields = ['W', 'lockin']
 
     def is_displayed(self):
-        if self.player.lockin == '1':
-            return False
-        else:
+        if self.player.lockin.lower() != 'lockin':
             return True
+        else:
+            return False
 
 
     def before_next_page(self):
@@ -49,6 +80,7 @@ class SetPrice(Page):
                 'reward': reward
                 }
 
+
 class Res1(Page):
     def vars_for_template(self):
         return {'is_reject': self.player.is_reject,
@@ -60,12 +92,14 @@ class SetPrice2(Page):
     form_model = 'player'
     form_fields = ['R', 'lockin2']
 
+
+
     def is_displayed(self):
         if self.player.is_reject == 'accepted':
-            if self.player.lockin2 == '1':
-                return False
-            else:
+            if self.player.lockin2.lower() != 'lockin':
                 return True
+            else:
+                return False
         else:
             return False
 
@@ -101,11 +135,21 @@ class Survey(Page):
 class End(Page):
     pass
 
+# page_sequence = []
 
-page_sequence = [Welcome,
+page_sequence = [Consent,
+                Welcome,
                  Info,
                  Summary,
-                 Survey_coffee,
+                 Survey_coffee1,
+                 Survey_coffee2,
+                 Survey_coffee3,
+                 Survey_coffee4,
+                 Survey_coffee5,
+                 Survey_coffee6,
+                 Survey_coffee7,
+                 Survey_coffee8,
+                 Survey_coffee9,
                  Payment,
                  Payment2,
                  ]

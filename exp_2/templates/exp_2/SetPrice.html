@@ -6,21 +6,54 @@
 {% endblock %}
 
 {% block content %}
+{{ formfield_errors 'lockin' }}
 
 What’s your choice of procurement price?<br><br>
 
-    {% formfield 'W' label="Enter W here" %}
+    {% formfield 'W' label="Enter W here" %} <br>
 
 
-    <div class="controls">
-         <input type="radio"  name="lockin" value="0"> Test
-         <input type="radio"  name="lockin" value="1"> Lock in <br>
-    </div>
+
+
+    <input id="lock" class="btn btn-primary" name="lockin" value="Test" onclick="checkSubmit2()">  </input> <br><br>
+
 
     ● At this W, you offer will be  {{is_reject}} <br>
     ● Your current bonus is {{ reward }} <br>
 
 
-    {% next_button %}
+    <button  type="button" name="lockin" value="Finalize Price" class="btn btn-primary" onclick="checkSubmit()">Finalize Price</button>
+
+    <script>
+        function checkSubmit() {
+            let form = document.getElementById('form');
+            let isValid = form.reportValidity();
+            if (!isValid) return;
+
+            let warnings = [];
+
+
+            if (warnings.length >= 0) {
+                warnings.push("Confirm your bid?")
+                let confirmed = window.confirm(warnings.join('\r\n'));
+                if (!confirmed) return;
+            }
+            document.getElementById('lock').value = 'lockin';
+
+            form.submit();
+        }
+
+                function checkSubmit2() {
+            let form = document.getElementById('form');
+            let isValid = form.reportValidity();
+            if (!isValid) return;
+
+            form.submit();
+        }
+    </script>
+
+
+
+{#    {% next_button %}#}
 
 {% endblock %}

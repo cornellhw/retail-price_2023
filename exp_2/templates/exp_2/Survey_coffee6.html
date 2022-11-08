@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+What do you think about the coffee?
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+6. On a scale of 0 to 10, where 0 is <u> not at all likely <u>and 10 is <u> extremely likely</u>, how likely would you be to <b> Recommend this coffee to a friend or colleague</b>?
+{#<input type="text" name="coffee_like" ><br><br>#}
+    <div class="controls">
+         <input type="radio"  name="coffee_recom" value="0"> 0 <br>
+         <input type="radio"  name="coffee_recom" value="1"> 1 <br>
+         <input type="radio"  name="coffee_recom" value="2"> 2 <br>
+         <input type="radio"  name="coffee_recom" value="3"> 3 <br>
+         <input type="radio"  name="coffee_recom" value="4"> 4<br>
+         <input type="radio"  name="coffee_recom" value="5"> 5 <br>
+         <input type="radio"  name="coffee_recom" value="6"> 6 <br>
+         <input type="radio"  name="coffee_recom" value="7"> 7 <br>
+         <input type="radio"  name="coffee_recom" value="8"> 8 <br>
+         <input type="radio"  name="coffee_recom" value="9"> 9 <br>
+         <input type="radio"  name="coffee_recom" value="10"> 10 <br>
+    </div>
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

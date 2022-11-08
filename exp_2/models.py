@@ -16,9 +16,10 @@ Simple trust game
 class Constants(BaseConstants):
     F = 5
     X = 10
+    r1, r2 = 0.5, 0.7
 
-    name_in_url = 'exp_2'
-    players_per_group = 60
+    name_in_url = 'exp_1c'
+    players_per_group = None
     num_rounds = 1
 
 
@@ -48,16 +49,17 @@ class Player(BasePlayer):
     payoff1 = models.FloatField(initial=0)
     payoff2 = models.FloatField(initial=0)
 
+    consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
     purchase_success2 = models.IntegerField(initial=0)
 
     is_reject = models.StringField(initial='')
     test = models.StringField(initial='0')
-    lockin = models.StringField(initial='0')
+    lockin = models.StringField(initial='-1', blank=True)
     reward = models.FloatField(initial=0)
     test_times = models.IntegerField(initial=0)
 
-    lockin2 = models.StringField(initial='0')
+    lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
     sell = models.FloatField()
@@ -67,7 +69,7 @@ class Player(BasePlayer):
     quality = models.StringField(
         choices=[['0', 'Poor'], ['1', 'Fair'], ['2', 'Good'], ['3', 'Very good']
             , ['4', 'Excellent!!']],
-
+        # label='你的性别是？',
         widget=widgets.RadioSelect,
         # initial='0'
     )
@@ -109,7 +111,7 @@ class Player(BasePlayer):
         else:
             self.is_reject = 'rejected'
             self.reward = 5
-        if self.lockin == '0':
+        if self.lockin != 'lockin':
             self.test_times += 1
         return
 
@@ -121,7 +123,7 @@ class Player(BasePlayer):
         self.sell = self.R
         self.earn = 2 * self.R
         self.bonus = 3 * self.R
-        if self.lockin2 == '0':
+        if self.lockin2 != 'lockin':
             self.test_times2 += 1
 
         return
