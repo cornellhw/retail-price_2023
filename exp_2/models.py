@@ -16,7 +16,6 @@ Simple trust game
 class Constants(BaseConstants):
     F = 5
     X = 10
-    r1, r2 = 0.5, 0.7
 
     name_in_url = 'exp_1c'
     players_per_group = None
