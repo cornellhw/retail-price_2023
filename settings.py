@@ -16,7 +16,14 @@ SESSION_CONFIGS = [
             name='exp_2',
             display_name='exp_2',
             num_demo_participants=32,
-            app_sequence=['exp_2']),
+            app_sequence=['exp_2'],
+            a1=0.5,
+            u1=10,
+            l1=2,
+            a2=0.5,
+            u2=10,
+            l2=2
+        ),
 ]
 
 # ISO-639 code
@@ -77,3 +84,4 @@ INSTALLED_APPS = ['otree']
 #      num_demo_participants=3, app_sequence=['public_goods_simple', 'payment_info']),
 # dict(name='trust_simple2', display_name="Trust Game (simple version from tutorial)", num_demo_participants=2,
 #      app_sequence=['trust_simple2']),
+

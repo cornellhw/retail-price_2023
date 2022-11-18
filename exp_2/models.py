@@ -14,8 +14,8 @@ Simple trust game
 
 
 class Constants(BaseConstants):
-    F = 5
-    X = 10
+    a1, u1, l1 = 0.5, 10, 2
+    a2, u2, l2 = 0.5, 10, 2
 
     name_in_url = 'exp_1c'
     players_per_group = None
@@ -30,28 +30,19 @@ class Group(BaseGroup):
 
     def init_setting(self):
         for p in self.get_players():
-            p.C = round(random.random() * 2 + 5, 2)
-            p.P = round(random.random() * 2 + 13, 2)
+            p.C = round(random.random() * 8 + 2, 2)
         return
 
 
 class Player(BasePlayer):
-    # EXP params
-    # F = models.FloatField(initial=10)
-    # X = models.FloatField(initial=10)
-    W = models.FloatField(label='Enter W here')
+    W = models.FloatField(label='Enter W here', max=10)
     R = models.FloatField(
         label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?')
     C = models.FloatField(initial=0)
-    P = models.FloatField(initial=0)
-    pi = models.FloatField(initial=0)
-    payoff1 = models.FloatField(initial=0)
-    payoff2 = models.FloatField(initial=0)
 
     consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
-    purchase_success2 = models.IntegerField(initial=0)
-
+    prob = models.FloatField()
     is_reject = models.StringField(initial='')
     test = models.StringField(initial='0')
     lockin = models.StringField(initial='-1', blank=True)
@@ -93,36 +84,32 @@ class Player(BasePlayer):
     coffee_sweetness = models.StringField()
     coffee_flavor = models.StringField()
     coffee_impression = models.StringField()
-    coffee_recom = models.StringField()
-    coffee_drink = models.StringField()
-    coffee_serve = models.StringField()
-    coffee_buy = models.StringField()
-
-    def price_check(self):
-        self.pi = self.P - self.W
-        self.purchase_success = int(self.W >= self.C)
-        return
+    coffee_recom = models.StringField(blank=True)
+    coffee_drink = models.StringField(blank=True)
+    coffee_serve = models.StringField(blank=True)
+    coffee_buy = models.StringField(blank=True)
 
     def set_payoff1(self):
-        if self.W >= 10:
+        if self.W >= self.C:
             self.is_reject = 'accepted'
-            self.reward = 0.5 * (10 - self.W)
+            self.reward = 5 + self.session.config['a1'] * (10 - self.W)
         else:
             self.is_reject = 'rejected'
             self.reward = 5
+        self.prob = min(
+            1 - (self.W - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 1)
         if self.lockin != 'lockin':
             self.test_times += 1
         return
 
-    def price_check2(self):
-        self.purchase_success2 = int(self.R <= self.P)
-        return
-
     def set_payoff2(self):
-        self.sell = self.R
-        self.earn = 2 * self.R
-        self.bonus = 3 * self.R
+        temp = (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2'])
+        self.sell = 1 - temp
+        self.earn = self.R * (28 * temp - self.W)
+        self.bonus = self.session.config['a2'] * self.R * (28 * temp - self.W)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
 
         return
+
+

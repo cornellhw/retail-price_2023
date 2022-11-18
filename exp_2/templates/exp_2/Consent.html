@@ -6,15 +6,50 @@ Consent Form
 {% endblock %}
 
 {% block content %}
+    <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-    XXXXXXXXXXXX
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-{#    {% formfields  %} <br>#}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
 
-    Please press consent to begin the experiment.<br>
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
+</head>
 
-        <input id="cons" class="btn btn-primary" name="consent" value="Consent" onclick="checkSubmit2()">  </input> <br><br>
+    <body>
 
+<div style="height:800px;width:1000px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>    abcd  <br>
+
+
+    Please press consent to begin the experiment.<br><br>
+
+
+        <input id="cons" class="btn btn-primary" name="consent" value="Consent" onclick="checkSubmit2()">  </input>
+
+        <input id="cons" class="btn btn-primary" name="consent" value="Do not Consent" onclick="checkSubmit3()">  </input> <br><br>
+
+</div>
+
+</body>
+
+    </html>
     <script>
 
                 function checkSubmit2() {
@@ -24,7 +59,25 @@ Consent Form
 
             form.submit();
         }
+
+                function checkSubmit3() {
+            let form = document.getElementById('form');
+            let isValid = form.reportValidity();
+            if (!isValid) return;
+
+            let warnings = [];
+
+
+            if (warnings.length >= 0) {
+                warnings.push("Do you confirm that you would not consent? You will not get your show up money.")
+                let confirmed = window.confirm(warnings.join('\r\n'));
+                if (!confirmed) return;
+            }
+            document.getElementById('cons').value = 'Do not Consent';
+
+            form.submit();
+        }
+
     </script>
 
 {% endblock %}
-
