@@ -9,8 +9,6 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = ['score', 'distribution']
-
 SESSION_CONFIGS = [
         dict(
             name='exp_2',
@@ -22,7 +20,8 @@ SESSION_CONFIGS = [
             l1=2,
             a2=0.5,
             u2=10,
-            l2=2
+            l2=2,
+            F=5,
         ),
 ]
 

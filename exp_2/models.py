@@ -17,7 +17,8 @@ class Constants(BaseConstants):
     a1, u1, l1 = 0.5, 10, 2
     a2, u2, l2 = 0.5, 10, 2
 
-    name_in_url = 'exp_1c'
+    F = 5
+    name_in_url = 'exp_2'
     players_per_group = None
     num_rounds = 1
 
@@ -30,14 +31,15 @@ class Group(BaseGroup):
 
     def init_setting(self):
         for p in self.get_players():
-            p.C = round(random.random() * 8 + 2, 2)
+            p.C = round(random.uniform(2,10), 2)
         return
 
 
 class Player(BasePlayer):
     W = models.FloatField(label='Enter W here', max=10)
     R = models.FloatField(
-        label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?')
+        label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?',
+        min=2, max=10)
     C = models.FloatField(initial=0)
 
     consent = models.StringField(initial='')
@@ -79,11 +81,11 @@ class Player(BasePlayer):
         # initial='0'
     )
 
-    coffee_like = models.StringField()
-    coffee_quality = models.StringField()
-    coffee_sweetness = models.StringField()
-    coffee_flavor = models.StringField()
-    coffee_impression = models.StringField()
+    coffee_like = models.StringField(blank=True)
+    coffee_quality = models.StringField(blank=True)
+    coffee_sweetness = models.StringField(blank=True)
+    coffee_flavor = models.StringField(blank=True)
+    coffee_impression = models.StringField(blank=True)
     coffee_recom = models.StringField(blank=True)
     coffee_drink = models.StringField(blank=True)
     coffee_serve = models.StringField(blank=True)
@@ -92,22 +94,23 @@ class Player(BasePlayer):
     def set_payoff1(self):
         if self.W >= self.C:
             self.is_reject = 'accepted'
-            self.reward = 5 + self.session.config['a1'] * (10 - self.W)
+            self.reward = self.session.config['F'] + self.session.config['a1'] * (10 - self.W)
         else:
             self.is_reject = 'rejected'
-            self.reward = 5
-        self.prob = (self.W - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2'])
+            self.reward = self.session.config['F']
+        self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
         if self.lockin != 'lockin':
             self.test_times += 1
         return
 
     def set_payoff2(self):
-        temp = max((self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0)
-        self.sell = 1 - temp
-        self.earn = self.R * (28 * temp - self.W)
-        self.bonus = self.session.config['a2'] * self.R * (28 * temp - self.W)
+        temp = int(
+            28 * max((self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
+        self.sell = temp
+        self.earn = self.R * (temp - self.W)
+        self.bonus = self.session.config['a2'] * self.R * (temp - self.W)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
-
         return
+
 
