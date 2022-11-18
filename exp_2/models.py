@@ -105,7 +105,7 @@ class Player(BasePlayer):
 
     def set_payoff2(self):
         temp = int(
-            28 * max((self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
+            28 * max(1-(self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
         self.sell = temp
         self.earn = self.R * (temp - self.W)
         self.bonus = self.session.config['a2'] * self.R * (temp - self.W)
