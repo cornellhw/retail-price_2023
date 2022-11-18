@@ -96,14 +96,13 @@ class Player(BasePlayer):
         else:
             self.is_reject = 'rejected'
             self.reward = 5
-        self.prob = min(
-            1 - (self.W - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 1)
+        self.prob = (self.W - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2'])
         if self.lockin != 'lockin':
             self.test_times += 1
         return
 
     def set_payoff2(self):
-        temp = (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2'])
+        temp = max((self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0)
         self.sell = 1 - temp
         self.earn = self.R * (28 * temp - self.W)
         self.bonus = self.session.config['a2'] * self.R * (28 * temp - self.W)
@@ -111,5 +110,4 @@ class Player(BasePlayer):
             self.test_times2 += 1
 
         return
-
 

@@ -10,7 +10,7 @@ class Consent(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Welcome(Page):
@@ -41,7 +41,7 @@ class Survey_coffee1(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee2(Page):
@@ -54,7 +54,7 @@ class Survey_coffee2(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee3(Page):
@@ -67,7 +67,7 @@ class Survey_coffee3(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee4(Page):
@@ -80,7 +80,7 @@ class Survey_coffee4(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee5(Page):
@@ -93,7 +93,7 @@ class Survey_coffee5(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee6(Page):
@@ -107,7 +107,7 @@ class Survey_coffee6(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee7(Page):
@@ -120,7 +120,7 @@ class Survey_coffee7(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee8(Page):
@@ -133,7 +133,7 @@ class Survey_coffee8(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Survey_coffee9(Page):
@@ -146,7 +146,7 @@ class Survey_coffee9(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class Payment(Page):
@@ -174,7 +174,7 @@ class SetPrice(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
     def before_next_page(self):
         self.player.set_payoff1()
@@ -205,7 +205,7 @@ class SetPrice2(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
     def is_displayed(self):
         if self.player.consent.lower() != 'consent':
@@ -257,7 +257,7 @@ class Survey(Page):
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
-            return 'You should select your answer'
+            return 'you should select your answer'
 
 
 class End(Page):
