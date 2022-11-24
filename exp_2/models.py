@@ -286,7 +286,7 @@ class Player(BasePlayer):
         label='29.What is your current marital status?',
         widget=widgets.RadioSelect,
     )
-    children  = models.StringField(
+    children = models.StringField(
         choices=[['0', 'Yes'], ['1', 'No'], ['2', 'Prefer not to answer']],
         label='30.Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,

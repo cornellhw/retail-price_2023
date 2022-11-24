@@ -337,4 +337,4 @@ page_sequence += [Consent,
 page_sequence += [SetPrice] * 100
 page_sequence += [Res1]
 page_sequence += [SetPrice2] * 100
-page_sequence += [Res2, Survey]
+page_sequence += [Res2, Survey1, Survey2, Survey3,]
