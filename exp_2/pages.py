@@ -30,6 +30,55 @@ class Summary(Page):
     def is_displayed(self):
         return self.player.consent.lower() == 'consent'
 
+class Survey1(Page):
+    form_model = 'player'
+    form_fields = ['coffee_howoften', 'coffee_where', 'coffee_where_string',
+                   'door_unlocked', 'lend_money', 'lend_personal', 'lie_parents', 'lie_roommates',
+                   'lie_acquaintances', 'lie_friends', 'lie_partner']
+
+    def is_displayed(self):
+        return self.player.consent.lower() == 'consent'
+        # return True
+
+    def error_message(self, values):
+        errors = [1 for f in values if 'string' not in f and not values[f]]
+        if errors:
+            return 'you should select your answer'
+
+
+class Survey2(Page):
+    form_model = 'player'
+    form_fields = ['take_advantage', 'try_to_be_helpful', 'trust',
+                   'count_on_strangers', 'deal_with_strangers', 'recycle'
+                   'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
+
+    def is_displayed(self):
+        # return self.player.consent.lower() == 'consent'
+        return True
+
+    def error_message(self, values):
+        errors = [1 for f in values if 'string' not in f and not values[f]]
+        if errors:
+            return 'you should select your answer'
+
+class Survey3(Page):
+    form_model = 'player'
+    form_fields = ['age', 'gender', 'gender_string',
+                   'describe_white','describe_Middle','describe_Black', 'describe_American',
+                   'describe_Asian','describe_Native','describe_Hispanic','describe_Prefer','describe_other', 'describe_other_string',
+                   'edu','major','major_string','parents','employment', 'employment_string',
+                   'income','marital','children',
+                   ]
+
+    def is_displayed(self):
+        return self.player.consent.lower() == 'consent'
+        # return True
+
+    def error_message(self, values):
+        errors = [1 for f in values if 'string' not in f and not values[f]]
+        if errors:
+            return 'you should select your answer'
+
 
 class Survey_coffee1(Page):
     form_model = 'player'
@@ -249,7 +298,7 @@ class Res2(Page):
 
 class Survey(Page):
     form_model = 'player'
-    form_fields = ['age', 'gender', 'coffee']
+    form_fields = ['coffee_howoften', 'coffee_where','door_unlocked','lend_money','lend_personal','lie_parents','lie_roommates','lie_acquaintances','lie_friends','lie_partner','take_advantage','try_to_be_helpful','trust','count_on_strangers','deal_with_strangers','recycle','more_pay_fair_trade','frequency_not_buy','car','frequency_shoes','age','gender']
 
     def is_displayed(self):
         return self.player.consent.lower() == 'consent'
