@@ -196,7 +196,7 @@ class Player(BasePlayer):
     more_pay_fair_trade = models.StringField(
         choices=[['0', 'Nothing'], ['1', '1 Dollar'], ['2', '2 Dollars'], ['3', '3 Dollars'],
                  ['4', '4 Dollars or more']],
-        label='17. How much more would you pay for a cup of Fair Trade coffee?',
+        label='17. Fairtrade is an arrangement designed to help producers in growing countries achieve sustainable and equitable trade relationships. How much more would you pay for a cup of Fairtrade coffee?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
