@@ -11,17 +11,15 @@
 Our choice of procurement price W=({{ player.W }}).<br><br>
 
 
-What’s your choice of retail price(R)? (Based on the consumers' willingess to pay, choose your retail price between 2 and 10)<br><br>
+What’s your choice of retail price(R)?<br><br>
 
     {% formfield 'R' label="Enter R here" %}<br>
 
     <input id="lock" class="btn btn-primary" name="lockin2" value="Test" onclick="checkSubmit2()">  </input> <br><br>
 
-
     ● At this R, you will sell {{sell}} cups of coffee<br>
     ● Your firm earn {{ earn }} dollars of profit<br>
     ● Your bonus payment is {{ bonus }} dollars<br>
-
 
     <button  type="button" name="lockin2" value="Finalize Price" class="btn btn-primary" onclick="checkSubmit()">Finalize Price</button>
 
@@ -35,7 +33,7 @@ What’s your choice of retail price(R)? (Based on the consumers' willingess to 
 
 
             if (warnings.length >= 0) {
-                warnings.push("Confirm your retail price?")
+                warnings.push("Confirm your bid?")
                 let confirmed = window.confirm(warnings.join('\r\n'));
                 if (!confirmed) return;
             }
