@@ -282,7 +282,7 @@ class Player(BasePlayer):
     )
     marital = models.StringField(
         choices=[['0', 'Married'], ['1', 'Living with a partner'], ['2', 'Widowed'], ['3', 'Divorced'],
-                 ['4', 'Separated '],['5', 'Never married'],['6', 'Prefer ']],
+                 ['4', 'Separated '],['5', 'Never married'],['6', 'Prefer not to answer']],
         label='29.What is your current marital status?',
         widget=widgets.RadioSelect,
     )
