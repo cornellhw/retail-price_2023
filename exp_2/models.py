@@ -6,19 +6,21 @@ from otree.api import (
     BaseGroup,
     BasePlayer,
 )
+
 import random
 
 doc = """
 Simple trust game
 """
-
-
 class Constants(BaseConstants):
+
     a1, u1, l1 = 0.5, 10, 2
     a2, u2, l2 = 0.5, 10, 2
 
-    F = 7
-    name_in_url = 'exp_2'
+    lower, upper = 2, 10
+    miu, sigma = 6, 0.5
+    F=7
+    name_in_url = 'exp_1c'
     players_per_group = None
     num_rounds = 1
 
@@ -26,22 +28,26 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     pass
 
-
 class Group(BaseGroup):
+    dist = stats.truncnorm((Constants.lower - Constants.miu) / Constants.sigma,
+                    (Constants.upper - Constants.miu) / Constants.sigma,
+                    loc=Constants.miu, scale=Constants.sigma)
 
     def init_setting(self):
         for p in self.get_players():
-            p.C = round(random.uniform(2,10), 2)
+            # p.C = round(random.random()*8+2,2)  # uniform
+            # print(self.dist.rvs(1))
+            p.C = float(np.round_(self.dist.rvs(1), 2))  # normal
         return
 
 
 class Player(BasePlayer):
+
     W = models.FloatField(label='Enter W here', max=10)
-    R = models.FloatField(
-        label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?',
-        min=2, max=10)
+    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10)
     C = models.FloatField(initial=0)
 
+    payoff_test = models.FloatField()
     consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
     prob = models.FloatField()
@@ -51,12 +57,26 @@ class Player(BasePlayer):
     reward = models.FloatField(initial=0)
     test_times = models.IntegerField(initial=0)
 
+    test_round = models.IntegerField(initial=0)
+
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
-    sell = models.FloatField()
+
+    sell = models.IntegerField()
     bonus = models.FloatField()
     earn = models.FloatField()
+
+    logger_W = models.LongStringField(initial='')
+    logger_T = models.LongStringField(initial='')
+
+    quality = models.StringField(
+        choices=[['0', 'Poor'], ['1', 'Fair'], ['2', 'Good'], ['3', 'Very good']
+                 , ['4', 'Excellent!!']],
+        # label='你的性别是？',
+        widget=widgets.RadioSelect,
+        # initial='0'
+    )
 
     # survey
     # age = models.IntegerField(label="What is your age?", min=5, max=125)
@@ -196,7 +216,7 @@ class Player(BasePlayer):
     more_pay_fair_trade = models.StringField(
         choices=[['0', 'Nothing'], ['1', '1 Dollar'], ['2', '2 Dollars'], ['3', '3 Dollars'],
                  ['4', '4 Dollars or more']],
-        label='17. Fairtrade is an arrangement designed to help producers in growing countries achieve sustainable and equitable trade relationships. How much more would you pay for a cup of Fairtrade coffee?',
+        label='17. How much more would you pay for a cup of Fair Trade coffee?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
@@ -282,11 +302,11 @@ class Player(BasePlayer):
     )
     marital = models.StringField(
         choices=[['0', 'Married'], ['1', 'Living with a partner'], ['2', 'Widowed'], ['3', 'Divorced'],
-                 ['4', 'Separated '],['5', 'Never married'],['6', 'Prefer not to answer']],
+                 ['4', 'Separated '],['5', 'Never married'],['6', 'Prefer ']],
         label='29.What is your current marital status?',
         widget=widgets.RadioSelect,
     )
-    children = models.StringField(
+    children  = models.StringField(
         choices=[['0', 'Yes'], ['1', 'No'], ['2', 'Prefer not to answer']],
         label='30.Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,
@@ -303,7 +323,10 @@ class Player(BasePlayer):
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
 
+        self.payoff_test = self.session.config['a1'] * (10 - self.W)
+
         if self.lockin != 'lockin':
+            self.logger_W += str(self.W) + ','
             self.test_times += 1
         return
 
@@ -316,5 +339,18 @@ class Player(BasePlayer):
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
         return
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -21,7 +21,7 @@ SESSION_CONFIGS = [
             a2=0.5,
             u2=10,
             l2=2,
-            F=5,
+            F=7,
         ),
 ]
 

@@ -49,7 +49,7 @@ class Survey1(Page):
 class Survey2(Page):
     form_model = 'player'
     form_fields = ['take_advantage', 'try_to_be_helpful', 'trust',
-                   'count_on_strangers', 'deal_with_strangers', 'recycle',
+                   'count_on_strangers', 'deal_with_strangers', 'recycle'
                    'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
 
     def is_displayed(self):
@@ -78,6 +78,7 @@ class Survey3(Page):
         errors = [1 for f in values if 'string' not in f and not values[f]]
         if errors:
             return 'you should select your answer'
+
 
 
 class Survey_coffee1(Page):
@@ -231,21 +232,38 @@ class SetPrice(Page):
     def vars_for_template(self):
         if self.player.test_times == 0:
             prob = '---'
+            payoff = '---'
         else:
             prob = self.player.prob*100
+            payoff = self.player.payoff_test
         return {'prob': prob,
+                'payoff':payoff,
+                'round': ['first', 'second', 'third'][self.player.test_round],
+                'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
                 }
 
 
 class Res1(Page):
     def vars_for_template(self):
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            next_info = 'Click the "next" button to continue the procurement price setting!'
+        else:
+            next_info = 'Click the "next" button to finish the post-experiment survey! '
         return {'is_reject': self.player.is_reject,
-                'reward': self.player.reward
+                'reward': self.player.reward,
+                'next_info': next_info
                 }
 
     def is_displayed(self):
         return self.player.consent.lower() == 'consent'
 
+    def before_next_page(self):
+        self.player.test_round += 1
+        self.player.logger_W += '| '
+        self.player.logger_T += str(self.player.test_times)+','
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            self.player.lockin = '-1'
+            self.player.test_times = 0
 
 class SetPrice2(Page):
     form_model = 'player'
@@ -298,7 +316,7 @@ class Res2(Page):
 
 class Survey(Page):
     form_model = 'player'
-    form_fields = ['coffee_howoften', 'coffee_where','door_unlocked','lend_money','lend_personal','lie_parents','lie_roommates','lie_acquaintances','lie_friends','lie_partner','take_advantage','try_to_be_helpful','trust','count_on_strangers','deal_with_strangers','recycle','more_pay_fair_trade','frequency_not_buy','car','frequency_shoes','age','gender']
+    form_fields = ['age', 'gender', 'coffee']
 
     def is_displayed(self):
         return self.player.consent.lower() == 'consent'
@@ -336,5 +354,10 @@ page_sequence += [Consent,
 
 page_sequence += [SetPrice] * 100
 page_sequence += [Res1]
+page_sequence += [SetPrice] * 100
+page_sequence += [Res1]
+page_sequence += [SetPrice] * 100
+page_sequence += [Res1]
+
 page_sequence += [SetPrice2] * 100
 page_sequence += [Res2, Survey1, Survey2, Survey3,]
