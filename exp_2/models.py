@@ -1,3 +1,4 @@
+import np as np
 import stats
 from otree.api import (
     models,
