@@ -1,3 +1,4 @@
+import stats
 from otree.api import (
     models,
     widgets,
