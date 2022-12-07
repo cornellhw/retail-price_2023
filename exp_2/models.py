@@ -1,5 +1,5 @@
 import numpy as np
-import stats
+from scipy import stats
 from otree.api import (
     models,
     widgets,
