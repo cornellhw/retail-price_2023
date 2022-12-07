@@ -52,9 +52,7 @@ class Player(BasePlayer):
     payoff_test = models.FloatField()
     consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
-    prob1 = models.FloatField()
-    prob2 = models.FloatField()
-    prob3 = models.FloatField()
+    prob = models.FloatField()
     is_reject = models.StringField(initial='')
     test = models.StringField(initial='0')
     lockin = models.StringField(initial='-1', blank=True)
@@ -323,9 +321,9 @@ class Player(BasePlayer):
         else:
             self.is_reject = 'rejected'
             self.reward = self.session.config['F']
-        self.prob1 = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
-        self.prob1 = max(0, self.prob)
-        self.prob1 = round(self.prob, 2)
+        self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
+        self.prob = max(0, self.prob)
+        self.prob = round(self.prob, 2)
 
         self.payoff_test = self.session.config['a1'] * (10 - self.W)
 
