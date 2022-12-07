@@ -49,7 +49,7 @@ class Survey1(Page):
 class Survey2(Page):
     form_model = 'player'
     form_fields = ['take_advantage', 'try_to_be_helpful', 'trust',
-                   'count_on_strangers', 'deal_with_strangers', 'recycle'
+                   'count_on_strangers', 'deal_with_strangers', 'recycle',
                    'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
 
     def is_displayed(self):
