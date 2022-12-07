@@ -323,9 +323,9 @@ class Player(BasePlayer):
         else:
             self.is_reject = 'rejected'
             self.reward = self.session.config['F']
-        self.prob1 = (self.W - self.session.config['miu']) / (self.session.config['sigma'])
-        self.prob1 = max(0, self.prob1)
-        self.prob1 = round(self.prob1, 2)
+        self.prob1 = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
+        self.prob1 = max(0, self.prob)
+        self.prob1 = round(self.prob, 2)
 
         self.payoff_test = self.session.config['a1'] * (10 - self.W)
 
