@@ -22,6 +22,8 @@ SESSION_CONFIGS = [
             u2=10,
             l2=2,
             F=7,
+            miu=6,
+            sigma=0.5,
         ),
 ]
 
