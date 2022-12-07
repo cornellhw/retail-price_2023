@@ -53,8 +53,8 @@ class Survey2(Page):
                    'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
 
     def is_displayed(self):
-        # return self.player.consent.lower() == 'consent'
-        return True
+        return self.player.consent.lower() == 'consent'
+        # return True
 
     def error_message(self, values):
         errors = [1 for f in values if 'string' not in f and not values[f]]
