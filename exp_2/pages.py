@@ -250,7 +250,7 @@ class Res1(Page):
         else:
             next_info = 'Click the "next" button to finish the post-experiment survey! '
         return {'is_reject': self.player.is_reject,
-                'reward': self.player.reward,
+                'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
                 }
 
