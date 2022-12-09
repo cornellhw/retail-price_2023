@@ -331,6 +331,9 @@ class End(Page):
     def is_displayed(self):
         return self.player.consent.lower() == 'consent'
 
+class Final(Page):
+    def is_displayed(self):
+        return self.player.consent.lower() == 'consent'
 
 page_sequence = []
 
@@ -360,4 +363,4 @@ page_sequence += [SetPrice] * 100
 page_sequence += [Res1]
 
 page_sequence += [SetPrice2] * 100
-page_sequence += [Res2, Survey1, Survey2, Survey3,]
+page_sequence += [Res2, Survey1, Survey2, Survey3, Final,]

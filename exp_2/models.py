@@ -17,7 +17,7 @@ Simple trust game
 class Constants(BaseConstants):
 
     a1, u1, l1 = 0.5, 10, 2
-    a2, u2, l2 = 0.5, 10, 2
+    a2, u2, l2 = 0.5, 7, 1
 
     lower, upper = 2, 10
     miu, sigma = 6, 0.5
