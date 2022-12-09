@@ -56,7 +56,7 @@ class Player(BasePlayer):
     is_reject = models.StringField(initial='')
     test = models.StringField(initial='0')
     lockin = models.StringField(initial='-1', blank=True)
-    reward = models.FloatField(initial=0)
+    cost_bonus = models.FloatField(initial=0)
     test_times = models.IntegerField(initial=0)
 
     test_round = models.IntegerField(initial=0)
@@ -317,10 +317,10 @@ class Player(BasePlayer):
     def set_payoff1(self):
         if self.W >= self.C:
             self.is_reject = 'accepted'
-            self.reward = self.session.config['F'] + self.session.config['a1'] * (10 - self.W)
+            self.cost_bonus = self.session.config['F'] + self.session.config['a1'] * (10 - self.W)
         else:
             self.is_reject = 'rejected'
-            self.reward = self.session.config['F']
+            self.cost_bonus = self.session.config['F']
         self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
@@ -340,7 +340,7 @@ class Player(BasePlayer):
         self.profit_bonus = self.session.config['a2'] * (self.R * temp - self.W)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
-        self.total_bonus = self.reward + self.profit_bonus
+        self.total_bonus = self.cost_bonus + self.profit_bonus
         return
 
 

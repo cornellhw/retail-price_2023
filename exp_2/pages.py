@@ -293,14 +293,20 @@ class SetPrice2(Page):
         if self.player.test_times2 == 0:
             sell = '28(1−R−2/10−2)'
             earn = '[R∗{28(1−R−2/10−2)}−W]'
-            bonus = '0.5∗[R∗{28(1−R−2/10−2)}−W]'
+            cost_bonus = 'F + 0.5 + (10-W)'
+            profit_bonus = '0.5∗[R∗{28(1−R−2/10−2)}−W]'
+            total_bonus = 'F + 0.5 + (10-W) + 0.5∗[R∗{28(1−R−2/10−2)}−W]'
         else:
             sell = self.player.sell
             earn = self.player.earn
-            bonus = self.player.bonus
+            cost_bonus = self.player.cost_bonus
+            profit_bonus = self.player.profit_bonus
+            total_bonus = self.player.total_bonus
         return {'sell': sell,
                 'earn': earn,
-                'bonus': bonus
+                'cost_bonus': cost_bonus,
+                'profit_bonus': profit_bonus,
+                'total_bonus': total_bonus
                 }
 
 
