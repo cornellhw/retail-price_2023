@@ -69,6 +69,7 @@ class Player(BasePlayer):
     profit_bonus = models.FloatField()
     total_bonus = models.FloatField()
     earn = models.FloatField()
+    market_coverage = models.FloatField()
     logger_W = models.LongStringField(initial='')
     logger_T = models.LongStringField(initial='')
 
@@ -337,6 +338,7 @@ class Player(BasePlayer):
             28 * max(1-(self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
         self.sell = temp
         self.earn = self.R * temp - self.W
+        self.market_coverage = self.sell/28
         self.profit_bonus = self.session.config['a2'] * (self.R * temp - self.W)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1

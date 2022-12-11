@@ -292,17 +292,20 @@ class SetPrice2(Page):
     def vars_for_template(self):
         if self.player.test_times2 == 0:
             sell = '28(1−(R−1)/7−1)'
+            market_coverage = '(1−(R−1)/7−1)'
             earn = '[R∗{28(1−(R−1)/(7−1))}−W]'
             cost_bonus = 'F + 0.5∗(10-W)'
             profit_bonus = '0.5∗[R∗{28(1−(R−1)/(7−1))}−W]'
             total_bonus = 'F + 0.5∗(10-W) + 0.5∗[R∗{28(1−R−2/10−2)}−W]'
         else:
             sell = self.player.sell
+            market_coverage = self.player.market_coverage
             earn = self.player.earn
             cost_bonus = self.player.cost_bonus
             profit_bonus = self.player.profit_bonus
             total_bonus = self.player.total_bonus
         return {'sell': sell,
+                'market_coverage':market_coverage,
                 'earn': earn,
                 'cost_bonus': cost_bonus,
                 'profit_bonus': profit_bonus,
