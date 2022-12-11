@@ -9,7 +9,7 @@
 {% block content %}
 
 The choice of procurement price W=({{ player.W }}).<br><br>
-
+The overall quality that the procurement guys set is .<br><br>
 
 What’s your choice of retail price(R)?<br><br>
 
@@ -18,12 +18,12 @@ What’s your choice of retail price(R)?<br><br>
     <input id="lock" class="btn btn-primary" name="lockin2" value="Test" onclick="checkSubmit2()">  </input> <br><br>
     <b>Firm level:</b><br>
     ● At this R, you will sell {{sell}} cups of coffee<br>
-    ● The market coverage (% of market sold to) is {{market_coverage}} % <br>
+    ● The market coverage (% of market sold to) is {{market_coverage}}% <br>
     ● Your firm earn {{ earn }} dollars of profit<br>
     <b>Subject level:</b><br>
-    ● Your cost bonus payment is {{ cost_bonus }} dollars<br>
-    ● Your profit bonus payment is {{ profit_bonus }} dollars<br>
-    ● Your total bonus payment is {{ total_bonus }} dollars<br>
+    ● Your cost savings payoff is {{ cost_bonus }} dollars<br>
+    ● Your profit savings payoff is {{ profit_bonus }} dollars<br>
+    ● Your total savings payoff is {{ total_bonus }} dollars<br>
     <button  type="button" name="lockin2" value="Finalize Price" class="btn btn-primary" onclick="checkSubmit()">Finalize Price</button>
 
     <script>
