@@ -344,6 +344,8 @@ class Final(Page):
     def is_displayed(self):
         return self.player.consent.lower() == 'consent'
 
+    def vars_for_template(self):
+        return {'id': self.player.id_in_group}
 page_sequence = []
 
 

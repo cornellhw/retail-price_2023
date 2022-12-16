@@ -26,7 +26,6 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
 
-
 class Subsession(BaseSubsession):
     pass
 
@@ -39,14 +38,13 @@ class Group(BaseGroup):
         for p in self.get_players():
             # p.C = round(random.random()*8+2,2)  # uniform
             # print(self.dist.rvs(1))
-            p.C = float(np.round_(self.dist.rvs(1), 2))  # normal
+            p.C = float(round(float(self.dist.rvs(1)), 2))  # normal
         return
-
 
 class Player(BasePlayer):
 
     W = models.FloatField(label='Enter W here', max=10)
-    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10)
+    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?',min=2, max=10)
     C = models.FloatField(initial=0)
 
     payoff_test = models.FloatField()
@@ -64,23 +62,22 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
-
     sell = models.IntegerField()
     profit_bonus = models.FloatField()
     total_bonus = models.FloatField()
     earn = models.FloatField()
     market_coverage = models.FloatField()
     logger_W = models.LongStringField(initial='')
+    logger_W_final = models.LongStringField(initial='')
     logger_T = models.LongStringField(initial='')
 
     quality = models.StringField(
         choices=[['0', 'Poor'], ['1', 'Fair'], ['2', 'Good'], ['3', 'Very good']
-                 , ['4', 'Excellent!!']],
-        # label='你的性别是？',
+                , ['4', 'Excellent!!']],
+            # label='你的性别是？',
         widget=widgets.RadioSelect,
-        # initial='0'
+            # initial='0'
     )
-
     # survey
     # age = models.IntegerField(label="What is your age?", min=5, max=125)
     # gender = models.StringField(
@@ -315,6 +312,9 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
     )
 
+    def fz(self, w):
+        return (w - Constants.miu) / Constants.sigma
+
     def set_payoff1(self):
         if self.W >= self.C:
             self.is_reject = 'accepted'
@@ -322,7 +322,24 @@ class Player(BasePlayer):
         else:
             self.is_reject = 'rejected'
             self.cost_bonus = self.session.config['F']
-        self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
+        if self.test_round == 0:
+            # self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
+            self.prob = self.fz(self.W)
+        elif self.test_round == 1:
+            w1 = int(self.logger_W_final.split(',')[0])
+            if self.W <= w1:
+                self.prob = 0
+            else:
+                self.prob = (self.fz(self.W) - self.fz(w1)) / (1 - self.fz(w1))
+        else:
+            w1 = int(self.logger_W_final.split(',')[0])
+            w2 = int(self.logger_W_final.split(',')[1])
+            w_max = max(w1, w2)
+            if self.W <= w_max:
+                self.prob = 0
+            else:
+                self.prob = (self.fz(self.W) - self.fz(w_max)) / (1 - self.fz(w_max))
+
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
 
@@ -331,6 +348,8 @@ class Player(BasePlayer):
         if self.lockin != 'lockin':
             self.logger_W += str(self.W) + ','
             self.test_times += 1
+        else:
+            self.logger_W_final += str(self.W) + ','
         return
 
     def set_payoff2(self):

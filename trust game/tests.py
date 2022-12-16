@@ -1,12 +1,11 @@
-from otree.api import Currency as c, currency_range, SubmissionMustFail
-from . import pages
-from ._builtin import Bot
-from .models import Constants
+from otree.api import Currency as c, currency_range, expect, Bot
+from . import *
+
 
 class PlayerBot(Bot):
     def play_round(self):
 
-        yield introduction
+        yield Introduction
 
         if self.player.id_in_group == 1:
             yield Send, dict(sent_amount=4)

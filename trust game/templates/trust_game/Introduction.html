@@ -1,14 +1,35 @@
-{% extends "global/Page.html" %} {% load staticfiles otree %} {% load i18n %} {# ****************************************************************************************************************** #} {# *** STYLES *** #} {# ****************************************************************************************************************** #} {% block styles %} {% endblock %} {# ****************************************************************************************************************** #} {# *** SCRIPTS *** #} {# ****************************************************************************************************************** #} {% block scripts %} {% if Constants.enforce_consistency == True %} {% if Constants.one_choice_per_page == False and Constants.random_order == False %} {% endif %} {% endif %} {% endblock %} {# ****************************************************************************************************************** #} {# *** TITLE *** #} {# ****************************************************************************************************************** #} {% block title %} {% trans "Your Decision" %} {% endblock %} {# ****************************************************************************************************************** #} {# *** CONTENT *** #} {# ****************************************************************************************************************** #} {% block content %}
-{% if Constants.one_choice_per_page == True and Constants.progress_bar == True %} {% blocktrans trimmed with page=page total=total %} Page {{ page }} of {{ total }} {% endblocktrans %}
-{% endif %} {% if Constants.accept_reject == True and Constants.variation != 'sure_payoff' %}
-{% for i,f,p,hi,lo,sp in choices %} {% endfor %}
-{% trans "Lottery" %}	{% trans "Accept" %}	{% trans "Reject" %}
-{{ hi }} {% trans "with a probability of " %}{{ p|floatformat:1 }}, {{ lo }} {% trans "otherwise" %}
-{% else %}
-{% for i,f,p,hi,lo,sp in choices %} {% endfor %}
-{% trans "Option A" %}		{% trans "Option B" %}
-{{ hi }} {% trans "with a probability of " %}{{ p|floatformat:1 }},
-{{ lo }} {% trans "otherwise" %}	  	{{ sp }} {% trans "with a probability of " %}100.0%
-{% trans "(sure payoff)" %}
-{% endif %}
-{% next_button %} {% endblock %}
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    {{ if player.id_in_group == 1 }}
+        <p>
+            You chose to send participant B {{ group.sent_amount }}.
+            Participant B returned {{ group.sent_back_amount }}.
+        </p>
+        <p>
+            You were initially endowed with {{ C.ENDOWMENT }},
+            chose to send {{ group.sent_amount }},
+            received {{ group.sent_back_amount }}
+            thus you now have:
+            {{ C.ENDOWMENT }}-{{ group.sent_amount }}+{{ group.sent_back_amount }}=<strong>{{ player.payoff }}</strong>
+        </p>
+    {{ else }}
+        <p>
+            Participant A sent you {{ group.sent_amount }}.
+            They were tripled so you received {{ tripled_amount }}.
+            You chose to return {{ group.sent_back_amount }}.
+        </p>
+        <p>
+            You received {{ tripled_amount }},
+            chose to return {{ group.sent_back_amount }}
+            thus you now have:
+            ({{ tripled_amount }})-({{ group.sent_back_amount }})=<strong>{{ player.payoff }}</strong>
+        </p>
+        .
+    {{ endif }}
+
+    <p>{{ next_button }}</p>
+
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+{{ endblock }}
