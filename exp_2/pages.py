@@ -81,68 +81,7 @@ class Survey3(Page):
 
 class CEM(Page):
     form_model = 'player'
-    form_fields = ['CEM_zero']
-
-    def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-class CEM1(Page):
-    form_model = 'player'
-    form_fields = ['CEM_one']
-
-    def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-class CEM2(Page):
-    form_model = 'player'
-    form_fields = ['CEM_two']
-
-    def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-class CEM3(Page):
-    form_model = 'player'
-    form_fields = ['CEM_three']
-
-    def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class CEM4(Page):
-    form_model = 'player'
-    form_fields = ['CEM_four']
-
-    def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-class CEM5(Page):
-    form_model = 'player'
-    form_fields = ['CEM_five']
+    form_fields = ['CEM_zero','CEM_one','CEM_two','CEM_three','CEM_four','CEM_five',]
 
     def is_displayed(self):
         return self.player.consent.lower() == 'consent'
@@ -430,11 +369,6 @@ page_sequence += [Consent,
                   Info,
                   Summary,
                   CEM,
-                  CEM1,
-                  CEM2,
-                  CEM3,
-                  CEM4,
-                  CEM5,
                   CEMresults,
                   Survey_coffee1,
                   Survey_coffee2,
