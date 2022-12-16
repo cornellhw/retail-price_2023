@@ -152,6 +152,10 @@ class CEM5(Page):
         if errors:
             return 'you should select your answer'
 
+class CEMresults(Page):
+    def is_displayed(self):
+        return self.player.consent.lower() == 'consent'
+
 class Survey_coffee1(Page):
     form_model = 'player'
     form_fields = ['coffee_like']
@@ -431,6 +435,7 @@ page_sequence += [Consent,
                   CEM3,
                   CEM4,
                   CEM5,
+                  CEMresults,
                   Survey_coffee1,
                   Survey_coffee2,
                   Survey_coffee3,
