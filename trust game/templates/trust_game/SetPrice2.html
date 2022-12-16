@@ -1,0 +1,57 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    retail price setting
+
+{% endblock %}
+
+{% block content %}
+
+The choice of procurement price W=({{ player.W }}).<br><br>
+The overall quality that the procurement guys set is .<br><br>
+
+What’s your choice of retail price(R)?<br><br>
+
+    {% formfield 'R' label="Enter R here" %}<br>
+
+    <input id="lock" class="btn btn-primary" name="lockin2" value="Test" onclick="checkSubmit2()">  </input> <br><br>
+    <b>Firm level:</b><br>
+    ● At this R, you will sell {{sell}} cups of coffee<br>
+    ● The market coverage (% of market sold to) is {{market_coverage}}% <br>
+    ● Your firm earn {{ earn }} dollars of profit<br>
+    <b>Subject level:</b><br>
+    ● Your cost savings payoff is {{ cost_bonus }} dollars<br>
+    ● Your profit savings payoff is {{ profit_bonus }} dollars<br>
+    ● Your total savings payoff is {{ total_bonus }} dollars<br>
+    <button  type="button" name="lockin2" value="Finalize Price" class="btn btn-primary" onclick="checkSubmit()">Finalize Price</button>
+
+    <script>
+        function checkSubmit() {
+            let form = document.getElementById('form');
+            let isValid = form.reportValidity();
+            if (!isValid) return;
+
+            let warnings = [];
+
+
+            if (warnings.length >= 0) {
+                warnings.push("Confirm your bid?")
+                let confirmed = window.confirm(warnings.join('\r\n'));
+                if (!confirmed) return;
+            }
+            document.getElementById('lock').value = 'lockin';
+
+            form.submit();
+        }
+
+                function checkSubmit2() {
+            let form = document.getElementById('form');
+            let isValid = form.reportValidity();
+            if (!isValid) return;
+
+            form.submit();
+        }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Experiment: Summary of Decisions
+{% endblock %}
+
+{% block content %}
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+        A visual summary of the steps of this experiment is included below<br>
+
+<h2>1. Coffee Selection Stage</h2>
+● You arrive<br>
+● You will be seated<br>
+● You will be provided with a selection <u>5 different types of roasted coffee</u><br>
+● You will taste and evaluate all coffees<br>
+● You will select your most preferred option<br>
+● You will answer some follow-up questions based on your tasting and choice<br><br>
+
+<h2>2. Coffee Sourcing Stage</h2>
+● You will make the supplier a take-it-or-leave-it wholesale price offer (W) for <u>one pound your selected coffee</u><br>
+● You will learn if your offer is accepted<br><br>
+
+        <h2>3. Coffee Selling Stage</h2>
+● You will set the retail price (R) for <u>one 8 oz cup of brewed coffee</u> made with your selected bean<br>
+● You will see the results of your retail price choice, and learn your final payoff<br><br>
+        </p>
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

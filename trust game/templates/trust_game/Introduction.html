@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %} {% load staticfiles otree %} {% load i18n %} {# ****************************************************************************************************************** #} {# *** STYLES *** #} {# ****************************************************************************************************************** #} {% block styles %} {% endblock %} {# ****************************************************************************************************************** #} {# *** SCRIPTS *** #} {# ****************************************************************************************************************** #} {% block scripts %} {% if Constants.enforce_consistency == True %} {% if Constants.one_choice_per_page == False and Constants.random_order == False %} {% endif %} {% endif %} {% endblock %} {# ****************************************************************************************************************** #} {# *** TITLE *** #} {# ****************************************************************************************************************** #} {% block title %} {% trans "Your Decision" %} {% endblock %} {# ****************************************************************************************************************** #} {# *** CONTENT *** #} {# ****************************************************************************************************************** #} {% block content %}
+{% if Constants.one_choice_per_page == True and Constants.progress_bar == True %} {% blocktrans trimmed with page=page total=total %} Page {{ page }} of {{ total }} {% endblocktrans %}
+{% endif %} {% if Constants.accept_reject == True and Constants.variation != 'sure_payoff' %}
+{% for i,f,p,hi,lo,sp in choices %} {% endfor %}
+{% trans "Lottery" %}	{% trans "Accept" %}	{% trans "Reject" %}
+{{ hi }} {% trans "with a probability of " %}{{ p|floatformat:1 }}, {{ lo }} {% trans "otherwise" %}
+{% else %}
+{% for i,f,p,hi,lo,sp in choices %} {% endfor %}
+{% trans "Option A" %}		{% trans "Option B" %}
+{{ hi }} {% trans "with a probability of " %}{{ p|floatformat:1 }},
+{{ lo }} {% trans "otherwise" %}	  	{{ sp }} {% trans "with a probability of " %}100.0%
+{% trans "(sure payoff)" %}
+{% endif %}
+{% next_button %} {% endblock %}
