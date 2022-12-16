@@ -1,3 +1,4 @@
+# oTree-may-not-overwrite-this-file
 
 otree==5.9.8
 psycopg2>=2.8.4
