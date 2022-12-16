@@ -305,12 +305,13 @@ class SetPrice2(Page):
             profit_bonus = self.player.profit_bonus
             total_bonus = self.player.total_bonus
         return {'sell': sell,
-                'market_coverage': f'{market_coverage}:.2f',
+                'market_coverage':market_coverage,
                 'earn': earn,
-                'cost_bonus': f'{cost_bonus}.2f',
-                'profit_bonus': f'{profit_bonus}.2f',
-                'total_bonus': f'{total_bonus}.2f',
+                'cost_bonus': cost_bonus,
+                'profit_bonus': profit_bonus,
+                'total_bonus': total_bonus
                 }
+
 
 
 class Res2(Page):
