@@ -236,8 +236,8 @@ class SetPrice(Page):
         else:
             prob = self.player.prob*100
             payoff = self.player.payoff_test
-        return {'prob': f'{prob:.2f}',
-                'payoff': f'{payoff:.2f}',
+        return {'prob': prob,
+                'payoff': payoff,
                 'round': ['first', 'second', 'third'][self.player.test_round],
                 'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
                 }
