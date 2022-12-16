@@ -11,7 +11,7 @@ from otree.api import (
 import random
 
 doc = """
-Simple trust_game
+Simple trust
 """
 class Constants(BaseConstants):
 
