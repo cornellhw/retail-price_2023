@@ -4,8 +4,8 @@ from otree.api import *
 
 
 doc = """
-This is a standard 2-player trust game where the amount sent by player 1 gets
-tripled. The trust game was first proposed by
+This is a standard 2-player trust_game where the amount sent by player 1 gets
+tripled. The trust_game was first proposed by
 <a href="http://econweb.ucsd.edu/~jandreon/Econ264/papers/Berg%20et%20al%20GEB%201995.pdf" target="_blank">
     Berg, Dickhaut, and McCabe (1995)
 </a>.

@@ -236,8 +236,8 @@ class SetPrice(Page):
         else:
             prob = self.player.prob*100
             payoff = self.player.payoff_test
-        return {'prob': prob,
-                'payoff':payoff,
+        return {'prob': f'{prob:.2f}',
+                'payoff': f'{payoff:.2f}',
                 'round': ['first', 'second', 'third'][self.player.test_round],
                 'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
                 }
@@ -305,11 +305,11 @@ class SetPrice2(Page):
             profit_bonus = self.player.profit_bonus
             total_bonus = self.player.total_bonus
         return {'sell': sell,
-                'market_coverage':market_coverage,
+                'market_coverage': f'{market_coverage}:.2f',
                 'earn': earn,
-                'cost_bonus': cost_bonus,
-                'profit_bonus': profit_bonus,
-                'total_bonus': total_bonus
+                'cost_bonus': f'{cost_bonus}.2f',
+                'profit_bonus': f'{profit_bonus}.2f',
+                'total_bonus': f'{total_bonus}.2f',
                 }
 
 
