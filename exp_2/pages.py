@@ -260,7 +260,7 @@ class SetPrice(Page):
             optimal_total_bonus = self.player.optimal_total_bonus
             optimal_sell = self.player.optimal_sell
             optimal_market_coverage = self.player.optimal_market_coverage
-            optimal_earn = self.player.earn
+            optimal_earn = self.player.optimal_earn
         return {'prob': prob if isinstance(prob, float) else prob[0],
                 'cost_bonus' : cost_bonus,
                 'optimal_profit_bonus': optimal_profit_bonus if isinstance( optimal_profit_bonus, float) else  optimal_profit_bonus[0],
