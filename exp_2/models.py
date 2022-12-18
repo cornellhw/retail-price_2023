@@ -358,12 +358,14 @@ class Player(BasePlayer):
         self.prob = round(self.prob, 2)
 
         self.payoff_test = self.session.config['a1'] * (10 - self.W)
-        self.optimal_profit_bonus =  self.session.config['a1'] +3
-        self.optimal_total_bonus=self.cost_bonus + self.optimal_profit_bonus
+        temp1 = 28 * 0.5 / (self.session.config['u2'] - self.session.config['l2']) * \
+        (0.5 * self.session.config['u2'] - 0.5 * self.W) ** 2
+        self.optimal_profit_bonus = temp1
+        self.optimal_total_bonus = self.cost_bonus + self.optimal_profit_bonus
         self.optimal_sell=int(
-            28 * max(1-(self.optimal_profit_bonus - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
+            28 * max(1-(temp1 - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
         self.optimal_market_coverage = self.optimal_sell/28
-        self.optimal_earn= self.optimal_profit_bonus * self.optimal_sell-self.W
+        self.optimal_earn= temp1 * self.optimal_sell-self.W
 
         if self.lockin != 'lockin':
             self.logger_W += str(self.W) + ','
