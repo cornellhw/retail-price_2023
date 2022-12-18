@@ -246,12 +246,12 @@ class SetPrice(Page):
     def vars_for_template(self):
         if self.player.test_times == 0:
             prob = '---'
-            payoff = '---'
+            optimal_profit_bonus = '---'
         else:
             prob = self.player.prob*100
-            payoff = self.player.payoff_test
+            optimal_profit_bonus = self.player.optimal_profit_bonus
         return {'prob': prob,
-                'payoff': payoff,
+                'optimal_profit_bonus': optimal_profit_bonus,
                 'round': ['first', 'second', 'third'][self.player.test_round],
                 'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
                 }

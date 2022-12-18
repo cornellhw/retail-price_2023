@@ -63,7 +63,7 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
-
+    optimal_profit_bonus = models.IntegerField()
     sell = models.IntegerField()
     profit_bonus = models.FloatField()
     total_bonus = models.FloatField()
@@ -353,6 +353,7 @@ class Player(BasePlayer):
         self.prob = round(self.prob, 2)
 
         self.payoff_test = self.session.config['a1'] * (10 - self.W)
+        self.optimal_profit_bonus = 28 * (self.session.config['a2']/(self.session.config['u2']-self.session.config['l2'])) * (self.session.config['u2']/2-self.W/2)^2
 
         if self.lockin != 'lockin':
             self.logger_W += str(self.W) + ','
