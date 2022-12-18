@@ -64,10 +64,10 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
-    optimal_profit_bonus = models.IntegerField()
-    optimal_total_bonus = models.IntegerField()
+    optimal_profit_bonus = models.FloatField()
+    optimal_total_bonus = models.FloatField()
     optimal_sell = models.IntegerField()
-    optimal_market_coverage = models.IntegerField()
+    optimal_market_coverage = models.FloatField()
     optimal_earn = models.FloatField()
     sell = models.IntegerField()
     profit_bonus = models.FloatField()
