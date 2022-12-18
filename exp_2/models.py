@@ -358,8 +358,7 @@ class Player(BasePlayer):
         self.prob = round(self.prob, 2)
 
         self.payoff_test = self.session.config['a1'] * (10 - self.W)
-        temp1 = 28 * 0.5 / (self.session.config['u2'] - self.session.config['l2']) * \
-        (0.5 * self.session.config['u2'] - 0.5 * self.W) ** 2
+        temp1 = 3
         self.optimal_profit_bonus = temp1
         self.optimal_total_bonus=self.cost_bonus + temp1
         self.optimal_sell=int(
