@@ -9,6 +9,7 @@ from otree.api import (
 )
 
 import random
+import math
 
 doc = """
 Simple trust
@@ -353,7 +354,7 @@ class Player(BasePlayer):
         self.prob = round(self.prob, 2)
 
         self.payoff_test = self.session.config['a1'] * (10 - self.W)
-        self.optimal_profit_bonus = 28 * (self.session.config['a2']/(self.session.config['u2']-self.session.config['l2'])) * (self.session.config['u2']/2-self.W/2)^2
+        self.optimal_profit_bonus = 28 * (self.session.config['a2']/(self.session.config['u2']-self.session.config['l2'])) * math. pow((self.session.config['u2']/2-self.W/2), 2)
 
         if self.lockin != 'lockin':
             self.logger_W += str(self.W) + ','
