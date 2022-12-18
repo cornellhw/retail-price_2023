@@ -246,12 +246,28 @@ class SetPrice(Page):
     def vars_for_template(self):
         if self.player.test_times == 0:
             prob = '---'
+            cost_bonus= '---'
             optimal_profit_bonus = '---'
+            optimal_total_bonus = '---'
+            optimal_sell='---'
+            optimal_market_coverage = '---'
+            optimal_earn = '---'
+
         else:
             prob = self.player.prob*100
+            cost_bonus = self.player.cost_bonus
             optimal_profit_bonus = self.player.optimal_profit_bonus
+            optimal_total_bonus = self.player.optimal_total_bonus
+            optimal_sell = self.player.optimal_sell
+            optimal_market_coverage = self.player.optimal_market_coverage
+            optimal_earn = self.player.earn
         return {'prob': prob,
+                'cost_bonus' : cost_bonus,
                 'optimal_profit_bonus': optimal_profit_bonus,
+                'optimal_total_bonus': optimal_total_bonus,
+                'optimal_sell': optimal_sell,
+                'optimal_market_coverage': optimal_market_coverage,
+                'optimal_earn': optimal_earn,
                 'round': ['first', 'second', 'third'][self.player.test_round],
                 'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
                 }
