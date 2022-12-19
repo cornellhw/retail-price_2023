@@ -335,13 +335,12 @@ class SetPrice2(Page):
             profit_bonus = self.player.profit_bonus
             total_bonus = self.player.total_bonus
         return {'sell': sell,
-                'market_coverage':market_coverage,
+                'market_coverage': [f'{market_coverage}:.2f' if isinstance(market_coverage, float) else market_coverage][0],
                 'earn': earn,
-                'cost_bonus': cost_bonus,
-                'profit_bonus': profit_bonus,
-                'total_bonus': total_bonus
+                'cost_bonus': [f'{cost_bonus}:.2f' if isinstance(cost_bonus, float) else cost_bonus][0],
+                'profit_bonus': [f'{profit_bonus}:.2f' if isinstance(profit_bonus, float) else profit_bonus][0],
+                'total_bonus': [f'{total_bonus}:.2f' if isinstance(total_bonus, float) else total_bonus][0],
                 }
-
 
 
 class Res2(Page):
