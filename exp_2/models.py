@@ -382,7 +382,7 @@ class Player(BasePlayer):
         self.profit_bonus = self.session.config['a2'] * (self.R * sell_temp - self.W)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
-        self.total_bonus = self.cost_bonus + self.profit_bonus
+        self.total_bonus = round(self.cost_bonus + self.profit_bonus, 0)
         return
 
 
