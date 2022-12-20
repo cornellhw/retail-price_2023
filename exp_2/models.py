@@ -373,7 +373,7 @@ class Player(BasePlayer):
         self.sell = int(sell_temp)
         self.earn = int(self.R * sell_temp - self.W)
         self.market_coverage = round(sell_temp/28,0)
-        self.profit_bonus = self.session.config['a2'] * (self.R * sell_temp - self.W)
+        self.profit_bonus = round(self.session.config['a2'] * (self.R * sell_temp - self.W),0)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
         self.total_bonus = round(self.cost_bonus + self.profit_bonus, 0)
