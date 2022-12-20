@@ -79,21 +79,6 @@ class Survey3(Page):
         if errors:
             return 'you should select your answer'
 
-class CEM(Page):
-    form_model = 'player'
-    form_fields = ['CEM_zero','CEM_one','CEM_two','CEM_three','CEM_four','CEM_five',]
-
-    def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-class CEMresults(Page):
-    def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
 
 class Survey_coffee1(Page):
     form_model = 'player'

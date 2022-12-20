@@ -101,12 +101,6 @@ class Player(BasePlayer):
     #     # initial='0'
     # )
     #
-    CEM_zero = models.StringField(blank=True)
-    CEM_one = models.StringField(blank=True)
-    CEM_two = models.StringField(blank=True)
-    CEM_three = models.StringField(blank=True)
-    CEM_four = models.StringField(blank=True)
-    CEM_five = models.StringField(blank=True)
 
     coffee_like = models.StringField(blank=True)
     coffee_quality = models.StringField(blank=True)
