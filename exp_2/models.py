@@ -326,10 +326,10 @@ class Player(BasePlayer):
     def set_payoff1(self):
         if self.W >= self.C:
             self.is_reject = 'accepted'
-            self.cost_bonus = self.session.config['F'] + self.session.config['a1'] * (10 - self.W)
+            self.cost_bonus = self.session.config['a1'] * (10 - self.W)
         else:
             self.is_reject = 'rejected'
-            self.cost_bonus = self.session.config['F']
+            self.cost_bonus = 0
         if self.test_round == 0:
             # self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
             self.prob = self.fz(self.W)
