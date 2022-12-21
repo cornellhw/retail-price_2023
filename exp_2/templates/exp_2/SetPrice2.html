@@ -2,29 +2,29 @@
 {% load otree %}
 
 {% block title %}
-    retail price setting
+    Marketing: Retail Price Setting
 
 {% endblock %}
 
 {% block content %}
 
-The choice of procurement price W=({{ player.W }}).<br><br>
-Procurement assessed the overall quality of the coffee before making a bid and assigned it an overall rating of {{player.coffee_like}} out of 5.<br><br>
-
+Procurement has successfully sourced one pound of coffee beans at a wholesale price of <b>W=({{ player.W }}).</b><br><br>
+Prior to making an offer, procurement assessed the quality of the coffee and assigned it an <b>overall quality score of {{player.coffee_like}} out of 5.</b><br><br>
+<b>Note:</b>one pound of coffee beans produces 28 drinkable cups of brewed coffee.<br><br>
+You may now set the retail price (R) for a cup of coffee made from these beans.<br><br>
 What’s your choice of retail price(R)?<br><br>
 
     {% formfield 'R' label="Enter R here" %}<br>
 
-    <input id="lock" class="btn btn-primary" name="lockin2" value="Test" onclick="checkSubmit2()">  </input> <br><br>
-    <b>Firm level:</b><br>
-    ● At this R, you will sell {{sell}} cups of coffee<br>
-    ● The market coverage (% of market sold to) is {{market_coverage}}% <br>
-    ● Your firm earn {{ earn }} dollars of profit<br>
-    <b>Subject level:</b><br>
-    ● Your cost savings payoff is {{ cost_bonus }} dollars<br>
-    ● Your profit savings payoff is {{ profit_bonus }} dollars<br>
-    ● Your total savings payoff is {{ total_bonus }} dollars<br>
-    <button  type="button" name="lockin2" value="Finalize Price" class="btn btn-primary" onclick="checkSubmit()">Finalize Price</button>
+    <input id="lock" class="btn btn-primary" name="lockin2" value="Test your current choice of R" onclick="checkSubmit2()">  </input> <br><br>
+You have earned a <u>cost savings bonus of ${{ cost_bonus }}.</u><br>
+If you choose this retail price (R), then<br>
+-{{market_coverage}}*100% of market demand would be satisfied, leaving 1-{{sell}} pounds of coffee unsold.<br>
+-You would earn a <u>revenue sharing bonus of ${{ profit_bonus }}</u><br>
+-Your firm’s profit would be ${{ earn }}<br>
+-Your total payment for today’s work would be ${{ total_bonus }}<br>
+
+    <button  type="button" name="lockin2" value="Finalize your choice R" class="btn btn-primary" onclick="checkSubmit()">Finalize Price</button>
 
     <script>
         function checkSubmit() {

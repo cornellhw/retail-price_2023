@@ -234,8 +234,6 @@ class SetPrice(Page):
             cost_bonus= '---'
             optimal_profit_bonus = '---'
             optimal_total_bonus = '---'
-            optimal_sell='---'
-            optimal_market_coverage = '---'
             optimal_earn = '---'
 
         else:
@@ -243,15 +241,11 @@ class SetPrice(Page):
             cost_bonus = self.player.cost_bonus
             optimal_profit_bonus = self.player.optimal_profit_bonus
             optimal_total_bonus = self.player.optimal_total_bonus
-            optimal_sell = self.player.optimal_sell
-            optimal_market_coverage = self.player.optimal_market_coverage
             optimal_earn = self.player.optimal_earn
         return {'prob': prob if isinstance(prob, float) else prob[0],
                 'cost_bonus' : cost_bonus,
                 'optimal_profit_bonus': optimal_profit_bonus if isinstance( optimal_profit_bonus, float) else  optimal_profit_bonus[0],
                 'optimal_total_bonus': optimal_total_bonus,
-                'optimal_sell': optimal_sell,
-                'optimal_market_coverage': optimal_market_coverage,
                 'optimal_earn': optimal_earn,
                 'round': ['first', 'second', 'third'][self.player.test_round],
                 'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
@@ -261,9 +255,54 @@ class SetPrice(Page):
 class Res1(Page):
     def vars_for_template(self):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            next_info = 'Click the "next" button to continue the procurement price setting!'
+            next_info = 'Click the "next" button to make the supplier another offer!'
         else:
             next_info = 'Click the "next" button to finish the post-experiment survey! '
+        return {'is_reject': self.player.is_reject,
+                'cost_bonus': self.player.cost_bonus,
+                'next_info': next_info
+                }
+
+    def is_displayed(self):
+        return self.player.consent.lower() == 'consent'
+
+    def before_next_page(self):
+        self.player.test_round += 1
+        self.player.logger_W += '| '
+        self.player.logger_T += str(self.player.test_times)+','
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            self.player.lockin = '-1'
+            self.player.test_times = 0
+
+class Res12(Page):
+    def vars_for_template(self):
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            next_info = 'Click the "next" button to make the supplier another offer!'
+        else:
+            next_info = 'Click the "next" button to finish the post-experiment survey! '
+        return {'is_reject': self.player.is_reject,
+                'cost_bonus': self.player.cost_bonus,
+                'next_info': next_info
+                }
+
+    def is_displayed(self):
+        return self.player.consent.lower() == 'consent'
+
+    def before_next_page(self):
+        self.player.test_round += 1
+        self.player.logger_W += '| '
+        self.player.logger_T += str(self.player.test_times)+','
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            self.player.lockin = '-1'
+            self.player.test_times = 0
+
+
+class Res123(Page):
+    def vars_for_template(self):
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            next_info = 'Click the "next" button to continue the procurement price setting!'
+        else:
+            next_info = 'Click the "next" button to finish the post-experiment survey!'
         return {'is_reject': self.player.is_reject,
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
@@ -383,9 +422,9 @@ page_sequence += [Consent,
 page_sequence += [SetPrice] * 100
 page_sequence += [Res1]
 page_sequence += [SetPrice] * 100
-page_sequence += [Res1]
+page_sequence += [Res12]
 page_sequence += [SetPrice] * 100
-page_sequence += [Res1]
+page_sequence += [Res123]
 
 page_sequence += [SetPrice2] * 100
 page_sequence += [Res2, Survey1, Survey2, Survey3, Final,]

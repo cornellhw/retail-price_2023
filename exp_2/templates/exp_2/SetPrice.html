@@ -2,38 +2,35 @@
 {% load otree %}
 
 {% block title %}
-Procurement price setting
+Procurement: Wholesale Price Setting
 {% endblock %}
 
 {% block content %}
 {{ formfield_errors 'lockin' }}
 
-Now you have the opportunity to use your procurement bond of 10 dollars (set your W no larger than 10) to make
-an offer to suppliers and this is your <b>{{ round }}</b> of 3 opportunities. What's your
-choice of your procurement price for one pound of coffee? <br><br>
+You now have the opportunity to use your initial funding of $10 to make a wholesale price offer (W) to the supplier of your
+choice. This is your <b>{{ round }}</b> of three such opportunities. Please enter your choice of wholesale price in the space. Testing
+functionality is provided to assist you in making a good choice.<br><br>
+
 
 {% formfield 'W' label="Enter W here" %} <br>
 
 
-<input id="lock" class="btn btn-primary" name="lockin" value="Test" onclick="checkSubmit2()"> </input> <br>
-The suppliers’ cost is normally distributed. <br>
+<input id="lock" class="btn btn-primary" name="lockin" value="Test your current choice of W" onclick="checkSubmit2()"> </input> <br>
+
+Supplier cost is normally distributed with an average cost of $6 per pound and standard deviation of $0.5<br>
+● Probability of acceptance of {{round_n}} offer: If you finalize this choice of Wi, your offer has a  {{ prob }}% likelihood of being accepted by the supplier<br>
+
+<b>If your offer of Wi is accepted</b>, then<br>
+-You would earn a <u>cost savings bonus of ${{ cost_bonus }}</u><br>
+-<b>Assuming marketing makes a good decision,</b><br>
+    -You should expect to earn a <u>revenue sharing bonus of ${{optimal_profit_bonus}} </u><br>
+    -Your firm’s profit would be $ {{ optimal_earn }}<br>
+    -Your total payment for today’s work would be ${{ optimal_total_bonus }}<br>
 
 
 
-● Probability of acceptance of {{round_n}} offer: At this W, the probability that your offer will be accepted is {{ prob }} %  <br>
-    <b>Firm level:</b><br>
-If your bid W is accepted, assuming that marketing makes a good decision: <br>
-● Cups of coffee sold: If your bid W is accepted, assuming that marketing makes a good decision: your optimal market coverage is {{optimal_sell}} # of cups <br>
-● Market coverage(% of market sold to): If your bid W is accepted, assuming that marketing makes a good decision: your optimal market coverage is {{optimal_market_coverage}} % <br>
-● Earnings for firm: {{ optimal_earn }} dollars of profit<br>
-    <b>Subject level:</b><br>
-● Cost savings payoff: {{ cost_bonus }} dollars<br>
-● Optimal profit savings payoff: If your bid W is accepted, assuming that marketing makes a good decision: your optimal profit payoff is {{optimal_profit_bonus}} dollars <br>
-● Your total savings payoff: {{ optimal_total_bonus }} dollars<br>
-
-
-
-<button type="button" name="lockin" value="Finalize Price" class="btn btn-primary" onclick="checkSubmit()">Finalize
+<button type="button" name="lockin" value="Finalize your choice W" class="btn btn-primary" onclick="checkSubmit()">Finalize
     Price
 </button><br>
 
