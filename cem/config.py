@@ -22,7 +22,7 @@ class Constants(BaseConstants):
 
     # number (n) of choices with <i = 1, 2, ..., n>
     # <num_choices> determines how many choices between a lottery and a sure payoff shall be implemented
-    num_choices = 9
+    num_choices = 19
 
     # "high" and "low" payoffs (in currency units set in settings.py) of the lottery "option A"
     # the lottery payoffs remain constant if <variation = 'sure_payoff'> or <variation = 'probability'>
@@ -30,7 +30,7 @@ class Constants(BaseConstants):
     # for subsequent choices <i>, the high lottery outcome is determined by <lottery_hi> + <i-1> * <step_size>
     # if <variation = 'lottery_lo'>, <lottery_lo> constitutes the low lottery payoff for the first choice
     # for subsequent choices <i>, the high lottery outcome is determined by <lottery_lo> - <i-1> * <step_size>
-    lottery_hi = 30.00
+    lottery_hi = 300.00
     lottery_lo = 0.00
 
     # probability of lottery outcome "high" in %
@@ -43,7 +43,7 @@ class Constants(BaseConstants):
     # the sure payoff remains constant if <variation = 'probability'> or <variation = 'lottery_*'>
     # if <variation = 'sure_payoff'>, <sure_payoff> constitutes the certain payment ("option B") in the first choice
     # for subsequent choices <i>, the certain payment is determined by <sure_payoff> + <i-1> * <step_size>
-    sure_payoff = 10.00
+    sure_payoff = 15.00
 
     # step size (in units of the parameter defined in <variation>)
     # the variable <variation> defines which of the four parameters is varied across the <num_choices> choices
@@ -51,7 +51,7 @@ class Constants(BaseConstants):
     # thus, the varying parameter for choice i = 1, 2, ..., n, <var_i>, is defined by <var> + <i-1> * <step_size>
     # if <variation> is set to 'sure_payoff', 'lottery_hi', or 'lottery_lo', <step_size> is in currency units
     # if <variation> is set to 'probability', <step_size> is in percentage units (i.e. <step_size>%)
-    step_size = 2.50
+    step_size = 15.00
 
     # initial endowment (in currency units set in settings.py)
     # <endowment> defines an additional endowment for the task to capture potential losses if <variation = lottery_lo>

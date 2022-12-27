@@ -16,12 +16,12 @@ Simple trust
 """
 class Constants(BaseConstants):
 
-    a1, u1, l1 = 0.5, 10, 2
-    a2, u2, l2 = 0.5, 7, 1
+    a1, u1, l1 = 0.2, 10, 2
+    a2, u2, l2 = 0.2, 7, 1
 
     lower, upper = 2, 10
     miu, sigma = 6, 0.5
-    F=7
+    F=5
     name_in_url = 'exp_1c'
     players_per_group = None
     num_rounds = 1
@@ -64,6 +64,7 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
+    optimal_R = models.FloatField()
     optimal_profit_bonus = models.FloatField()
     optimal_total_bonus = models.FloatField()
     optimal_sell = models.IntegerField()
@@ -74,6 +75,8 @@ class Player(BasePlayer):
     total_bonus = models.FloatField()
     earn = models.FloatField()
     market_coverage = models.FloatField()
+    market_demand = models.IntegerField()
+    coffee_not_used = models.FloatField()
     logger_W = models.LongStringField(initial='')
     logger_W_final = models.LongStringField(initial='')
     logger_T = models.LongStringField(initial='')
@@ -326,10 +329,10 @@ class Player(BasePlayer):
     def set_payoff1(self):
         if self.W >= self.C:
             self.is_reject = 'accepted'
-            self.cost_bonus = self.session.config['a1'] * (10 - self.W)
+            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
         else:
             self.is_reject = 'rejected'
-            self.cost_bonus = 0
+            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
         if self.test_round == 0:
             # self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
             self.prob = self.fz(self.W)
@@ -351,32 +354,32 @@ class Player(BasePlayer):
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
 
+
+
         self.payoff_test = self.session.config['a1'] * (10 - self.W)
-        temp1 = 28 * 0.5 / (self.session.config['u2'] - self.session.config['l2']) * \
-        (0.5 * self.session.config['u2'] - 0.5 * self.W) ** 2
-        self.optimal_profit_bonus = round(temp1,0)
-        self.optimal_total_bonus = self.cost_bonus + self.optimal_profit_bonus
-        self.optimal_sell=int(
-            28 * max(1-(temp1 - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
-        self.optimal_market_coverage = round(self.optimal_sell/28,0)
-        self.optimal_earn= round(temp1 * self.optimal_sell-self.W,0)
+        self.optimal_R = self.session.config['u2'] / 2
+        self.optimal_profit_bonus = round(0.2 * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
+        self.optimal_total_bonus = round(5 + self.cost_bonus + self.optimal_profit_bonus,1)
+        self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,1)
 
         if self.lockin != 'lockin':
             self.logger_W += str(self.W) + ','
             self.test_times += 1
         else:
-            self.logger_W_final += str(self.W)+','
+            self.logger_W_final += str(self.W) + ','
         return
+
 
     def set_payoff2(self):
         sell_temp = 28 * (max(1-(self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
         self.sell = int(sell_temp)
         self.earn = int(self.R * sell_temp - self.W)
-        self.market_coverage = round(sell_temp/28,0)
-        self.profit_bonus = round(self.session.config['a2'] * (self.R * sell_temp - self.W),0)
+        self.market_demand = int(round(100*(1-(self.R-1)/6),0))
+        self.coffee_not_used = round((self.R-1)/6,2)
+        self.profit_bonus = round(self.session.config['a2'] * self.R * sell_temp,1)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
-        self.total_bonus = round(self.cost_bonus + self.profit_bonus, 0)
+        self.total_bonus = round(5 + self.cost_bonus + self.profit_bonus, 1)
         return
 
 
