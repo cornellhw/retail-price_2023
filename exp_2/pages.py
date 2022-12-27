@@ -254,10 +254,10 @@ class SetPrice(Page):
 
 class Res1(Page):
     def vars_for_template(self):
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+        if self.player.is_reject == 'rejected' and self.player.test_round==1:
             next_info = 'Click the "next" button to make the supplier another offer!'
         else:
-            next_info = 'Click the "next" button to finish the post-experiment survey! '
+            next_info = 'Click the "next" button to continue with the experiment!'
         return {'is_reject': self.player.is_reject,
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
@@ -270,16 +270,16 @@ class Res1(Page):
         self.player.test_round += 1
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+        if self.player.is_reject == 'rejected' and self.player.test_round==1:
             self.player.lockin = '-1'
             self.player.test_times = 0
 
 class Res12(Page):
     def vars_for_template(self):
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+        if self.player.is_reject == 'rejected' and self.player.test_round==2:
             next_info = 'Click the "next" button to make the supplier another offer!'
         else:
-            next_info = 'Click the "next" button to finish the post-experiment survey! '
+            next_info = 'Click the "next" button to continue with the experiment! '
         return {'is_reject': self.player.is_reject,
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
@@ -292,17 +292,17 @@ class Res12(Page):
         self.player.test_round += 1
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+        if self.player.is_reject == 'rejected' and self.player.test_round==2:
             self.player.lockin = '-1'
             self.player.test_times = 0
 
 
 class Res123(Page):
     def vars_for_template(self):
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            next_info = 'Click the "next" button to continue the procurement price setting!'
-        else:
+        if self.player.is_reject == 'rejected' and self.player.test_round==3:
             next_info = 'Click the "next" button to finish the post-experiment survey!'
+        else:
+            next_info = 'Click the "next" button to continue with the experiment! '
         return {'is_reject': self.player.is_reject,
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
@@ -315,7 +315,7 @@ class Res123(Page):
         self.player.test_round += 1
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+        if self.player.is_reject == 'rejected' and self.player.test_round==3:
             self.player.lockin = '-1'
             self.player.test_times = 0
 
