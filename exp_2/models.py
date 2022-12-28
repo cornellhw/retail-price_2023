@@ -53,7 +53,6 @@ class Player(BasePlayer):
     purchase_success = models.IntegerField(initial=0)
     prob = models.FloatField()
     is_reject = models.StringField(initial='')
-    test = models.StringField(initial='0')
     lockin = models.StringField(initial='-1', blank=True)
     cost_bonus = models.FloatField(initial=0)
     test_times = models.IntegerField(initial=0)
