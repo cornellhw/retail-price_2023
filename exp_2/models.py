@@ -12,7 +12,7 @@ import random
 import math
 
 doc = """
-Simple trust
+Simple coffee experiment
 """
 class Constants(BaseConstants):
 
@@ -49,7 +49,6 @@ class Player(BasePlayer):
     R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10)
     C = models.FloatField(initial=0)
 
-    payoff_test = models.FloatField()
     consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
     prob = models.FloatField()
@@ -74,7 +73,6 @@ class Player(BasePlayer):
     profit_bonus = models.FloatField()
     total_bonus = models.FloatField()
     earn = models.FloatField()
-    market_coverage = models.FloatField()
     market_demand = models.IntegerField()
     coffee_not_used = models.FloatField()
     logger_W = models.LongStringField(initial='')
@@ -334,7 +332,6 @@ class Player(BasePlayer):
             self.is_reject = 'rejected'
             self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
         if self.test_round == 0:
-            # self.prob = (self.W - self.session.config['l1']) / (self.session.config['u1'] - self.session.config['l1'])
             self.prob = self.fz(self.W)
         elif self.test_round ==1:
             w1 = float(self.logger_W_final.split(',')[0])
@@ -356,7 +353,6 @@ class Player(BasePlayer):
 
 
 
-        self.payoff_test = self.session.config['a1'] * (10 - self.W)
         self.optimal_R = self.session.config['u2'] / 2
         self.optimal_profit_bonus = round(0.2 * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
         self.optimal_total_bonus = round(5 + self.cost_bonus + self.optimal_profit_bonus,1)
