@@ -1,0 +1,101 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Consent Form
+{% endblock %}
+
+{% block content %}
+    <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
+</head>
+
+    <body>
+
+<div style="height:800px;width:1000px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+  You are invited to participate in a research study about managerial decision-making. This study is being led by Professor Jacob Chestnut, SC Johnson College of Business, Cornell University. <br><br>
+
+    <b> 1.	Purpose of the Study:</b> The purpose of this research study is to examine how people make decisions.<br><br>
+
+    <b>2.	Procedures to be followed:</b>You will be asked to take part in an online game where you will play the role of a decision maker. During this process, you may also take part in a coffee tasting. The computer will calculate your profit from each round based on a predetermined equation. After you complete the game, you will complete a survey that asks questions about your consumption habits, attitudes, and demographic information. The research study will take no more than 60 minutes to complete. <br><br>
+
+    <b>3.	Discomforts and Risks:</b> There are no risks in participating in this research beyond those experienced in everyday life.<br><br>
+
+    <b>4.	Benefits:</b> This research might provide a better understanding of how people make decisions.  You may find participation interesting and enjoyable.<br><br>
+
+    <b>5.	Duration:</b> The study will last no more than 60 minutes.<br><br>
+
+    <b>6.	Statement of Confidentiality & Access to Data:</b> Your participation in this research is confidential. All data will be stored in a password protected electronic database. The task does not ask for any information that would identify to whom the responses belong.  In the event of any publication or presentation resulting from the research, no personally identifiable information will be shared because your name is in no way linked to your responses. We anticipate that your participation in this survey presents no greater risk than everyday use of the Internet.<br><br>
+    <b>7.  Right to Ask Questions:</b> The main researcher conducting this study is Prof. Jacob Chestnut. Please ask any questions you have now. If you have questions later, you may contact Prof. Jacob Chestnut at jacob.chestnut@cornell.edu or at 1-607-255-8396. If you have any questions or concerns regarding your rights as a subject in this study, you may contact the Institutional Review Board (IRB) at 607-255-5138 or access their website at http://www.irb.cornell.edu. You may also report your concerns or complaints anonymously through Ethicspoint (www.hotline.cornell.edu) or by calling toll free at 1-866-293-3077. Ethicspoint is an independent organization that serves as a liaison between the University and the person bringing the complaint so that anonymity can be ensured.<br><br>
+    <b>8.   Payment for Participation: </b> In return for your participation, you will receive $5 plus any earnings from the games in which you participate. You will be paid in cash upon the conclusion of the experiment.  All participants who show up on time will receive the $5.  To receive any additional earnings from the games, you must stay until the end of the session.<br><br>
+
+    <b>9.	Voluntary Participation:</b> Taking part in this study is completely voluntary. If you decide to take part, you are free to withdraw or decline to answer a question at any time.<br><br>
+You must be 18 years of age or older to take part in this research study. This consent form will be kept by the researcher for five years beyond the end of the study.<br><br>
+Clicking the “I consent” button indicates that <b>you have read and understood the above information</b>, and that you <b>consent to take part</b> in the study.<br><br>
+
+    Please press consent to begin the experiment.<br><br>
+
+
+        <input id="cons" class="btn btn-primary" name="consent" value="Consent" onclick="checkSubmit2()">  </input>
+
+        <input id="cons" class="btn btn-primary" name="consent" value="Do not Consent" onclick="checkSubmit3()">  </input> <br><br>
+
+</div>
+
+</body>
+
+    </html>
+    <script>
+
+                function checkSubmit2() {
+            let form = document.getElementById('form');
+            let isValid = form.reportValidity();
+            if (!isValid) return;
+
+            form.submit();
+        }
+
+                function checkSubmit3() {
+            let form = document.getElementById('form');
+            let isValid = form.reportValidity();
+            if (!isValid) return;
+
+            let warnings = [];
+
+
+            if (warnings.length >= 0) {
+                warnings.push("do you confirm that you would not consent? You will not get your show up money.")
+                let confirmed = window.confirm(warnings.join('\r\n'));
+                if (!confirmed) return;
+            }
+            document.getElementById('cons').value = 'Do not Consent';
+
+            form.submit();
+        }
+
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Coffee Tasting Evaluation<br>
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+            3. On a scale of 1 to 5, where 1 is <u> extremely bitter </u> and 5 is <u> extremely sweet</u>, please evaluate <b> the sweetness of the coffee</b> you selected based on your tasting.
+{#<input type="text" name="coffee_like" ><br><br>#}
+    <div class="controls">
+         <input type="radio"  name="coffee_sweetness" value="0"> extremely bitter <br>
+         <input type="radio"  name="coffee_sweetness" value="1"> poor <br>
+         <input type="radio"  name="coffee_sweetness" value="2"> fair <br>
+         <input type="radio"  name="coffee_sweetness" value="3"> sweet <br>
+         <input type="radio"  name="coffee_sweetness" value="4"> extremely sweet <br>
+    </div>
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

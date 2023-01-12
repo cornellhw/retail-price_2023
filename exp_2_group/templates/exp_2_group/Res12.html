@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+
+{% block content %}
+    <p>
+                <p style="line-height: 2em;">
+
+        {% if is_reject == 'rejected' %}
+        <h2>Your offer was rejected.<br></h2>
+The supplier has rejected your second wholesale price offer of ${{ player.W }} because it is also below her production cost.<br><br>
+You have one more opportunity to make the supplier an acceptable offer.<br><br>
+
+        {{next_info}}<br>
+
+        {% else %}
+            <h2>Your offer was accepted.<br></h2>
+
+    Congratulations. The supplier has accepted your wholesale price offers of ${{ player.W }}.<br><br>
+    Click the "next" button to continue with the experiment!<br>
+
+        {% endif %}
+    </p>
+
+    <p>{% next_button %}</p>
+
+
+{% endblock %}
+

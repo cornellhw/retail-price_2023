@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+<b>Post-experiment survey</b><br>
+Tell us about your consumption habits, attitudes, and demographic characteristics.<br>
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+            {% formfields %}
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}
+

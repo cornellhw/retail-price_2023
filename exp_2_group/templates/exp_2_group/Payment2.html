@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+ Payment: Rejected Order
+{% endblock %}
+
+{% block content %}
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+            You would have totally three opportunities to make an offer to suppliers. If the <u>Supplier</u> <b>rejects</b> all of your offers, you have no coffee to sell and your experiment today is finished. <br><br>
+
+        </p>
+
+        <u><b>Your final payment in words</b></u>: “Your show up fee” <br>
+        <u><b>Your final payment in math</b></u>: $5<br> <br>
+
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}
