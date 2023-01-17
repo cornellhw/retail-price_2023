@@ -18,17 +18,17 @@ class Welcome(Page):
         self.group.init_setting()
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
 
 class Info(Page):
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
 
 class Summary(Page):
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
 class Survey1(Page):
     form_model = 'player'
@@ -37,7 +37,7 @@ class Survey1(Page):
                    'lie_acquaintances', 'lie_friends', 'lie_partner']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
         # return True
 
     def error_message(self, values):
@@ -53,7 +53,7 @@ class Survey2(Page):
                    'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
         # return True
 
     def error_message(self, values):
@@ -71,7 +71,7 @@ class Survey3(Page):
                    ]
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
         # return True
 
     def error_message(self, values):
@@ -85,7 +85,7 @@ class Survey_coffee1(Page):
     form_fields = ['coffee_like']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -98,7 +98,7 @@ class Survey_coffee2(Page):
     form_fields = ['coffee_quality']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -111,7 +111,7 @@ class Survey_coffee3(Page):
     form_fields = ['coffee_sweetness']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -124,7 +124,7 @@ class Survey_coffee4(Page):
     form_fields = ['coffee_flavor']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -137,7 +137,7 @@ class Survey_coffee5(Page):
     form_fields = ['coffee_impression']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -150,7 +150,7 @@ class Survey_coffee6(Page):
     form_fields = ['coffee_recom']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
         # return True
 
     def error_message(self, values):
@@ -164,7 +164,7 @@ class Survey_coffee7(Page):
     form_fields = ['coffee_drink']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -177,7 +177,7 @@ class Survey_coffee8(Page):
     form_fields = ['coffee_serve']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -190,7 +190,7 @@ class Survey_coffee9(Page):
     form_fields = ['coffee_buy']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -200,12 +200,12 @@ class Survey_coffee9(Page):
 
 class Payment(Page):
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
 
 class Payment2(Page):
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
 
 class SetPrice(Page):
@@ -213,7 +213,7 @@ class SetPrice(Page):
     form_fields = ['W', 'lockin']
 
     def is_displayed(self):
-        if self.player.consent.lower() != 'consent':
+        if self.player.participant.vars['consent'].lower() != 'consent' :
             return False
         if self.player.lockin.lower() != 'lockin':
             return True
@@ -264,15 +264,16 @@ class Res1(Page):
                 }
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'  or self.player.is_reject == 'rejected'
 
     def before_next_page(self):
         self.player.test_round += 1
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
+        self.player.test_times = 0
+
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
-            self.player.test_times = 0
 
 class Res12(Page):
     def vars_for_template(self):
@@ -286,15 +287,17 @@ class Res12(Page):
                 }
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+
+        return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected'
 
     def before_next_page(self):
         self.player.test_round += 1
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
+        self.player.test_times = 0
+
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
-            self.player.test_times = 0
 
 
 class Res123(Page):
@@ -309,15 +312,16 @@ class Res123(Page):
                 }
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected'
 
     def before_next_page(self):
         self.player.test_round += 1
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
+        self.player.test_times = 0
+
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
-            self.player.test_times = 0
 
 class SetPrice2(Page):
     form_model = 'player'
@@ -329,7 +333,7 @@ class SetPrice2(Page):
             return 'you should select your answer'
 
     def is_displayed(self):
-        if self.player.consent.lower() != 'consent':
+        if self.player.participant.vars['consent'].lower() != 'consent':
             return False
         if self.player.is_reject == 'accepted':
             if self.player.lockin2.lower() != 'lockin':
@@ -369,7 +373,7 @@ class SetPrice2(Page):
 
 class Res2(Page):
     def is_displayed(self):
-        if self.player.consent.lower() != 'consent':
+        if self.player.participant.vars['consent'].lower() != 'consent':
             return False
         if self.player.is_reject == 'accepted':
             return True
@@ -382,7 +386,7 @@ class Survey(Page):
     form_fields = ['age', 'gender', 'coffee']
 
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -392,19 +396,29 @@ class Survey(Page):
 
 class End(Page):
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
 class Final(Page):
     def is_displayed(self):
-        return self.player.consent.lower() == 'consent'
+        return self.player.participant.vars['consent'].lower() == 'consent'
 
     def vars_for_template(self):
-        return {'id': self.player.id_in_group}
+        self.player.payoff_cem = float(self.player.participant.vars['payoff_cem']*0.02)
+        self.player.payoff_trust = float(self.player.participant.vars['payoff_trust']*0.02)
+        self.player.payoff_total = float(self.player.total_bonus+(self.player.participant.vars['payoff_trust']+self.player.participant.vars['payoff_cem'])*0.02)
+
+        return {'id': self.player.id_in_group,
+                'payoff_trust':self.player.payoff_trust,
+                'payoff_cem':self.player.payoff_cem,
+                'payoff_all': self.player.payoff_total}
+
+
 page_sequence = []
 
 
-page_sequence += [Consent,
-                  Welcome,
+page_sequence += [
+    # Consent,
+    Welcome,
                   Info,
                   Summary,
                   Survey_coffee1,

@@ -17,7 +17,7 @@ Simple coffee experiment
 class Constants(BaseConstants):
 
     name_in_url = 'consent'
-    players_per_group = None
+    players_per_group = 2
     num_rounds = 1
 
 

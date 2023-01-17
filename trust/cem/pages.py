@@ -23,8 +23,7 @@ class Instructions(Page):
     # only display instruction in round 1
     # ----------------------------------------------------------------------------------------------------------------
     def is_displayed(self):
-        return self.subsession.round_number == 1 and self.player.participant.vars['consent'].lower() == 'consent'
-
+        return self.subsession.round_number == 1
 
 
 # ******************************************************************************************************************** #
@@ -116,8 +115,7 @@ class Decision(Page):
             self.player.set_consistency()
             # set switching row
             self.player.set_switching_row()
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
+
 
 # ******************************************************************************************************************** #
 # *** PAGE RESULTS *** #
@@ -128,8 +126,8 @@ class Results(Page):
     # ----------------------------------------------------------------------------------------------------------------
     def is_displayed(self):
         if Constants.one_choice_per_page:
-            return self.subsession.round_number == Constants.num_rounds and self.player.participant.vars['consent'].lower() == 'consent'
-        return True and self.player.participant.vars['consent'].lower() == 'consent'
+            return self.subsession.round_number == Constants.num_rounds
+        return True
 
     # variables for template
     # ----------------------------------------------------------------------------------------------------------------
@@ -143,7 +141,6 @@ class Results(Page):
         index_to_pay = self.player.participant.vars['cem_index_to_pay']
         round_to_pay = indices.index(index_to_pay) + 1
         choice_to_pay = self.participant.vars['cem_choices'][round_to_pay - 1]
-        self.player.participant.vars['payoff_cem'] = self.player.payoff
 
         if Constants.one_choice_per_page:
             return {

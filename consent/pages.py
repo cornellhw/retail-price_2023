@@ -8,12 +8,21 @@ class Consent(Page):
     form_fields = ['consent']
 
     def error_message(self, values):
-        # errors = [1 for f in values if not values[f]]
-        if self.player.consent != 'consent':
-            return 'Please press consent to begin the experiment.'
+        self.player.participant.vars['consent'] = values['consent']
+        errors = [1 for f in values if not values[f]]
+        if errors:
+            return 'you should select your answer'
+    # def error_message(self, values):
+    #     # errors = [1 for f in values if not values[f]]
+    #     print(values)
+    #     self.player.participant.vars['consent'] = values['consent']
+    #     # self.player.participant['consent'] = values['consent']
+    #     if values['consent'].lower() != 'consent':
+    #         return 'Please press consent to begin the experiment.'
+    #
 
 
 page_sequence = []
 
 
-page_sequence += [Consent]
+page_sequence += [Consent, ]

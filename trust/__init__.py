@@ -54,7 +54,9 @@ def set_payoffs(group: Group):
 
 # PAGES
 class Introduction(Page):
-    pass
+    @staticmethod
+    def is_displayed(player: Player):
+        return player.participant.vars['consent'].lower() == 'consent'
 
 
 class Send(Page):
@@ -68,11 +70,13 @@ class Send(Page):
 
     @staticmethod
     def is_displayed(player: Player):
-        return player.id_in_group == 1
+        return player.id_in_group == 1 and player.participant.vars['consent'].lower() == 'consent'
 
 
 class SendBackWaitPage(WaitPage):
-    pass
+    @staticmethod
+    def is_displayed(player: Player):
+        return player.participant.vars['consent'].lower() == 'consent'
 
 
 class SendBack(Page):
@@ -84,7 +88,8 @@ class SendBack(Page):
 
     @staticmethod
     def is_displayed(player: Player):
-        return player.id_in_group == 2
+        return player.id_in_group == 2 and player.participant.vars['consent'].lower() == 'consent'
+
 
     @staticmethod
     def vars_for_template(player: Player):
@@ -96,6 +101,9 @@ class SendBack(Page):
 
 class ResultsWaitPage(WaitPage):
     after_all_players_arrive = set_payoffs
+    @staticmethod
+    def is_displayed(player: Player):
+        return player.participant.vars['consent'].lower() == 'consent'
 
 
 class Results(Page):
@@ -104,9 +112,12 @@ class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
         group = player.group
-
         return dict(tripled_amount=group.sent_amount * C.MULTIPLIER)
 
+    @staticmethod
+    def is_displayed(player: Player):
+        player.participant.vars['payoff_trust'] = player.payoff
+        return player.participant.vars['consent'].lower() == 'consent'
 
 page_sequence = [
     Introduction,

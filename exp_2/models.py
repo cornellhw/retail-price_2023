@@ -22,7 +22,7 @@ class Constants(BaseConstants):
     lower, upper = 2, 10
     miu, sigma = 6, 0.5
     F=5
-    name_in_url = 'exp_1c'
+    name_in_url = 'exp_2'
     players_per_group = None
     num_rounds = 1
 
@@ -45,13 +45,13 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 
-    W = models.FloatField(label='Enter W here', max=10)
-    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10)
+    W = models.FloatField(label='Enter W here', max=10, initial=0)
+    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10, initial=0)
     C = models.FloatField(initial=0)
 
     consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
-    prob = models.FloatField()
+    prob = models.FloatField(initial=0)
     is_reject = models.StringField(initial='')
     lockin = models.StringField(initial='-1', blank=True)
     cost_bonus = models.FloatField(initial=0)
@@ -62,18 +62,18 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
-    optimal_R = models.FloatField()
-    optimal_profit_bonus = models.FloatField()
-    optimal_total_bonus = models.FloatField()
+    optimal_R = models.FloatField(initial=0)
+    optimal_profit_bonus = models.FloatField(initial=0)
+    optimal_total_bonus = models.FloatField(initial=0)
     optimal_sell = models.IntegerField()
-    optimal_market_coverage = models.FloatField()
-    optimal_earn = models.FloatField()
+    optimal_market_coverage = models.FloatField(initial=0)
+    optimal_earn = models.FloatField(initial=0)
     sell = models.IntegerField()
-    profit_bonus = models.FloatField()
-    total_bonus = models.FloatField()
-    earn = models.FloatField()
+    profit_bonus = models.FloatField(initial=0)
+    total_bonus = models.FloatField(initial=0)
+    earn = models.FloatField(initial=0)
     market_demand = models.IntegerField()
-    coffee_not_used = models.FloatField()
+    coffee_not_used = models.FloatField(initial=0)
     logger_W = models.LongStringField(initial='')
     logger_W_final = models.LongStringField(initial='')
     logger_T = models.LongStringField(initial='')
@@ -85,6 +85,10 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
         # initial='0'
     )
+    payoff_trust = models.FloatField(initial=0)
+    payoff_cem = models.FloatField(initial=0)
+    payoff_total = models.FloatField(initial=0)
+
 
     # survey
     # age = models.IntegerField(label="What is your age?", min=5, max=125)
@@ -353,8 +357,8 @@ class Player(BasePlayer):
 
 
         self.optimal_R = self.session.config['u2'] / 2
-        self.optimal_profit_bonus = round(0.2 * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
-        self.optimal_total_bonus = round(5 + self.cost_bonus + self.optimal_profit_bonus,1)
+        self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
+        self.optimal_total_bonus = round(self.session.config['F'] + self.cost_bonus + self.optimal_profit_bonus,1)
         self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,1)
 
         if self.lockin != 'lockin':
@@ -364,20 +368,19 @@ class Player(BasePlayer):
             self.logger_W_final += str(self.W) + ','
         return
 
-
     def set_payoff2(self):
-        sell_temp = 28 * (max(1-(self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
+        sell_temp = 28 * (
+            max(1 - (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
         self.sell = int(sell_temp)
         self.earn = int(self.R * sell_temp - self.W)
         self.market_demand = int(round(100*(1-(self.R-1)/6),0))
-        self.coffee_not_used = round((self.R-1)/6,2)
-        self.profit_bonus = round(self.session.config['a2'] * self.R * sell_temp,1)
+        self.coffee_not_used = round(
+            (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 2)
+        self.profit_bonus = round(self.session.config['a2'] * self.R * sell_temp, 1)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
-        self.total_bonus = round(5 + self.cost_bonus + self.profit_bonus, 1)
+        self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 1)
         return
-
-
 
 
 
