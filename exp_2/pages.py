@@ -231,19 +231,19 @@ class SetPrice(Page):
     def vars_for_template(self):
         if self.player.test_times == 0:
             prob = 'XXX'
-            cost_bonus= 'XXX'
+            optimal_cost_bonus= 'XXX'
             optimal_profit_bonus = 'XXX'
             optimal_total_bonus = 'XXX'
             optimal_earn = 'XXX'
 
         else:
             prob = self.player.prob*100
-            cost_bonus = self.player.cost_bonus
+            optimal_cost_bonus = self.player.optimal_cost_bonus
             optimal_profit_bonus = self.player.optimal_profit_bonus
             optimal_total_bonus = self.player.optimal_total_bonus
             optimal_earn = self.player.optimal_earn
         return {'prob': prob if isinstance(prob, float) else prob[0],
-                'cost_bonus' : cost_bonus,
+                'optimal_cost_bonus' : optimal_cost_bonus,
                 'optimal_profit_bonus': optimal_profit_bonus if isinstance( optimal_profit_bonus, float) else  optimal_profit_bonus[0],
                 'optimal_total_bonus': optimal_total_bonus,
                 'optimal_earn': optimal_earn,

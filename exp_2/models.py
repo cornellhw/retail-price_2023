@@ -55,6 +55,7 @@ class Player(BasePlayer):
     is_reject = models.StringField(initial='')
     lockin = models.StringField(initial='-1', blank=True)
     cost_bonus = models.FloatField(initial=0)
+    optimal_cost_bonus = models.FloatField(initial=0)
     test_times = models.IntegerField(initial=0)
 
     test_round = models.IntegerField(initial=0)
@@ -333,7 +334,7 @@ class Player(BasePlayer):
             self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
         else:
             self.is_reject = 'rejected'
-            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
+            self.cost_bonus = 0
         if self.test_round == 0:
             self.prob = self.fz(self.W)
         elif self.test_round ==1:
@@ -358,8 +359,9 @@ class Player(BasePlayer):
 
         self.optimal_R = self.session.config['u2'] / 2
         self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
-        self.optimal_total_bonus = round(self.session.config['F'] + self.cost_bonus + self.optimal_profit_bonus,1)
+        self.optimal_total_bonus = round(self.session.config['F'] + self.optimal_cost_bonus + self.optimal_profit_bonus,1)
         self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,1)
+        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
 
         if self.lockin != 'lockin':
             self.logger_W += str(self.W) + ','
@@ -376,10 +378,18 @@ class Player(BasePlayer):
         self.market_demand = int(round(100*(1-(self.R-1)/6),0))
         self.coffee_not_used = round(
             (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 2)
+
         self.profit_bonus = round(self.session.config['a2'] * self.R * sell_temp, 1)
+
+        if self.W >= self.C:
+            self.is_reject = 'accepted'
+            self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 1)
+        else:
+            self.is_reject = 'rejected'
+            self.total_bonus = self.session.config['F']
+
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
-        self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 1)
         return
 
 
