@@ -34,33 +34,82 @@ class Group(BaseGroup):
     dist = stats.truncnorm((Constants.lower - Constants.miu) / Constants.sigma,
                     (Constants.upper - Constants.miu) / Constants.sigma,
                     loc=Constants.miu, scale=Constants.sigma)
-    W_group = models.FloatField()
-    R_group = models.FloatField()
+    W_group = models.FloatField(initial=0)
+    R_group = models.FloatField(initial=0)
+    is_reject_group = models.StringField(initial='')
+    consent_group = models.StringField(initial='')
+    coffee_like_group = models.StringField(initial='')
+    cost_bonus_group = models.FloatField(initial=0)
+    earn_group = models.FloatField(initial=0)
+    total_bonus_group = models.FloatField(initial=0)
+
+    payoff_cem_group = models.FloatField(initial=0)
+    payoff_trust_group = models.FloatField(initial=0)
+    payoff_total_group = models.FloatField(initial=0)
 
     def init_setting(self):
+        consent = True
         for p in self.get_players():
             # p.C = round(random.random()*8+2,2)  # uniform
             # print(self.dist.rvs(1))
             p.C = float(round(float(self.dist.rvs(1)), 2))  # normal
+            print(p.participant.vars)
+        #     if p.participant.vars['consent'].lower() != 'consent':
+        #         consent= False
+        # if consent:
+        #     self.consent_group = 'Consent'
+        # else:
+        #     self.consent_group = 'Do not consent'
+        # for p in self.get_players():
+        #     p.participant.vars['consent'] = self.consent_group
+        #     print(p.participant.vars['consent'] )
         return
 
     def get_value(self):
+
+
         for p in self.get_players():
-            if p.role == 'A':
+            if p.role_own == 'A':
                 self.W_group = p.W
-            if p.role == 'B':
-                self.R_group = p.R
+                self.is_reject_group = p.is_reject
+                self.coffee_like_group = p.coffee_like
+                self.cost_bonus_group = p.cost_bonus
+                self.earn_group = p.earn
+                self.total_bonus_group = p.total_bonus
+
+        for p in self.get_players():
+            if p.role_own == 'B':
+                p.W = self.W_group
+                p.is_reject = self.is_reject_group
+                p.coffee_like = self.coffee_like_group
+                p.cost_bonus = self.cost_bonus_group
+                p.earn = self.earn_group
+                p.total_bonus = self.total_bonus_group
+
+    def get_value2(self):
+        for p in self.get_players():
+            if p.role_own == 'B':
+
+                self.payoff_cem_group = p.payoff_cem
+                self.payoff_trust_group = p.payoff_trust
+                self.payoff_total_group = p.payoff_total
+
+        for p in self.get_players():
+            if p.role_own == 'A':
+                p.payoff_cem = self.payoff_cem_group
+                p.payoff_trust =self.payoff_trust_group
+                p.payoff_total = self.payoff_total_group
 
 
 class Player(BasePlayer):
-    W = models.FloatField(label='Enter W here', max=10)
-    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10)
+    W = models.FloatField(label='Enter W here', max=10, initial=0)
+    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10, initial=0)
     C = models.FloatField(initial=0)
 
-    role = models.StringField()
-    consent = models.StringField(initial='consent')
+    role_own = models.StringField(initial='')
+    consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
-    prob = models.FloatField()
+    prob = models.FloatField(initial=0)
     is_reject = models.StringField(initial='')
     lockin = models.StringField(initial='-1', blank=True)
     cost_bonus = models.FloatField(initial=0)
@@ -71,18 +120,19 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
-    optimal_R = models.FloatField()
-    optimal_profit_bonus = models.FloatField()
-    optimal_total_bonus = models.FloatField()
+    optimal_R = models.FloatField(initial=0)
+    optimal_cost_bonus = models.FloatField(initial=0)
+    optimal_profit_bonus = models.FloatField(initial=0)
+    optimal_total_bonus = models.FloatField(initial=0)
     optimal_sell = models.IntegerField()
-    optimal_market_coverage = models.FloatField()
-    optimal_earn = models.FloatField()
+    optimal_market_coverage = models.FloatField(initial=0)
+    optimal_earn = models.FloatField(initial=0)
     sell = models.IntegerField()
-    profit_bonus = models.FloatField()
-    total_bonus = models.FloatField()
-    earn = models.FloatField()
+    profit_bonus = models.FloatField(initial=0)
+    total_bonus = models.FloatField(initial=0)
+    earn = models.FloatField(initial=0)
     market_demand = models.IntegerField()
-    coffee_not_used = models.FloatField()
+    coffee_not_used = models.FloatField(initial=0)
     logger_W = models.LongStringField(initial='')
     logger_W_final = models.LongStringField(initial='')
     logger_T = models.LongStringField(initial='')
@@ -94,6 +144,10 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
         # initial='0'
     )
+    payoff_trust = models.FloatField(initial=0)
+    payoff_cem = models.FloatField(initial=0)
+    payoff_total = models.FloatField(initial=0)
+
 
     # survey
     # age = models.IntegerField(label="What is your age?", min=5, max=125)
@@ -111,15 +165,15 @@ class Player(BasePlayer):
     # )
     #
 
-    coffee_like = models.StringField(blank=True)
-    coffee_quality = models.StringField(blank=True)
-    coffee_sweetness = models.StringField(blank=True)
-    coffee_flavor = models.StringField(blank=True)
-    coffee_impression = models.StringField(blank=True)
-    coffee_recom = models.StringField(blank=True)
-    coffee_drink = models.StringField(blank=True)
-    coffee_serve = models.StringField(blank=True)
-    coffee_buy = models.StringField(blank=True)
+    coffee_like = models.StringField(blank=True,initial='')
+    coffee_quality = models.StringField(blank=True,initial='')
+    coffee_sweetness = models.StringField(blank=True,initial='')
+    coffee_flavor = models.StringField(blank=True,initial='')
+    coffee_impression = models.StringField(blank=True,initial='')
+    coffee_recom = models.StringField(blank=True,initial='')
+    coffee_drink = models.StringField(blank=True,initial='')
+    coffee_serve = models.StringField(blank=True,initial='')
+    coffee_buy = models.StringField(blank=True,initial='')
 
     coffee_howoften = models.StringField(
         choices=[['7', 'Multiple times daily'], ['6', 'Daily'], ['5', 'Weekly'], ['4', 'Monthly'], ['3', 'Bi-Monthly'],
@@ -331,7 +385,7 @@ class Player(BasePlayer):
     )
 
     def init_role(self):
-        self.role = ['A', 'B'][self.id_in_group % 2] # A: procurement; B: markeing
+        self.role_own = ['B', 'A'][self.id_in_group % 2] # A: procurement; B: markeing
         return
 
     def fz(self, w):
@@ -343,7 +397,7 @@ class Player(BasePlayer):
             self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
         else:
             self.is_reject = 'rejected'
-            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
+            self.cost_bonus = 0
         if self.test_round == 0:
             self.prob = self.fz(self.W)
         elif self.test_round ==1:
@@ -364,11 +418,10 @@ class Player(BasePlayer):
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
 
-
-
         self.optimal_R = self.session.config['u2'] / 2
-        self.optimal_profit_bonus = round(0.2 * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
-        self.optimal_total_bonus = round(5 + self.cost_bonus + self.optimal_profit_bonus,1)
+        self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
+        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20, 1)
+        self.optimal_total_bonus = round(self.session.config['F'] + self.optimal_cost_bonus + self.optimal_profit_bonus,1)
         self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,1)
 
         if self.lockin != 'lockin':
@@ -384,11 +437,18 @@ class Player(BasePlayer):
         self.sell = int(sell_temp)
         self.earn = int(self.R * sell_temp - self.W)
         self.market_demand = int(round(100*(1-(self.R-1)/6),0))
-        self.coffee_not_used = round((self.R-1)/6,2)
+        self.coffee_not_used = round(
+            (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 2)
+
         self.profit_bonus = round(self.session.config['a2'] * self.R * sell_temp,1)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
         self.total_bonus = round(5 + self.cost_bonus + self.profit_bonus, 1)
+
+        self.payoff_cem = round(float(self.participant.vars['payoff_cem']*0.02),1)
+        self.payoff_trust = round(float(self.participant.vars['payoff_trust']*0.02),1)
+        self.payoff_total = round(float(self.total_bonus+(self.participant.vars['payoff_trust']+self.participant.vars['payoff_cem'])*0.02),1)
+
         return
 
 

@@ -8,23 +8,40 @@ from os import environ
 SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
+PARTICIPANT_FIELDS = ['consent', 'payoff_cem', 'payoff_trust']
 
 SESSION_CONFIGS = [
         dict(
-            name='exp_2',
-            display_name='exp_2',
-            num_demo_participants=32,
-            app_sequence=['consent','trust','cem','exp_2'],
-            a1=0.2,
-            u1=10,
-            l1=2,
-            a2=0.2,
-            u2=7,
-            l2=1,
-            F=5,
-            miu=6,
-            sigma=0.5,
+        name='exp_2',
+        display_name='exp_2',
+        num_demo_participants=60,
+        app_sequence=['consent','trust','cem','exp_2', ],
+        a1=0.2,
+        u1=10,
+        l1=2,
+        a2=0.2,
+        u2=7,
+        l2=1,
+        F=5,
+        miu=6,
+        sigma=0.5,
         ),
+
+    dict(
+        name='exp_2_group',
+        display_name='exp_2_group',
+        num_demo_participants=60,
+        app_sequence=['consent_group','trust2','cem','exp_2_group'],
+        a1=0.2,
+        u1=10,
+        l1=2,
+        a2=0.2,
+        u2=7,
+        l2=1,
+        F=5,
+        miu=6,
+        sigma=0.5,
+    ),
 ]
 
 # ISO-639 code

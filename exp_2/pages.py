@@ -30,55 +30,6 @@ class Summary(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
-class Survey1(Page):
-    form_model = 'player'
-    form_fields = ['coffee_howoften', 'coffee_where', 'coffee_where_string',
-                   'door_unlocked', 'lend_money', 'lend_personal', 'lie_parents', 'lie_roommates',
-                   'lie_acquaintances', 'lie_friends', 'lie_partner']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class Survey2(Page):
-    form_model = 'player'
-    form_fields = ['take_advantage', 'try_to_be_helpful', 'trust',
-                   'count_on_strangers', 'deal_with_strangers', 'recycle',
-                   'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-class Survey3(Page):
-    form_model = 'player'
-    form_fields = ['age', 'gender', 'gender_string',
-                   'describe_white','describe_Middle','describe_Black', 'describe_American',
-                   'describe_Asian','describe_Native','describe_Hispanic','describe_Prefer','describe_other', 'describe_other_string',
-                   'edu','major','major_string','parents','employment', 'employment_string',
-                   'income','marital','children',
-                   ]
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
 
 class Survey_coffee1(Page):
     form_model = 'player'
@@ -231,7 +182,7 @@ class SetPrice(Page):
     def vars_for_template(self):
         if self.player.test_times == 0:
             prob = 'XXX'
-            optimal_cost_bonus= 'XXX'
+            cost_bonus= 'XXX'
             optimal_profit_bonus = 'XXX'
             optimal_total_bonus = 'XXX'
             optimal_earn = 'XXX'
@@ -323,6 +274,8 @@ class Res123(Page):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
 
+
+
 class SetPrice2(Page):
     form_model = 'player'
     form_fields = ['R', 'lockin2']
@@ -388,6 +341,8 @@ class Survey(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
+
+
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
         if errors:
@@ -398,14 +353,66 @@ class End(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
+
+class Survey1(Page):
+    form_model = 'player'
+    form_fields = ['coffee_howoften', 'coffee_where', 'coffee_where_string',
+                   'door_unlocked', 'lend_money', 'lend_personal', 'lie_parents', 'lie_roommates',
+                   'lie_acquaintances', 'lie_friends', 'lie_partner']
+
+    def is_displayed(self):
+        return self.player.participant.vars['consent'].lower() == 'consent'
+        # return True
+    def before_next_page(self):
+        self.player.set_payoff_final()
+    def error_message(self, values):
+        errors = [1 for f in values if 'string' not in f and not values[f]]
+        if errors:
+            return 'you should select your answer'
+
+
+class Survey2(Page):
+    form_model = 'player'
+    form_fields = ['take_advantage', 'try_to_be_helpful', 'trust',
+                   'count_on_strangers', 'deal_with_strangers', 'recycle',
+                   'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
+
+    def is_displayed(self):
+        return self.player.participant.vars['consent'].lower() == 'consent'
+        # return True
+
+    def error_message(self, values):
+        errors = [1 for f in values if 'string' not in f and not values[f]]
+        if errors:
+            return 'you should select your answer'
+
+class Survey3(Page):
+    form_model = 'player'
+    form_fields = ['age', 'gender', 'gender_string',
+                   'describe_white','describe_Middle','describe_Black', 'describe_American',
+                   'describe_Asian','describe_Native','describe_Hispanic','describe_Prefer','describe_other', 'describe_other_string',
+                   'edu','major','major_string','parents','employment', 'employment_string',
+                   'income','marital','children',
+                   ]
+
+    def is_displayed(self):
+        return self.player.participant.vars['consent'].lower() == 'consent'
+        # return True
+
+    def error_message(self, values):
+        errors = [1 for f in values if 'string' not in f and not values[f]]
+        if errors:
+            return 'you should select your answer'
+
+
 class Final(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
     def vars_for_template(self):
-        self.player.payoff_cem = float(self.player.participant.vars['payoff_cem']*0.02)
-        self.player.payoff_trust = float(self.player.participant.vars['payoff_trust']*0.02)
-        self.player.payoff_total = float(self.player.total_bonus+(self.player.participant.vars['payoff_trust']+self.player.participant.vars['payoff_cem'])*0.02)
+        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem']*0.02),1)
+        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust']*0.02),1)
+        self.player.payoff_total = round(float(self.player.total_bonus+(self.player.participant.vars['payoff_trust']+self.player.participant.vars['payoff_cem'])*0.02),1)
 
         return {'id': self.player.id_in_group,
                 'payoff_trust':self.player.payoff_trust,

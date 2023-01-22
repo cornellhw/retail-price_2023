@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+<b>Marketing & Procurement manager page <br></b>
+Role Assignment and Matching
+
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+Your participant ID number is: {{ID_number}}<br>
+You are assigned to act as the firm’s {{role}}.<br>
+You are matched with ID number {{ID_match}} to conduct the following experiment.<br>
+
+
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}
