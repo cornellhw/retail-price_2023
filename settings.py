@@ -11,7 +11,7 @@ SESSION_CONFIG_DEFAULTS = dict(
 PARTICIPANT_FIELDS = ['consent', 'payoff_cem', 'payoff_trust']
 
 SESSION_CONFIGS = [
-        dict(
+    dict(
         name='exp_2',
         display_name='exp_2',
         num_demo_participants=60,
@@ -25,7 +25,7 @@ SESSION_CONFIGS = [
         F=5,
         miu=6,
         sigma=0.5,
-        ),
+    ),
 
     dict(
         name='exp_2_group',

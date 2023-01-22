@@ -27,7 +27,6 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     pass
 
-
 class Player(BasePlayer):
 
     consent = models.StringField(initial='')
