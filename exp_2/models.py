@@ -16,7 +16,7 @@ Simple coffee experiment
 """
 class Constants(BaseConstants):
 
-    a1, = 0.2
+    a1 = 0.2
     a2, u2, l2 = 0.2, 7, 1
 
     lower, upper = 2, 10
@@ -69,7 +69,6 @@ class Player(BasePlayer):
     optimal_sell = models.IntegerField()
     optimal_market_coverage = models.FloatField(initial=0)
     optimal_earn = models.FloatField(initial=0)
-    sell = models.IntegerField()
     profit_bonus = models.FloatField(initial=0)
     total_bonus = models.FloatField(initial=0)
     earn = models.FloatField(initial=0)
