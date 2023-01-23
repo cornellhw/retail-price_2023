@@ -49,7 +49,6 @@ class Player(BasePlayer):
     R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10, initial=0)
     C = models.FloatField(initial=0)
 
-    consent = models.StringField(initial='')
     purchase_success = models.IntegerField(initial=0)
     prob = models.FloatField(initial=0)
     is_reject = models.StringField(initial='')
