@@ -16,7 +16,7 @@ Simple coffee experiment
 """
 class Constants(BaseConstants):
 
-    a1, u1, l1 = 0.2, 10, 2
+    a1, = 0.2
     a2, u2, l2 = 0.2, 7, 1
 
     lower, upper = 2, 10
