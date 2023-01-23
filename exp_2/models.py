@@ -67,7 +67,6 @@ class Player(BasePlayer):
     optimal_profit_bonus = models.FloatField(initial=0)
     optimal_total_bonus = models.FloatField(initial=0)
     optimal_sell = models.IntegerField()
-    optimal_market_coverage = models.FloatField(initial=0)
     optimal_earn = models.FloatField(initial=0)
     profit_bonus = models.FloatField(initial=0)
     total_bonus = models.FloatField(initial=0)
@@ -78,13 +77,6 @@ class Player(BasePlayer):
     logger_W_final = models.LongStringField(initial='')
     logger_T = models.LongStringField(initial='')
 
-    quality = models.StringField(
-        choices=[['0', 'Poor'], ['1', 'Fair'], ['2', 'Good'], ['3', 'Very good']
-                 , ['4', 'Excellent!!']],
-        # label='你的性别是？',
-        widget=widgets.RadioSelect,
-        # initial='0'
-    )
     payoff_trust = models.FloatField(initial=0)
     payoff_cem = models.FloatField(initial=0)
     payoff_total = models.FloatField(initial=0)
@@ -371,7 +363,6 @@ class Player(BasePlayer):
 
     def set_payoff2(self):
         sell_temp = 28 * (max(1-(self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
-        self.sell = int(sell_temp)
         self.earn = int(self.R * sell_temp - self.W)
         self.market_demand = int(round(100*(1-(self.R-1)/6),0))
         self.coffee_not_used = round(
