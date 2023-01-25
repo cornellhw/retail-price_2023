@@ -256,7 +256,7 @@ class SetPrice(Page):
     def vars_for_template(self):
         if self.player.test_times == 0:
             prob = 'XXX'
-            cost_bonus= 'XXX'
+            optimal_cost_bonus= 'XXX'
             optimal_profit_bonus = 'XXX'
             optimal_total_bonus = 'XXX'
             optimal_earn = 'XXX'
@@ -420,7 +420,7 @@ class SetPrice2(Page):
                 }
 
 class Waiting2(WaitPage):
-    body_text = "You are waiting for the results for marketing price setting from the procurement manager."
+    body_text = "You are waiting for the results for marketing price setting from the marketing manager."
 
     
 class Res2(Page):

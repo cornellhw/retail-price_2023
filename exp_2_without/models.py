@@ -22,7 +22,7 @@ class Constants(BaseConstants):
     lower, upper = 2, 10
     miu, sigma = 6, 0.5
     F=5
-    name_in_url = 'exp_2'
+    name_in_url = 'exp_2_without'
     players_per_group = None
     num_rounds = 1
 
@@ -97,15 +97,6 @@ class Player(BasePlayer):
     # )
     #
 
-    coffee_like = models.StringField(blank=True)
-    coffee_quality = models.StringField(blank=True)
-    coffee_sweetness = models.StringField(blank=True)
-    coffee_flavor = models.StringField(blank=True)
-    coffee_impression = models.StringField(blank=True)
-    coffee_recom = models.StringField(blank=True)
-    coffee_drink = models.StringField(blank=True)
-    coffee_serve = models.StringField(blank=True)
-    coffee_buy = models.StringField(blank=True)
 
     coffee_howoften = models.StringField(
         choices=[['7', 'Multiple times daily'], ['6', 'Daily'], ['5', 'Weekly'], ['4', 'Monthly'], ['3', 'Bi-Monthly'],
@@ -345,10 +336,9 @@ class Player(BasePlayer):
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
 
-
         self.optimal_R = self.session.config['u2'] / 2
-        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20, 1)
         self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
+        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20, 1)
         self.optimal_total_bonus = round(self.session.config['F'] + self.optimal_cost_bonus + self.optimal_profit_bonus,1)
         self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,1)
 
