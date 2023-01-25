@@ -81,22 +81,6 @@ class Player(BasePlayer):
     payoff_total = models.FloatField(initial=0)
 
 
-    # survey
-    # age = models.IntegerField(label="What is your age?", min=5, max=125)
-    # gender = models.StringField(
-    #     choices=[['0', 'male'], ['1', 'female']],
-    #     label='What is your gender?',
-    #     widget=widgets.RadioSelect,
-    # )
-    # coffee = models.StringField(
-    #     choices=[['0', 'Never'], ['1', 'Once a week'], ['2', 'Two or three times a week'],
-    #              ['3', 'Everyday']],
-    #     label='How often do you drink the coffee?',
-    #     widget=widgets.RadioSelect,
-    #     # initial='0'
-    # )
-    #
-
 
     coffee_howoften = models.StringField(
         choices=[['7', 'Multiple times daily'], ['6', 'Daily'], ['5', 'Weekly'], ['4', 'Monthly'], ['3', 'Bi-Monthly'],
