@@ -94,139 +94,144 @@ class Player(BasePlayer):
         # initial='0'
     )
     coffee_where = models.StringField(
-        choices=[['5', 'Make at home'], ['4', 'Make at work'], ['3', 'Dine in at a coffee shop'],
-                 ['2', 'Take out from a coffee shop'], ['1', 'Prefer not to answer'],
-                 ['0', 'Other']],
+        choices=[['6', 'Make at home'], ['5', 'Make at work'], ['4', 'Dine in at a coffee shop'],
+                 ['3', 'Take out from a coffee shop'], ['2', 'Prefer not to answer'],['1', 'Prefer not to answer'],
+                 ['0', 'other']],
         label='2. Where do you get your coffee most frequently?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     coffee_where_string = models.StringField(label='', blank=True)
     door_unlocked = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='3. How often do you leave your door unlocked?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lend_money = models.StringField(
-        choices=[['3', 'More than once a week'], ['2', 'About once a week'], ['1', 'About once a month'],
-                 ['0', 'Once a year or less']],
+        choices=[['4', 'More than once a week'], ['3', 'About once a week'], ['2', 'About once a month'],['1', 'Once a year or less'],
+                 ['0', 'Prefer not to answer']],
         label='4. How often do you lend money to your friends?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lend_personal = models.StringField(
-        choices=[['3', 'More than once a week'], ['2', 'About once a week'], ['1', 'About once a month'],
-                 ['0', 'Once a year or less']],
+        choices=[['4', 'More than once a week'], ['3', 'About once a week'], ['2', 'About once a month'],['1', 'Once a year or less'],
+                 ['0', 'Prefer not to answer']],
         label='5. How often do you lend personal possessions to friends (e.g., CDs, clothes, bicycle, etc.)?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_parents = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='6. How often do you lie to your parents?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_roommates = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='7. How often do you lie to your roommates?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_acquaintances = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='8. How often do you lie to your acquaintances?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_friends = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='9. How often do you lie to your close friends?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_partner = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='10. How often do you lie to your partner?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     take_advantage = models.StringField(
-        choices=[['1', 'Would take advantage of you'], ['0', 'Would try to be fair']],
+        choices=[['2', 'Would take advantage of you'], ['1', 'Would try to be fair'],
+                 ['0', 'Prefer not to answer']],
         label='11. Do you think most people would try to take advantage of you if they got a chance, or would they try to be fair?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     try_to_be_helpful = models.StringField(
-        choices=[['1', 'Try to be helpful'], ['0', 'Just look out for themselves']],
+        choices=[['2', 'Try to be helpful'], ['1', 'Just look out for themselves'],
+            ['0', 'Prefer not to answer']],
         label='12. Would you say that most of the time people try to be helpful, or that they are mostly just looking out for themselves?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     trust = models.StringField(
-        choices=[['1', 'Most people can be trusted'], ['0', 'Cannot be too careful']],
-        label='13. Generally speaking, would you say that most people can be trusted or that you can not be too careful in dealing with people?',
+        choices=[['2', 'Most people can be trusted'], ['1', 'Cannot be too careful'],
+        ['0', 'Prefer not to answer']],
+    label='13. Generally speaking, would you say that most people can be trusted or that you can not be too careful in dealing with people?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     count_on_strangers = models.StringField(
-        choices=[['1', 'More or less agree'], ['0', 'More or less disagree']],
+        choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
+        ['0', 'Prefer not to answer']],
         label='14. Do you agree or disagree with the following statement: "You cannot count on strangers anymore',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     deal_with_strangers = models.StringField(
-        choices=[['1', 'More or less agree'], ['0', 'More or less disagree']],
-        label='15. Do you agree or disagree with the following statement: "When dealing with strangers, one is better off using caution before trusting them',
+        choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
+        ['0', 'Prefer not to answer']],
+    label='15. Do you agree or disagree with the following statement: "When dealing with strangers, one is better off using caution before trusting them',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     recycle = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
-        label='16. How often do you recycle?',
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+        ['0', 'Prefer not to answer']],
+    label='16. How often do you recycle?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     more_pay_fair_trade = models.StringField(
-        choices=[['0', 'Nothing'], ['1', '1 Dollar'], ['2', '2 Dollars'], ['3', '3 Dollars'],
-                 ['4', '4 Dollars or more']],
+        choices=[['1', 'Nothing'], ['2', '1 Dollar'], ['3', '2 Dollars'], ['4', '3 Dollars'],['5', '4 Dollars or more'],
+                 ['0', 'Prefer not to answer']],
         label='17. How much more would you pay for a cup of Fair Trade coffee?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     frequency_not_buy = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='18. How frequently do you not buy something that you want, due to where it was made?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     car = models.StringField(
-        choices=[['4', 'Strongly agree'], ['3', 'Somewhat agree'], ['2', 'Indifferent'], ['1', 'Somewhat disagree'],
-                 ['0', 'Strongly disagree']],
+        choices=[['5', 'Strongly agree'], ['4', 'Somewhat agree'], ['3', 'Indifferent'], ['2', 'Somewhat disagree'],['1', 'Strongly disagree'],
+                 ['0', 'Prefer not to answer']],
         label='19. Ignoring cost differences, how strongly do you agree with this statement: I would rather drive a well-maintained used car than a brand new one',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     frequency_shoes = models.StringField(
-        choices=[['4', 'Very often'], ['3', 'Often'], ['2', 'Sometimes'], ['1', 'Rarely'],
-                 ['0', 'Never']],
+        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
+                 ['0', 'Prefer not to answer']],
         label='20. How frequently do you think about the day-to-day lives of the people who made your shoes',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     age = models.IntegerField(label="21. What is your age? (years)", min=5, max=125)
     gender = models.StringField(
-        choices=[['0', 'Male'], ['1', 'Female'], ['2', 'Non-binary/third gender'], ['3', 'Prefer not to answer'],
-                 ['4', 'Prefer to self-describe']],
+        choices=[['0', 'Male'], ['1', 'Female'], ['2', 'Non-binary/third gender'], ['3', 'Prefer to self-describe'],
+                 ['4', 'Prefer not to answer']],
         label='22. How do you describe your gender?',
         widget=widgets.RadioSelect,
     )
@@ -299,7 +304,7 @@ class Player(BasePlayer):
     def set_payoff1(self):
         if self.W >= self.C:
             self.is_reject = 'accepted'
-            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
+            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,2)
         else:
             self.is_reject = 'rejected'
             self.cost_bonus = 0
@@ -323,11 +328,11 @@ class Player(BasePlayer):
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
 
-        self.optimal_R = self.session.config['u2'] / 2
-        self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),1)
-        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20, 1)
-        self.optimal_total_bonus = round(self.session.config['F'] + self.optimal_cost_bonus + self.optimal_profit_bonus,1)
-        self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,1)
+        self.optimal_R = round(self.session.config['u2'] / 2,2)
+        self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),2)
+        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20, 2)
+        self.optimal_total_bonus = round(self.session.config['F'] + self.optimal_cost_bonus + self.optimal_profit_bonus,2)
+        self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,2)
 
         if self.lockin != 'lockin':
             self.logger_W += str(self.W) + ','
@@ -339,20 +344,20 @@ class Player(BasePlayer):
 
     def set_payoff2(self):
         sell_temp = 28 * (max(1-(self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0))
-        self.earn = int(self.R * sell_temp - self.W)
+        self.earn = round((self.R * sell_temp - self.W),2)
         self.market_demand = int(round(100*(1-(self.R-1)/6),0))
         self.coffee_not_used = round(
             (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 2)
 
-        self.profit_bonus = round(self.session.config['a2'] * self.R * sell_temp,1)
+        self.profit_bonus = round(self.session.config['a2'] * self.R * sell_temp,2)
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
-        self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 1)
+        self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 2)
         return
 
 
     def set_payoff_final(self):
-        self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 1)
+        self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 2)
 
 
 

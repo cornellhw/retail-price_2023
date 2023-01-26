@@ -8,7 +8,7 @@ Procurement: Wholesale Price Setting
 {% block content %}
 {{ formfield_errors 'lockin' }}
 
-You now have the opportunity to use your initial funding of $10 to make a wholesale price offer (W) to the supplier of your
+You now have the opportunity to use your initial funding of $10 to make a wholesale price offer <i><b>(W)</b></i> to the supplier of your
 choice. This is your <b>{{ round }}</b> of three such opportunities. Please enter your choice of wholesale price in the space. Testing
 functionality is provided to assist you in making a good choice.<br><br>
 
@@ -26,7 +26,7 @@ Probability of acceptance of {{round_n}} offer: If you finalize this choice of W
 -You would earn a <u>cost savings bonus of ${{ optimal_cost_bonus }}</u><br>
 -<b>Assuming marketing makes a good decision,</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;-You should expect to earn a <u>revenue sharing bonus of ${{optimal_profit_bonus}} </u><br>
-&nbsp;&nbsp;&nbsp;&nbsp;-Your firm’s profit would be $ {{ optimal_earn }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Your firm’s profit would be ${{ optimal_earn }}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-Your total payment for today’s coffee experiment would be ${{ optimal_total_bonus }}<br>
 
 

@@ -4,11 +4,12 @@
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_without/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res12.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res123.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res123.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/SetPrice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/SetPrice2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust/Instructions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust/Results.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,13 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00103" summary="description:new updates">
-      <created>1671471494715</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1671471494715</updated>
     </task>
     <task id="LOCAL-00104" summary="description:new updates">
       <created>1671471626982</created>
@@ -436,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674746834469</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="description:new updates">
+      <created>1674763292477</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1674763292477</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
