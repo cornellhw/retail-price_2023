@@ -23,6 +23,7 @@ SESSION_CONFIGS = [
         F=5,
         miu=6,
         sigma=0.5,
+        tasting = 0
     ),
 ]
 

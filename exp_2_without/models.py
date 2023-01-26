@@ -61,6 +61,8 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
+    tasting = models.FloatField(initial=0)
+
     optimal_R = models.FloatField(initial=0)
     optimal_cost_bonus = models.FloatField(initial=0)
     optimal_profit_bonus = models.FloatField(initial=0)
@@ -251,7 +253,7 @@ class Player(BasePlayer):
                  ['3', 'Sciences (Bio., Physics, Math, Chem.)'],
                  ['4', 'Medicine'],['5', 'Engineering'],['6', 'Law'],['7', 'Arts and Humanities'],['8', 'Architecture and Design'],['9', 'Prefer not to answer'],
                  ['10', 'Other']],
-        label='25.If you are currently or have previously attended college, what is or was your major?',
+        label='25. If you are currently or have previously attended college, what is or was your major?',
         widget=widgets.RadioSelect,
     )
     major_string = models.StringField(label='', blank=True)
@@ -259,14 +261,14 @@ class Player(BasePlayer):
     parents = models.StringField(
         choices=[['0', 'Some or no high school'], ['1', 'High school degree or equivalent'], ['2', 'Some college'], ['3', 'Associate’s degree or equivalent'],
                  ['4', 'Bachelor’s degree or equivalent'],['5', 'Graduate degree or equivalent'],['6', 'Prefer not to answer']],
-        label='26.What is the highest level of education completed by either of your parents? ',
+        label='26. What is the highest level of education completed by either of your parents? ',
         widget=widgets.RadioSelect,
     )
 
     employment  = models.StringField(
         choices=[['0', 'Working full-time'], ['1', 'Working part-time'], ['2', 'Unemployed and looking for work'], ['3', 'A homemaker or stay-at-home parents'],
                  ['4', 'Student'],['5', 'Retired'],['6', 'Prefer not to answer'], ['7','Other']],
-        label='27.What best describes your employment status over the last three months?',
+        label='27. What best describes your employment status over the last three months?',
         widget=widgets.RadioSelect,
     )
     employment_string = models.StringField(label='', blank=True)
@@ -277,18 +279,18 @@ class Player(BasePlayer):
                  ['8', '$80,000 to $89,999'],['9', '$90,000 to $99,999'],['10', '$100,000 to $149,999'], ['11','$150,000 or more'],
                  ['12', 'Prefer not to answer']
                  ],
-        label='28.What was your total household income before taxes during the past 12 months?',
+        label='28. What was your total household income before taxes during the past 12 months?',
         widget=widgets.RadioSelect,
     )
     marital = models.StringField(
         choices=[['0', 'Married'], ['1', 'Living with a partner'], ['2', 'Widowed'], ['3', 'Divorced'],
                  ['4', 'Separated '],['5', 'Never married'],['6', 'Prefer not to answer ']],
-        label='29.What is your current marital status?',
+        label='29. What is your current marital status?',
         widget=widgets.RadioSelect,
     )
     children  = models.StringField(
         choices=[['0', 'Yes'], ['1', 'No'], ['2', 'Prefer not to answer']],
-        label='30.Do you have children under 18 years old living in your household?',
+        label='30. Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,
     )
     def fz(self, w):
