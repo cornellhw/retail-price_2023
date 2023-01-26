@@ -230,8 +230,8 @@ class Player(BasePlayer):
     )
     age = models.IntegerField(label="21. What is your age? (years)", min=5, max=125)
     gender = models.StringField(
-        choices=[['0', 'Male'], ['1', 'Female'], ['2', 'Non-binary/third gender'], ['3', 'Prefer to self-describe'],
-                 ['4', 'Prefer not to answer']],
+        choices=[['0', 'Male'], ['1', 'Female'], ['2', 'Non-binary/third gender'], ['3', 'Prefer not to answer'],
+                 ['4', 'Prefer to self-describe']],
         label='22. How do you describe your gender?',
         widget=widgets.RadioSelect,
     )
@@ -330,7 +330,7 @@ class Player(BasePlayer):
 
         self.optimal_R = round(self.session.config['u2'] / 2,2)
         self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),2)
-        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20, 2)
+        self.optimal_cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,2)
         self.optimal_total_bonus = round(self.session.config['F'] + self.optimal_cost_bonus + self.optimal_profit_bonus,2)
         self.optimal_earn = round(self.optimal_R * (28 * (1-(self.optimal_R-1)/6)) - self.W,2)
 
