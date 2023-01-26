@@ -30,7 +30,17 @@ class Summary(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
+class Survey_coffee1(Page):
+    form_model = 'player'
+    form_fields = ['coffee_like']
 
+    def is_displayed(self):
+        return self.player.participant.vars['consent'].lower() == 'consent'
+
+    def error_message(self, values):
+        errors = [1 for f in values if not values[f]]
+        if errors:
+            return 'you should select your answer'
 
 class Payment(Page):
     def is_displayed(self):
@@ -310,6 +320,7 @@ page_sequence += [
     Welcome,
                   Info,
                   Summary,
+                  Survey_coffee1,
                   Payment,
                   Payment2,
                   ]

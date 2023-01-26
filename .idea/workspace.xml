@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
+      <change afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Survey_coffee1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_without/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_without/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,16 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/admin/Documents/GitHub/retail-price&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/admin/Documents/GitHub/retail-price/exp_2_without/templates/exp_2_without",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -90,13 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00097" summary="description:new updates">
-      <created>1671378507161</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1671378507162</updated>
     </task>
     <task id="LOCAL-00098" summary="description:new updates">
       <created>1671378747905</created>
@@ -434,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674677715560</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="description:new updates">
+      <created>1674678301053</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1674678301053</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
