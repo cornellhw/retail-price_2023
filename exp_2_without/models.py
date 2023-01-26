@@ -80,6 +80,7 @@ class Player(BasePlayer):
     payoff_cem = models.FloatField(initial=0)
     payoff_total = models.FloatField(initial=0)
 
+    coffee_like = models.StringField(blank=True)
 
 
     coffee_howoften = models.StringField(
