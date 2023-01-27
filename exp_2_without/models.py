@@ -22,6 +22,7 @@ class Constants(BaseConstants):
     lower, upper = 2, 10
     miu, sigma = 6, 0.5
     F=5
+    tasting = 0
     name_in_url = 'exp_2_without'
     players_per_group = None
     num_rounds = 1
@@ -61,8 +62,7 @@ class Player(BasePlayer):
     lockin2 = models.StringField(initial='-1', blank=True)
     test_times2 = models.IntegerField(initial=0)
 
-    tasting = models.FloatField(initial=0)
-
+    tasting_new = models.IntegerField(initial=0)
     optimal_R = models.FloatField(initial=0)
     optimal_cost_bonus = models.FloatField(initial=0)
     optimal_profit_bonus = models.FloatField(initial=0)
@@ -83,6 +83,7 @@ class Player(BasePlayer):
     payoff_total = models.FloatField(initial=0)
 
     coffee_like = models.StringField(blank=True)
+
 
 
     coffee_howoften = models.StringField(
@@ -298,6 +299,9 @@ class Player(BasePlayer):
         label='30. Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,
     )
+    def tast(self):
+        self.tasting_new = self.session.config['tasting']
+
     def fz(self, w):
         return (w-Constants.miu)/Constants.sigma
 

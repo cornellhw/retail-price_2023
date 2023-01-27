@@ -29,13 +29,28 @@ class Info(Page):
 class Summary(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
+    def before_next_page(self):
+        self.player.tast()
 
 class Survey_coffee1(Page):
     form_model = 'player'
     form_fields = ['coffee_like']
 
+    def vars_for_template(self):
+        if self.player.tasting_new == 0:
+            next_is = '11111'
+        elif self.player.tasting_new == 1:
+            next_is = '22222'
+        else:
+            next_is = '3333'
+        return {'tasting_new': self.player.tasting_new,
+                'next_is': next_is
+                }
+
+
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
+
 
     def error_message(self, values):
         errors = [1 for f in values if not values[f]]
@@ -303,9 +318,9 @@ class Final(Page):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
     def vars_for_template(self):
-        self.player.payoff_cem = round(self.player.participant.vars['payoff_cem']*0.02,2)
-        self.player.payoff_trust = round(self.player.participant.vars['payoff_trust']*0.02,2)
-        self.player.payoff_total = round(self.player.total_bonus+(self.player.participant.vars['payoff_trust']+self.player.participant.vars['payoff_cem'])*0.02,)
+        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem'] * 0.02), 2)
+        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust'] * 0.02), 2)
+        self.player.payoff_total = float(self.player.total_bonus + (self.player.participant.vars['payoff_trust'] + self.player.participant.vars['payoff_cem']) * 0.02)
 
         return {'id': self.player.id_in_group,
                 'payoff_trust':self.player.payoff_trust,

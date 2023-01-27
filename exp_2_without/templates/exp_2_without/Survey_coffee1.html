@@ -14,6 +14,7 @@ Coffee Selection Evaluation<br>
 
 
         <p style="line-height: 2em;">
+            {% if tasting_new == 0 %}
 1. What’s your most preferred option from five different types of coffee?
 {#<input type="text" name="coffee_like" ><br><br>#}
     <div class="controls">
@@ -23,7 +24,31 @@ Coffee Selection Evaluation<br>
          <input type="radio"  name="coffee_like" value="3"> Coffee4 <br>
          <input type="radio"  name="coffee_like" value="4"> Coffee5 <br>
     </div>
+        {{next_is}}<br>
+            {% elif tasting_new == 1 %}
+2. What’s your most preferred option from five different types of coffee?
+{#<input type="text" name="coffee_like" ><br><br>#}
+    <div class="controls">
+         <input type="radio"  name="coffee_like" value="0"> Coffee1 <br>
+         <input type="radio"  name="coffee_like" value="1"> Coffee2 <br>
+         <input type="radio"  name="coffee_like" value="2"> Coffee3 <br>
+         <input type="radio"  name="coffee_like" value="3"> Coffee4 <br>
+         <input type="radio"  name="coffee_like" value="4"> Coffee5 <br>
+    </div>
+        {{next_is}}<br>
 
+            {% else %}
+3. What’s your most preferred option from five different types of coffee?
+{#<input type="text" name="coffee_like" ><br><br>#}
+    <div class="controls">
+         <input type="radio"  name="coffee_like" value="0"> Coffee1 <br>
+         <input type="radio"  name="coffee_like" value="1"> Coffee2 <br>
+         <input type="radio"  name="coffee_like" value="2"> Coffee3 <br>
+         <input type="radio"  name="coffee_like" value="3"> Coffee4 <br>
+         <input type="radio"  name="coffee_like" value="4"> Coffee5 <br>
+    </div>
+        {{next_is}}<br>
+        {% endif %}
     </body>
 
 </html>
