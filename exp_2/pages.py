@@ -268,11 +268,11 @@ class Res1(Page):
         return self.player.participant.vars['consent'].lower() == 'consent'  or self.player.is_reject == 'rejected'
 
     def before_next_page(self):
+        self.player.show_res1 = 0
         self.player.test_round += 1
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
         self.player.test_times = 0
-
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
 
@@ -288,8 +288,9 @@ class Res12(Page):
                 }
 
     def is_displayed(self):
-
-        return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected'
+        print(self.player.show_res1)
+        return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected') \
+            and self.player.show_res2
 
     def before_next_page(self):
         self.player.test_round += 1
@@ -313,7 +314,8 @@ class Res123(Page):
                 }
 
     def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected'
+        return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected') \
+            and self.player.show_res3
 
     def before_next_page(self):
         self.player.test_round += 1
@@ -323,7 +325,6 @@ class Res123(Page):
 
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
-
 
 
 class SetPrice2(Page):

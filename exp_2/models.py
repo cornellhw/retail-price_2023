@@ -313,28 +313,38 @@ class Player(BasePlayer):
         return (w-Constants.miu)/Constants.sigma
 
     def set_payoff1(self):
+        print('set_payoff1')
+            # is_reject_prev = self.is_reject
         if self.W >= self.C:
             self.is_reject = 'accepted'
-            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,2)
+            self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20, 1)
         else:
             self.is_reject = 'rejected'
             self.cost_bonus = 0
+                # show res or not after setting price
+                # if is_reject_prev == 'accepted':
+            self.show_res1 = 0
+
         if self.test_round == 0:
             self.prob = self.fz(self.W)
-        elif self.test_round ==1:
+            self.show_res1 = 1
+        elif self.test_round == 1:
             w1 = float(self.logger_W_final.split(',')[0])
+            self.show_res2 = 1
             if self.W <= w1:
                 self.prob = 0
             else:
-                self.prob = (self.fz(self.W) - self.fz(w1))/(1-self.fz(w1))
+                self.prob = (self.fz(self.W) - self.fz(w1)) / (1 - self.fz(w1))
         else:
+            self.show_res3 = 1
+
             w1 = float(self.logger_W_final.split(',')[0])
             w2 = float(self.logger_W_final.split(',')[1])
             w_max = max(w1, w2)
             if self.W <= w_max:
                 self.prob = 0
             else:
-                self.prob = (self.fz(self.W) - self.fz(w_max)) / (1-self.fz(w_max))
+                self.prob = (self.fz(self.W) - self.fz(w_max)) / (1 - self.fz(w_max))
 
         self.prob = max(0, self.prob)
         self.prob = round(self.prob, 2)
@@ -350,6 +360,7 @@ class Player(BasePlayer):
             self.test_times += 1
         else:
             self.logger_W_final += str(self.W) + ','
+        # self.test_round+=1
         return
 
 
