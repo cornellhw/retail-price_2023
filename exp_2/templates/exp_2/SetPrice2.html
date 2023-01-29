@@ -8,17 +8,17 @@
 
 {% block content %}
 
-Procurement has successfully sourced one pound of coffee beans at a wholesale price of <b>W=({{ player.W }}).</b><br><br>
-Prior to making an offer, procurement assessed the quality of the coffee and assigned it an <b>overall quality score of {{player.coffee_like}} out of 5.</b><br><br>
+Procurement has successfully sourced one pound of coffee beans at a wholesale price of <b>W={{ player.W }}.</b><br><br>
+Prior to making an offer, procurement assessed the quality of the coffee and assigned it an <b>overall quality score of {{player.coffee_quality}} out of 5.</b><br><br>
 <b>Note: </b>one pound of coffee beans produces 28 drinkable cups of brewed coffee.<br><br>
-You may now set the retail price (R) for a cup of coffee made from these beans.<br><br>
+You may now set the retail price <i><b>(R)</b></i> for a cup of coffee made from these beans.<br><br>
 
     {% formfield 'R' label="Enter R here" %}<br>
 
     <input id="lock" class="btn btn-primary" name="lockin2" value="Test your current choice of R" onclick="checkSubmit2()">  </input> <br><br>
 You have earned a <u>cost savings bonus of ${{ cost_bonus }}.</u><br> <br>
-If you choose this retail price (R), then<br>
-- {{market_demand}}% of market demand would be satisfied, leaving {{coffee_not_used}} pounds of coffee unsold.<br>
+If you choose this retail price <i><b>(R)</b></i>, then<br>
+- {{market_demand}}% of market demand would be satisfied, leaving {{coffee_not_used}} pounds of coffee unsold<br>
 - You would earn a <u>revenue sharing bonus of ${{ profit_bonus }}</u><br>
 - Your firm’s profit would be ${{ earn }}<br>
 - Your total payment for today’s work would be ${{ total_bonus }}<br>

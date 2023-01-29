@@ -14,16 +14,27 @@ Coffee Tasting Evaluation<br>
 
 
         <p style="line-height: 2em;">
-5. On a scale of 1 to 5, where 1 is <u>poor</u> and 5 is <u> excellent</u>, please evaluate <b> the overall impression of the coffee</b> you selected based on its quality and complexity of its combined taste.
-{#<input type="text" name="coffee_like" ><br><br>#}
+            {% if tasting_new == 0 %}
+5. On a scale of 1 to 5, where 1 is <u>poor</u> and 5 is <u> excellent</u>, please evaluate <b> the overall impression of the coffee</b> you selected based on its quality and complexity {{next_is}}.
+{#<input type="text" name="coffee_impression" ><br><br>#}
     <div class="controls">
-         <input type="radio"  name="coffee_impression" value="0"> poor <br>
-         <input type="radio"  name="coffee_impression" value="1"> below average <br>
-         <input type="radio"  name="coffee_impression" value="2"> average <br>
-         <input type="radio"  name="coffee_impression" value="3"> above average <br>
+         <input type="radio"  name="coffee_impression" value="0"> very poor <br>
+         <input type="radio"  name="coffee_impression" value="1"> poor <br>
+         <input type="radio"  name="coffee_impression" value="2"> fair <br>
+         <input type="radio"  name="coffee_impression" value="3"> good <br>
          <input type="radio"  name="coffee_impression" value="4"> excellent <br>
     </div>
-
+            {% else %}
+5. On a scale of 1 to 5, where 1 is <u>poor</u> and 5 is <u> excellent</u>, please evaluate <b> the overall impression of the coffee</b> you selected based on its quality and complexity {{next_is}}.
+{#<input type="text" name="coffee_impression" ><br><br>#}
+    <div class="controls">
+         <input type="radio"  name="coffee_impression" value="0"> very poor <br>
+         <input type="radio"  name="coffee_impression" value="1"> poor <br>
+         <input type="radio"  name="coffee_impression" value="2"> fair <br>
+         <input type="radio"  name="coffee_impression" value="3"> good <br>
+         <input type="radio"  name="coffee_impression" value="4"> excellent <br>
+    </div>
+        {% endif %}
     </body>
 
 </html>

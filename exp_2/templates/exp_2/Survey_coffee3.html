@@ -14,16 +14,27 @@ Coffee Tasting Evaluation<br>
 
 
         <p style="line-height: 2em;">
-            3. On a scale of 1 to 5, where 1 is <u> extremely bitter </u> and 5 is <u> extremely sweet</u>, please evaluate <b> the sweetness of the coffee</b> you selected based on your tasting.
-{#<input type="text" name="coffee_like" ><br><br>#}
+            {% if tasting_new == 0 %}
+            3. On a scale of 1 to 5, where 1 is <u> extremely bitter </u> and 5 is <u> extremely sweet</u>, please evaluate <b> the sweetness of the coffee</b> {{next_is}}.
+{#<input type="text" name="coffee_sweetness" ><br><br>#}
     <div class="controls">
          <input type="radio"  name="coffee_sweetness" value="0"> extremely bitter <br>
-         <input type="radio"  name="coffee_sweetness" value="1"> poor <br>
+         <input type="radio"  name="coffee_sweetness" value="1"> slightly bitter <br>
          <input type="radio"  name="coffee_sweetness" value="2"> fair <br>
-         <input type="radio"  name="coffee_sweetness" value="3"> sweet <br>
+         <input type="radio"  name="coffee_sweetness" value="3"> slightly sweet <br>
          <input type="radio"  name="coffee_sweetness" value="4"> extremely sweet <br>
     </div>
-
+            {% else %}
+            3. On a scale of 1 to 5, where 1 is <u> extremely bitter </u> and 5 is <u> extremely sweet</u>, please evaluate <b> the sweetness of the coffee</b> {{next_is}}.
+{#<input type="text" name="coffee_sweetness" ><br><br>#}
+    <div class="controls">
+         <input type="radio"  name="coffee_sweetness" value="0"> extremely bitter <br>
+         <input type="radio"  name="coffee_sweetness" value="1"> slightly bitter <br>
+         <input type="radio"  name="coffee_sweetness" value="2"> fair <br>
+         <input type="radio"  name="coffee_sweetness" value="3"> slightly sweet <br>
+         <input type="radio"  name="coffee_sweetness" value="4"> extremely sweet <br>
+    </div>
+        {% endif %}
     </body>
 
 </html>

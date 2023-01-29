@@ -2,7 +2,6 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 
-
 class Consent(Page):
     form_model = 'player'
     form_fields = ['consent']
@@ -12,7 +11,6 @@ class Consent(Page):
         if errors:
             return 'you should select your answer'
 
-
 class Welcome(Page):
     def vars_for_template(self):
         self.group.init_setting()
@@ -20,16 +18,15 @@ class Welcome(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
-
 class Info(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
-
 class Summary(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
-
+    def before_next_page(self):
+        self.player.tast()
 
 class Survey_coffee1(Page):
     form_model = 'player'
@@ -43,10 +40,18 @@ class Survey_coffee1(Page):
         if errors:
             return 'you should select your answer'
 
-
 class Survey_coffee2(Page):
     form_model = 'player'
     form_fields = ['coffee_quality']
+
+    def vars_for_template(self):
+        if self.player.tasting_new == 0:
+            next_is = 'you selected based on the information provided'
+        else:
+            next_is = 'you selected based on your tasting'
+        return {'tasting_new': self.player.tasting_new,
+                'next_is': next_is
+                }
 
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
@@ -56,10 +61,18 @@ class Survey_coffee2(Page):
         if errors:
             return 'you should select your answer'
 
-
 class Survey_coffee3(Page):
     form_model = 'player'
     form_fields = ['coffee_sweetness']
+
+    def vars_for_template(self):
+        if self.player.tasting_new == 0:
+            next_is = 'you selected based on the information provided'
+        else:
+            next_is = 'you selected based on your tasting'
+        return {'tasting_new': self.player.tasting_new,
+                'next_is': next_is
+                }
 
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
@@ -74,6 +87,15 @@ class Survey_coffee4(Page):
     form_model = 'player'
     form_fields = ['coffee_flavor']
 
+    def vars_for_template(self):
+        if self.player.tasting_new == 0:
+            next_is = 'you selected based on the information provided'
+        else:
+            next_is = 'you selected based on your tasting'
+        return {'tasting_new': self.player.tasting_new,
+                'next_is': next_is
+                }
+
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
@@ -86,6 +108,15 @@ class Survey_coffee4(Page):
 class Survey_coffee5(Page):
     form_model = 'player'
     form_fields = ['coffee_impression']
+
+    def vars_for_template(self):
+        if self.player.tasting_new == 0:
+            next_is = 'conveyed in the information provided'
+        else:
+            next_is = 'of its combined taste'
+        return {'tasting_new': self.player.tasting_new,
+                'next_is': next_is
+                }
 
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
@@ -113,6 +144,15 @@ class Survey_coffee6(Page):
 class Survey_coffee7(Page):
     form_model = 'player'
     form_fields = ['coffee_drink']
+
+    def vars_for_template(self):
+        if self.player.tasting_new == 0:
+            next_is = 'Drink this coffee'
+        else:
+            next_is = 'Drink this coffee again'
+        return {'tasting_new': self.player.tasting_new,
+                'next_is': next_is
+                }
 
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
@@ -410,9 +450,9 @@ class Final(Page):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
     def vars_for_template(self):
-        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem']*0.02),2)
-        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust']*0.02),2)
-        self.player.payoff_total = round(float(self.player.total_bonus+(self.player.participant.vars['payoff_trust']+self.player.participant.vars['payoff_cem'])*0.02),)
+        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem'] * 0.02), 2)
+        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust'] * 0.02), 2)
+        self.player.payoff_total = float(self.player.total_bonus + (self.player.participant.vars['payoff_trust'] + self.player.participant.vars['payoff_cem']) * 0.02)
 
         return {'id': self.player.id_in_group,
                 'payoff_trust':self.player.payoff_trust,
@@ -424,7 +464,6 @@ page_sequence = []
 
 
 page_sequence += [
-    # Consent,
     Welcome,
                   Info,
                   Summary,

@@ -15,8 +15,8 @@ Coffee Tasting Evaluation<br>
 
 
         <p style="line-height: 2em;">
+            {% if tasting_new == 0 %}
 6. On a scale of 0 to 10, where 0 is <u> not at all likely </u> and 10 is <u> extremely likely</u>, how likely would you be to <b> Recommend this coffee to a friend or colleague</b>?
-
     <div class="controls">
                     Not at all likely
          <button type='button' id="lock" class="btn btn-light" name="coffee_recom" value="1" onclick="checkSubmit('0')"> 0 </button>
@@ -33,7 +33,6 @@ Coffee Tasting Evaluation<br>
          <button type='button' id="lock" class="btn btn-light" name="coffee_recom" value="1" onclick="checkSubmit('10')"> 10 </button>
         Extremely likely
     </div>
-
 
         <br><br>
      <button type="button" id="p" class="btn btn-primary" onclick="checkSubmit2()"> Next </button>
