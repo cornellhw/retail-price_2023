@@ -21,12 +21,22 @@ class Welcome(Page):
 class Info(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
-
-class Summary(Page):
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
     def before_next_page(self):
         self.player.tast()
+
+class Summary(Page):
+
+    def vars_for_template(self):
+        if self.player.tasting_new == 0:
+            next_is = 'based on your choice'
+        else:
+            next_is = 'based on your tasting and choice'
+        return {'tasting_new': self.player.tasting_new,
+                'next_is': next_is
+                }
+    def is_displayed(self):
+        return self.player.participant.vars['consent'].lower() == 'consent'
+
 
 class Survey_coffee1(Page):
     form_model = 'player'
