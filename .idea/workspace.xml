@@ -1,53 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Final.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Info.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Res1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Res1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Res12.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Res12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Res123.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Res123.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Res2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/SetPrice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/SetPrice2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee3.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee4.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee5.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee6.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee7.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Survey_coffee7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/_builtin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/pages.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Consent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Final.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Payment2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res123.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Res2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/SetPrice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/SetPrice2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Survey.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Survey1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Survey2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Survey3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Survey_coffee1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/templates/exp_2_without/Welcome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_without/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,13 +84,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00107" summary="description:new updates">
-      <created>1671477703357</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1671477703357</updated>
     </task>
     <task id="LOCAL-00108" summary="description:new updates">
       <created>1671478120606</created>
@@ -474,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674785381214</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="description:new updates">
+      <created>1675026341649</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1675026341649</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
