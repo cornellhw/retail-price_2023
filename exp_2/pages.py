@@ -256,9 +256,9 @@ class SetPrice(Page):
 class Res1(Page):
     def vars_for_template(self):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            next_info = 'Click the "next" button to make the supplier another offer!'
+            next_info = 'Click the "Next" button to make the supplier another offer!'
         else:
-            next_info = 'Click the "next" button to continue with the experiment!'
+            next_info = 'Click the "Next" button to continue with the experiment!'
         return {'is_reject': self.player.is_reject,
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
@@ -279,9 +279,9 @@ class Res1(Page):
 class Res12(Page):
     def vars_for_template(self):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            next_info = 'Click the "next" button to make the supplier another offer!'
+            next_info = 'Click the "Next" button to make the supplier another offer!'
         else:
-            next_info = 'Click the "next" button to continue with the experiment! '
+            next_info = 'Click the "Next" button to continue with the experiment! '
         return {'is_reject': self.player.is_reject,
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
@@ -305,9 +305,9 @@ class Res12(Page):
 class Res123(Page):
     def vars_for_template(self):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            next_info = 'Click the "next" button to finish the post-experiment survey!'
+            next_info = 'Click the "Next" button to finish the post-experiment survey!'
         else:
-            next_info = 'Click the "next" button to continue with the experiment! '
+            next_info = 'Click the "Next" button to continue with the experiment! '
         return {'is_reject': self.player.is_reject,
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info

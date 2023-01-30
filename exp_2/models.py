@@ -20,7 +20,7 @@ class Constants(BaseConstants):
     a1 = 0.2
     a2, u2, l2 = 0.2, 7, 1
 
-    lower, upper = 2, 10
+    lower, upper = 0, 10
     miu, sigma = 6, 0.5
     F=5
     tasting = 0
@@ -68,7 +68,6 @@ class Player(BasePlayer):
     optimal_cost_bonus = models.FloatField(initial=0)
     optimal_profit_bonus = models.FloatField(initial=0)
     optimal_total_bonus = models.FloatField(initial=0)
-    optimal_sell = models.IntegerField()
     optimal_earn = models.FloatField(initial=0)
     profit_bonus = models.FloatField(initial=0)
     total_bonus = models.FloatField(initial=0)
