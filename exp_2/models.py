@@ -105,9 +105,9 @@ class Player(BasePlayer):
         # initial='0'
     )
     coffee_where = models.StringField(
-        choices=[['6', 'Make at home'], ['5', 'Make at work'], ['4', 'Dine in at a coffee shop'],
-                 ['3', 'Take out from a coffee shop'], ['2', 'Prefer not to answer'],['1', 'Prefer not to answer'],
-                 ['0', 'other']],
+        choices=[['5', 'Make at home'], ['4', 'Make at work'], ['3', 'Dine in at a coffee shop'],
+                 ['2', 'Take out from a coffee shop'],['0', 'Prefer not to answer'],
+                 ['1', 'Other']],
         label='2. Where do you get your coffee most frequently?',
         widget=widgets.RadioSelect,
         # initial='0'
@@ -241,7 +241,7 @@ class Player(BasePlayer):
     )
     age = models.IntegerField(label="21. What is your age? (years)", min=5, max=125)
     gender = models.StringField(
-        choices=[['0', 'Male'], ['1', 'Female'], ['2', 'Non-binary/third gender'], ['3', 'Prefer not to answer'],
+        choices=[['1', 'Male'], ['2', 'Female'], ['3', 'Non-binary/third gender'], ['0', 'Prefer not to answer'],
                  ['4', 'Prefer to self-describe']],
         label='22. How do you describe your gender?',
         widget=widgets.RadioSelect,
@@ -258,16 +258,16 @@ class Player(BasePlayer):
     describe_other_string = models.StringField(initial='', blank=True)
     describe_Prefer = models.StringField(initial='0', blank=True)
     edu = models.StringField(
-        choices=[['0', 'Some or no high school'], ['1', 'High school degree or equivalent'], ['2', 'Some college'], ['3', 'Associate’s degree or equivalent'],
-                 ['4', 'Bachelor’s degree or equivalent'],['5', 'Graduate degree or equivalent'],['6', 'Prefer not to answer']],
+        choices=[['1', 'Some or no high school'], ['2', 'High school degree or equivalent'], ['3', 'Some college'], ['4', 'Associate’s degree or equivalent'],
+                 ['5', 'Bachelor’s degree or equivalent'],['6', 'Graduate degree or equivalent'],['0', 'Prefer not to answer']],
         label='24. What is the highest level of education you have completed?',
         widget=widgets.RadioSelect,
     )
 
     major = models.StringField(
-        choices=[['0', 'Business Administration'], ['1', 'Social Sciences (Anthro., Pol. Science, History)'], ['2', 'Economics'],
-                 ['3', 'Sciences (Bio., Physics, Math, Chem.)'],
-                 ['4', 'Medicine'],['5', 'Engineering'],['6', 'Law'],['7', 'Arts and Humanities'],['8', 'Architecture and Design'],['9', 'Prefer not to answer'],
+        choices=[['1', 'Business Administration'], ['2', 'Social Sciences (Anthro., Pol. Science, History)'], ['3', 'Economics'],
+                 ['4', 'Sciences (Bio., Physics, Math, Chem.)'],
+                 ['5', 'Medicine'],['6', 'Engineering'],['7', 'Law'],['8', 'Arts and Humanities'],['9', 'Architecture and Design'],['0', 'Prefer not to answer'],
                  ['10', 'Other']],
         label='25. If you are currently or have previously attended college, what is or was your major?',
         widget=widgets.RadioSelect,
@@ -275,37 +275,37 @@ class Player(BasePlayer):
     major_string = models.StringField(label='', blank=True)
 
     parents = models.StringField(
-        choices=[['0', 'Some or no high school'], ['1', 'High school degree or equivalent'], ['2', 'Some college'], ['3', 'Associate’s degree or equivalent'],
-                 ['4', 'Bachelor’s degree or equivalent'],['5', 'Graduate degree or equivalent'],['6', 'Prefer not to answer']],
+        choices=[['1', 'Some or no high school'], ['2', 'High school degree or equivalent'], ['3', 'Some college'], ['4', 'Associate’s degree or equivalent'],
+                 ['5', 'Bachelor’s degree or equivalent'],['6', 'Graduate degree or equivalent'],['0', 'Prefer not to answer']],
         label='26. What is the highest level of education completed by either of your parents? ',
         widget=widgets.RadioSelect,
     )
 
     employment  = models.StringField(
-        choices=[['0', 'Working full-time'], ['1', 'Working part-time'], ['2', 'Unemployed and looking for work'], ['3', 'A homemaker or stay-at-home parents'],
-                 ['4', 'Student'],['5', 'Retired'],['6', 'Prefer not to answer'], ['7','Other']],
+        choices=[['1', 'Working full-time'], ['2', 'Working part-time'], ['3', 'Unemployed and looking for work'], ['4', 'A homemaker or stay-at-home parents'],
+                 ['5', 'Student'],['6', 'Retired'],['0', 'Prefer not to answer'], ['7','Other']],
         label='27. What best describes your employment status over the last three months?',
         widget=widgets.RadioSelect,
     )
     employment_string = models.StringField(label='', blank=True)
 
     income = models.StringField(
-        choices=[['0', 'Less than $10,000'], ['1', '$10,000 to $19,999'], ['2', '$20,000 to $29,999'], ['3', '$30,000 to $39,999'],
-                 ['4', '$40,000 to $49,999'],['5', '$50,000 to $59,999'],['6', '$60,000 to $69,999'], ['7','$70,000 to $79,999'],
-                 ['8', '$80,000 to $89,999'],['9', '$90,000 to $99,999'],['10', '$100,000 to $149,999'], ['11','$150,000 or more'],
-                 ['12', 'Prefer not to answer']
+        choices=[['1', 'Less than $10,000'], ['2', '$10,000 to $19,999'], ['3', '$20,000 to $29,999'], ['4', '$30,000 to $39,999'],
+                 ['5', '$40,000 to $49,999'],['6', '$50,000 to $59,999'],['7', '$60,000 to $69,999'], ['8','$70,000 to $79,999'],
+                 ['9', '$80,000 to $89,999'],['10', '$90,000 to $99,999'],['11', '$100,000 to $149,999'], ['12','$150,000 or more'],
+                 ['0', 'Prefer not to answer']
                  ],
         label='28. What was your total household income before taxes during the past 12 months?',
         widget=widgets.RadioSelect,
     )
     marital = models.StringField(
-        choices=[['0', 'Married'], ['1', 'Living with a partner'], ['2', 'Widowed'], ['3', 'Divorced'],
-                 ['4', 'Separated '],['5', 'Never married'],['6', 'Prefer not to answer ']],
+        choices=[['1', 'Married'], ['2', 'Living with a partner'], ['3', 'Widowed'], ['4', 'Divorced'],
+                 ['5', 'Separated '],['6', 'Never married'],['0', 'Prefer not to answer ']],
         label='29. What is your current marital status?',
         widget=widgets.RadioSelect,
     )
     children  = models.StringField(
-        choices=[['0', 'Yes'], ['1', 'No'], ['2', 'Prefer not to answer']],
+        choices=[['1', 'Yes'], ['2', 'No'], ['0', 'Prefer not to answer']],
         label='30. Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,
     )
