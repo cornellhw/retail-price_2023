@@ -466,8 +466,8 @@ class Final(Page):
         self.player.payoff_total = float(self.player.total_bonus + (self.player.participant.vars['payoff_trust'] + self.player.participant.vars['payoff_cem']) * 0.02)
 
         return {'id': self.player.id_in_group,
-                'payoff_trust':f'{self.player.payoff_trust:2f}',
-                'payoff_cem':f'{self.player.payoff_cem:2f}',
+                'payoff_trust':self.player.payoff_trust,
+                'payoff_cem':self.player.payoff_cem,
                 'payoff_all': self.player.payoff_total}
 
 

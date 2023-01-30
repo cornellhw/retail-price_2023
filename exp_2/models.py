@@ -193,14 +193,14 @@ class Player(BasePlayer):
     count_on_strangers = models.StringField(
         choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
         ['0', 'Prefer not to answer']],
-        label='14. Do you agree or disagree with the following statement: "You cannot count on strangers anymore"',
+        label='14. Do you agree or disagree with the following statement: "You cannot count on strangers anymore".',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     deal_with_strangers = models.StringField(
         choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
         ['0', 'Prefer not to answer']],
-    label='15. Do you agree or disagree with the following statement: "When dealing with strangers, one is better off using caution before trusting them"',
+    label='15. Do you agree or disagree with the following statement: "When dealing with strangers, one is better off using caution before trusting them".',
         widget=widgets.RadioSelect,
         # initial='0'
     )
