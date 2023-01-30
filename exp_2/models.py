@@ -350,7 +350,7 @@ class Player(BasePlayer):
                 self.prob = (self.fz(self.W) - self.fz(w_max)) / (1 - self.fz(w_max))
 
         self.prob = max(0, self.prob)
-        self.prob = round(self.prob, 4)
+        self.prob = round(self.prob, 3)
 
         self.optimal_R = round(self.session.config['u2'] / 2,2)
         self.optimal_profit_bonus = round(self.session.config['a2'] * self.optimal_R * (28 * (1-(self.optimal_R-1)/6)),2)
