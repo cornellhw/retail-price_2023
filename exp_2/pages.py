@@ -461,13 +461,13 @@ class Final(Page):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
     def vars_for_template(self):
-        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem'] * 0.02), 2)
-        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust'] * 0.02), 2)
+        self.player.payoff_cem = float(self.player.participant.vars['payoff_cem'] * 0.02)
+        self.player.payoff_trust = float(self.player.participant.vars['payoff_trust'] * 0.02)
         self.player.payoff_total = float(self.player.total_bonus + (self.player.participant.vars['payoff_trust'] + self.player.participant.vars['payoff_cem']) * 0.02)
 
         return {'id': self.player.id_in_group,
-                'payoff_trust':self.player.payoff_trust,
-                'payoff_cem':self.player.payoff_cem,
+                'payoff_trust':f'{self.player.payoff_trust:2f}',
+                'payoff_cem':f'{self.player.payoff_cem:2f}',
                 'payoff_all': self.player.payoff_total}
 
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
-      <change beforePath="$PROJECT_DIR$/exp_2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/pages.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00116" summary="description:new updates">
-      <created>1671553087002</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1671553087002</updated>
     </task>
     <task id="LOCAL-00117" summary="description:new updates">
       <created>1671553429019</created>
@@ -430,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675112100538</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="description:new updates">
+      <created>1675112232622</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1675112232622</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
