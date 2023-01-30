@@ -48,7 +48,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     W = models.FloatField(label='Enter W here', max=10, initial=0)
-    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=2, max=10, initial=0)
+    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=1, max=10, initial=0)
     C = models.FloatField(initial=0)
 
     purchase_success = models.IntegerField(initial=0)
@@ -193,14 +193,14 @@ class Player(BasePlayer):
     count_on_strangers = models.StringField(
         choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
         ['0', 'Prefer not to answer']],
-        label='14. Do you agree or disagree with the following statement: "You cannot count on strangers anymore',
+        label='14. Do you agree or disagree with the following statement: "You cannot count on strangers anymore"',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     deal_with_strangers = models.StringField(
         choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
         ['0', 'Prefer not to answer']],
-    label='15. Do you agree or disagree with the following statement: "When dealing with strangers, one is better off using caution before trusting them',
+    label='15. Do you agree or disagree with the following statement: "When dealing with strangers, one is better off using caution before trusting them"',
         widget=widgets.RadioSelect,
         # initial='0'
     )
@@ -228,14 +228,14 @@ class Player(BasePlayer):
     car = models.StringField(
         choices=[['5', 'Strongly agree'], ['4', 'Somewhat agree'], ['3', 'Indifferent'], ['2', 'Somewhat disagree'],['1', 'Strongly disagree'],
                  ['0', 'Prefer not to answer']],
-        label='19. Ignoring cost differences, how strongly do you agree with this statement: I would rather drive a well-maintained used car than a brand new one',
+        label='19. Ignoring cost differences, how strongly do you agree with this statement: I would rather drive a well-maintained used car than a brand new one.',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     frequency_shoes = models.StringField(
         choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
                  ['0', 'Prefer not to answer']],
-        label='20. How frequently do you think about the day-to-day lives of the people who made your shoes',
+        label='20. How frequently do you think about the day-to-day lives of the people who made your shoes.',
         widget=widgets.RadioSelect,
         # initial='0'
     )

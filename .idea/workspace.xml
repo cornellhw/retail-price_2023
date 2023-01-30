@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Res2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00113" summary="description:new updates">
-      <created>1671552442626</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1671552442627</updated>
     </task>
     <task id="LOCAL-00114" summary="description:new updates">
       <created>1671552585310</created>
@@ -430,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675108592955</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="description:new updates">
+      <created>1675109494921</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1675109494921</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
