@@ -10,6 +10,7 @@ from otree.api import (
 
 import random
 import math
+from scipy.stats import norm
 
 doc = """
 Simple coffee experiment
@@ -81,6 +82,9 @@ class Player(BasePlayer):
     payoff_trust = models.FloatField(initial=0)
     payoff_cem = models.FloatField(initial=0)
     payoff_total = models.FloatField(initial=0)
+    show_res1 = models.IntegerField(initial=0)
+    show_res2 = models.IntegerField(initial=0)
+    show_res3 = models.IntegerField(initial=0)
 
     coffee_like = models.StringField(blank=True)
     coffee_quality = models.StringField(blank=True)
@@ -310,7 +314,7 @@ class Player(BasePlayer):
         self.tasting_new = self.session.config['tasting']
 
     def fz(self, w):
-        return (w-Constants.miu)/Constants.sigma
+        return norm.cdf((w-Constants.miu)/Constants.sigma)
 
     def set_payoff1(self):
         print('set_payoff1')

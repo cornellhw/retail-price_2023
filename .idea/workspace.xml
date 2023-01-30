@@ -4,7 +4,7 @@
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/retail-price.otreezip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +88,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00110" summary="description:new updates">
-      <created>1671478778854</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1671478778854</updated>
     </task>
     <task id="LOCAL-00111" summary="description:new updates">
       <created>1671478930607</created>
@@ -432,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675028314991</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="description:new updates">
+      <created>1675029103341</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1675029103342</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
