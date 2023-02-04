@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cem/templates/cem/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/cem/templates/cem/Instructions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Payment2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Payment2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Res2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,20 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00122" summary="description:new updates">
-      <created>1672166428536</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1672166428536</updated>
-    </task>
-    <task id="LOCAL-00123" summary="description:new updates">
-      <created>1672166631114</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1672166631114</updated>
     </task>
     <task id="LOCAL-00124" summary="description:new updates">
       <created>1672166649491</created>
@@ -431,7 +420,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675475573635</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="description:new updates">
+      <created>1675487137887</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1675487137888</updated>
+    </task>
+    <task id="LOCAL-00172" summary="description:new updates">
+      <created>1675487425585</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1675487425585</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
