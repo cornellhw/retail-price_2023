@@ -20,9 +20,20 @@ class Consent(Page):
     #     if values['consent'].lower() != 'consent':
     #         return 'Please press consent to begin the experiment.'
     #
+class passcode(Page):
+    form_model = 'player'
+    form_fields = ['passcode_new']
+
+    def is_displayed(self):
+        return self.player.participant.vars['consent'].lower() == 'consent'
+
+    def error_message(self, values):
+        errors = [1 for f in values if values[f] !=self.session.config['passcode_correct']]
+        if errors:
+            return 'Your passcode is incorrect'
 
 
 page_sequence = []
 
 
-page_sequence += [Consent, ]
+page_sequence += [Consent,passcode,]
