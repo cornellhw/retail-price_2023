@@ -463,7 +463,7 @@ class Final(Page):
     def vars_for_template(self):
         self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem']) * 0.02,2)
         self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust']) * 0.02,2)
-        self.player.payoff_total = round((float(self.player.total_bonus) + float(self.player.participant.vars['payoff_trust']) + float(self.player.participant.vars['payoff_cem'])) * 0.02,2)
+        self.player.payoff_total = round((float(self.player.total_bonus) + float(self.player.payoff_cem) + float(self.player.payoff_trust)),2)
 
         return {'id': self.player.id_in_group,
                 'payoff_trust':self.player.payoff_trust,
