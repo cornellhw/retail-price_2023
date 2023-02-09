@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2/templates/exp_2/Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/templates/exp_2/Summary.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00135" summary="description:new updates">
-      <created>1674402514108</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1674402514108</updated>
     </task>
     <task id="LOCAL-00136" summary="description:new updates">
       <created>1674403711295</created>
@@ -431,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675979546063</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="description:new updates">
+      <created>1675981008271</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1675981008271</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
