@@ -30,7 +30,7 @@ class passcode(Page):
     def error_message(self, values):
         errors = [1 for f in values if values[f] !=self.session.config['passcode_correct']]
         if errors:
-            return 'Your passcode is incorrect'
+            return 'Your password is incorrect'
 
 
 page_sequence = []

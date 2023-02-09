@@ -30,6 +30,6 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     consent = models.StringField(initial='')
-    passcode_new = models.StringField(label="Please enter the passcode to start the experiment",blank=True)
+    passcode_new = models.StringField(label="Please enter the password to start the experiment:",blank=True)
 
 
