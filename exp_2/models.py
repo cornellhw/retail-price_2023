@@ -24,6 +24,7 @@ class Constants(BaseConstants):
     miu, sigma = 6, 0.5
     F=5
     tasting = 0
+    passcode_second = ''
     name_in_url = 'exp_2'
     players_per_group = None
     num_rounds = 1
@@ -64,6 +65,7 @@ class Player(BasePlayer):
     test_times2 = models.IntegerField(initial=0)
 
     tasting_new = models.IntegerField(initial=0)
+    passcode_2 = models.StringField(label="Please enter the password to continue with the experiment:",blank=True)
     optimal_R = models.FloatField(initial=0)
     optimal_cost_bonus = models.FloatField(initial=0)
     optimal_profit_bonus = models.FloatField(initial=0)

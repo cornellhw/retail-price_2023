@@ -37,6 +37,17 @@ class Summary(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
+class passcode(Page):
+    form_model = 'player'
+    form_fields = ['passcode_2']
+
+    def is_displayed(self):
+        return self.player.participant.vars['consent'].lower() == 'consent'
+
+    def error_message(self, values):
+        errors = [1 for f in values if values[f] !=self.session.config['passcode_second']]
+        if errors:
+            return 'Your password is incorrect'
 
 class Survey_coffee1(Page):
     form_model = 'player'
@@ -478,6 +489,7 @@ page_sequence += [
     Welcome,
                   Info,
                   Summary,
+                  passcode,
                   Survey_coffee1,
                   Survey_coffee2,
                   Survey_coffee3,

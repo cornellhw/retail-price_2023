@@ -24,7 +24,8 @@ SESSION_CONFIGS = [
         miu=6,
         sigma=0.5,
         tasting = 0,
-        passcode_correct = ''
+        passcode_first = '',
+        passcode_second = ''
     ),
 ]
 

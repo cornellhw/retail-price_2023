@@ -22,13 +22,13 @@ class Consent(Page):
     #
 class passcode(Page):
     form_model = 'player'
-    form_fields = ['passcode_new']
+    form_fields = ['passcode_1']
 
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
     def error_message(self, values):
-        errors = [1 for f in values if values[f] !=self.session.config['passcode_correct']]
+        errors = [1 for f in values if values[f] !=self.session.config['passcode_first']]
         if errors:
             return 'Your password is incorrect'
 
