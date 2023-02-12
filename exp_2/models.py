@@ -99,152 +99,152 @@ class Player(BasePlayer):
 
 
     coffee_howoften = models.StringField(
-        choices=[['7', 'Multiple times daily'], ['6', 'Daily'], ['5', 'Weekly'], ['4', 'Monthly'], ['3', 'Bi-Monthly'],
-                 ['2', 'Seasonally'], ['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Multiple daily', 'Multiple times daily'], ['Daily', 'Daily'], ['Weekly', 'Weekly'], ['Monthly', 'Monthly'], ['Bi-Monthly', 'Bi-Monthly'],
+                 ['Seasonally', 'Seasonally'], ['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='1. How often do you drink the coffee?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     coffee_where = models.StringField(
-        choices=[['5', 'Make at home'], ['4', 'Make at work'], ['3', 'Dine in at a coffee shop'],
-                 ['2', 'Take out from a coffee shop'],['0', 'Prefer not to answer'],
-                 ['1', 'Other']],
+        choices=[['Home', 'Make at home'], ['Work', 'Make at work'], ['Dine_coffee shop', 'Dine in at a coffee shop'],
+                 ['Take out_coffee shop', 'Take out from a coffee shop'],['Not_to_answer', 'Prefer not to answer'],
+                 ['Other', 'Other']],
         label='2. Where do you get your coffee most frequently?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     coffee_where_string = models.StringField(label='', blank=True)
     door_unlocked = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='3. How often do you leave your door unlocked?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lend_money = models.StringField(
-        choices=[['4', 'More than once a week'], ['3', 'About once a week'], ['2', 'About once a month'],['1', 'Once a year or less'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['More_once a week', 'More than once a week'], ['Once a week', 'About once a week'], ['Once a month', 'About once a month'],['Once a year', 'Once a year or less'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='4. How often do you lend money to your friends?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lend_personal = models.StringField(
-        choices=[['4', 'More than once a week'], ['3', 'About once a week'], ['2', 'About once a month'],['1', 'Once a year or less'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['More_once a week', 'More than once a week'], ['Once a week', 'About once a week'], ['Once a month', 'About once a month'],['Once a year', 'Once a year or less'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='5. How often do you lend personal possessions to friends (e.g., CDs, clothes, bicycle, etc.)?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_parents = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='6. How often do you lie to your parents?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_roommates = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='7. How often do you lie to your roommates?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_acquaintances = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='8. How often do you lie to your acquaintances?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_friends = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='9. How often do you lie to your close friends?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     lie_partner = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='10. How often do you lie to your partner?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     take_advantage = models.StringField(
-        choices=[['2', 'Would take advantage of you'], ['1', 'Would try to be fair'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['0', 'Would take advantage of you'], ['1', 'Would try to be fair'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='11. Do you think most people would try to take advantage of you if they got a chance, or would they try to be fair?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     try_to_be_helpful = models.StringField(
-        choices=[['2', 'Try to be helpful'], ['1', 'Just look out for themselves'],
-            ['0', 'Prefer not to answer']],
+        choices=[['0', 'Try to be helpful'], ['1', 'Just look out for themselves'],
+            ['Not_to_answer', 'Prefer not to answer']],
         label='12. Would you say that most of the time people try to be helpful, or that they are mostly just looking out for themselves?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     trust = models.StringField(
-        choices=[['2', 'Most people can be trusted'], ['1', 'Cannot be too careful'],
-        ['0', 'Prefer not to answer']],
+        choices=[['0', 'Most people can be trusted'], ['1', 'Cannot be too careful'],
+        ['Not_to_answer', 'Prefer not to answer']],
     label='13. Generally speaking, would you say that most people can be trusted or that you can not be too careful in dealing with people?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     count_on_strangers = models.StringField(
-        choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
-        ['0', 'Prefer not to answer']],
+        choices=[['0', 'More or less agree'], ['1', 'More or less disagree'],
+        ['Not_to_answer', 'Prefer not to answer']],
         label='14. Do you agree or disagree with the following statement: "You cannot count on strangers anymore".',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     deal_with_strangers = models.StringField(
-        choices=[['2', 'More or less agree'], ['1', 'More or less disagree'],
-        ['0', 'Prefer not to answer']],
+        choices=[['0', 'More or less agree'], ['1', 'More or less disagree'],
+        ['Not_to_answer', 'Prefer not to answer']],
     label='15. Do you agree or disagree with the following statement: "When dealing with strangers, one is better off using caution before trusting them".',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     recycle = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-        ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+        ['Not_to_answer', 'Prefer not to answer']],
     label='16. How often do you recycle?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     more_pay_fair_trade = models.StringField(
-        choices=[['1', 'Nothing'], ['2', '1 Dollar'], ['3', '2 Dollars'], ['4', '3 Dollars'],['5', '4 Dollars or more'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Nothing', 'Nothing'], ['1 Dollar', '1 Dollar'], ['2 Dollars', '2 Dollars'], ['3 Dollars', '3 Dollars'],['4 Dollars_more', '4 Dollars or more'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='17. How much more would you pay for a cup of Fair Trade coffee?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     frequency_not_buy = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='18. How frequently do you not buy something that you want, due to where it was made?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     car = models.StringField(
-        choices=[['5', 'Strongly agree'], ['4', 'Somewhat agree'], ['3', 'Indifferent'], ['2', 'Somewhat disagree'],['1', 'Strongly disagree'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Strongly agree', 'Strongly agree'], ['Somewhat agree', 'Somewhat agree'], ['Indifferent', 'Indifferent'], ['Somewhat disagree', 'Somewhat disagree'],['Strongly disagree', 'Strongly disagree'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='19. Ignoring cost differences, how strongly do you agree with this statement: I would rather drive a well-maintained used car than a brand new one.',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     frequency_shoes = models.StringField(
-        choices=[['5', 'Very often'], ['4', 'Often'], ['3', 'Sometimes'], ['2', 'Rarely'],['1', 'Never'],
-                 ['0', 'Prefer not to answer']],
+        choices=[['Very often', 'Very often'], ['Often', 'Often'], ['Sometimes', 'Sometimes'], ['Rarely', 'Rarely'],['Never', 'Never'],
+                 ['Not_to_answer', 'Prefer not to answer']],
         label='20. How frequently do you think about the day-to-day lives of the people who made your shoes.',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     age = models.IntegerField(label="21. What is your age? (years)", min=5, max=125)
     gender = models.StringField(
-        choices=[['1', 'Male'], ['2', 'Female'], ['3', 'Non-binary/third gender'], ['0', 'Prefer not to answer'],
-                 ['4', 'Prefer to self-describe']],
+        choices=[['Male', 'Male'], ['Female', 'Female'], ['third gender', 'Non-binary/third gender'], ['Not_to_answer', 'Prefer not to answer'],
+                 ['self-describe', 'Prefer to self-describe']],
         label='22. How do you describe your gender?',
         widget=widgets.RadioSelect,
     )
@@ -260,54 +260,54 @@ class Player(BasePlayer):
     describe_other_string = models.StringField(initial='', blank=True)
     describe_Prefer = models.StringField(initial='0', blank=True)
     edu = models.StringField(
-        choices=[['1', 'Some or no high school'], ['2', 'High school degree or equivalent'], ['3', 'Some college'], ['4', 'Associate’s degree or equivalent'],
-                 ['5', 'Bachelor’s degree or equivalent'],['6', 'Graduate degree or equivalent'],['0', 'Prefer not to answer']],
+        choices=[['No high school', 'Some or no high school'], ['High school', 'High school degree or equivalent'], ['College', 'Some college'], ['Associate', 'Associate’s degree or equivalent'],
+                 ['Bachelor', 'Bachelor’s degree or equivalent'],['Graduate', 'Graduate degree or equivalent'],['Not_to_answer', 'Prefer not to answer']],
         label='24. What is the highest level of education you have completed?',
         widget=widgets.RadioSelect,
     )
 
     major = models.StringField(
-        choices=[['1', 'Business Administration'], ['2', 'Social Sciences (Anthro., Pol. Science, History)'], ['3', 'Economics'],
-                 ['4', 'Sciences (Bio., Physics, Math, Chem.)'],
-                 ['5', 'Medicine'],['6', 'Engineering'],['7', 'Law'],['8', 'Arts and Humanities'],['9', 'Architecture and Design'],['0', 'Prefer not to answer'],
-                 ['10', 'Other']],
+        choices=[['Business', 'Business Administration'], ['Social Sciences', 'Social Sciences (Anthro., Pol. Science, History)'], ['Economics', 'Economics'],
+                 ['Sciences', 'Sciences (Bio., Physics, Math, Chem.)'],
+                 ['Medicine', 'Medicine'],['Engineering', 'Engineering'],['Law', 'Law'],['Arts', 'Arts and Humanities'],['Architecture', 'Architecture and Design'],['Not_to_answer', 'Prefer not to answer'],
+                 ['Other', 'Other']],
         label='25. If you are currently or have previously attended college, what is or was your major?',
         widget=widgets.RadioSelect,
     )
     major_string = models.StringField(label='', blank=True)
 
     parents = models.StringField(
-        choices=[['1', 'Some or no high school'], ['2', 'High school degree or equivalent'], ['3', 'Some college'], ['4', 'Associate’s degree or equivalent'],
-                 ['5', 'Bachelor’s degree or equivalent'],['6', 'Graduate degree or equivalent'],['0', 'Prefer not to answer']],
+        choices=[['No high school', 'Some or no high school'], ['High school', 'High school degree or equivalent'], ['College', 'Some college'], ['Associate', 'Associate’s degree or equivalent'],
+                 ['Bachelor', 'Bachelor’s degree or equivalent'],['Graduate', 'Graduate degree or equivalent'],['Not_to_answer', 'Prefer not to answer']],
         label='26. What is the highest level of education completed by either of your parents? ',
         widget=widgets.RadioSelect,
     )
 
     employment  = models.StringField(
-        choices=[['1', 'Working full-time'], ['2', 'Working part-time'], ['3', 'Unemployed and looking for work'], ['4', 'A homemaker or stay-at-home parents'],
-                 ['5', 'Student'],['6', 'Retired'],['0', 'Prefer not to answer'], ['7','Other']],
+        choices=[['Full-time', 'Working full-time'], ['Part-time', 'Working part-time'], ['Unemployed', 'Unemployed and looking for work'], ['Homemaker', 'A homemaker or stay-at-home parents'],
+                 ['Student', 'Student'],['Retired', 'Retired'],['Not_to_answer', 'Prefer not to answer'], ['Other','Other']],
         label='27. What best describes your employment status over the last three months?',
         widget=widgets.RadioSelect,
     )
     employment_string = models.StringField(label='', blank=True)
 
     income = models.StringField(
-        choices=[['1', 'Less than $10,000'], ['2', '$10,000 to $19,999'], ['3', '$20,000 to $29,999'], ['4', '$30,000 to $39,999'],
-                 ['5', '$40,000 to $49,999'],['6', '$50,000 to $59,999'],['7', '$60,000 to $69,999'], ['8','$70,000 to $79,999'],
-                 ['9', '$80,000 to $89,999'],['10', '$90,000 to $99,999'],['11', '$100,000 to $149,999'], ['12','$150,000 or more'],
-                 ['0', 'Prefer not to answer']
+        choices=[['less_$10,000', 'Less than $10,000'], ['$10,000-$19,999', '$10,000 to $19,999'], ['$20,000-$29,999', '$20,000 to $29,999'], ['$30,000-$39,999', '$30,000 to $39,999'],
+                 ['$40,000-$49,999', '$40,000 to $49,999'],['$50,000-$59,999', '$50,000 to $59,999'],['$60,000-$69,999', '$60,000 to $69,999'], ['$70,000-$79,999','$70,000 to $79,999'],
+                 ['$80,000-$89,999', '$80,000 to $89,999'],['$90,000-$99,999', '$90,000 to $99,999'],['$100,000-$149,999', '$100,000 to $149,999'], ['$150,000_more','$150,000 or more'],
+                 ['Not_to_answer', 'Prefer not to answer']
                  ],
         label='28. What was your total household income before taxes during the past 12 months?',
         widget=widgets.RadioSelect,
     )
     marital = models.StringField(
-        choices=[['1', 'Married'], ['2', 'Living with a partner'], ['3', 'Widowed'], ['4', 'Divorced'],
-                 ['5', 'Separated '],['6', 'Never married'],['0', 'Prefer not to answer ']],
+        choices=[['Married', 'Married'], ['Living_with_partner', 'Living with a partner'], ['Widowed', 'Widowed'], ['Divorced', 'Divorced'],
+                 ['Separated', 'Separated'],['Never married', 'Never married'],['Not_to_answer', 'Prefer not to answer']],
         label='29. What is your current marital status?',
         widget=widgets.RadioSelect,
     )
     children  = models.StringField(
-        choices=[['1', 'Yes'], ['2', 'No'], ['0', 'Prefer not to answer']],
+        choices=[['0', 'Yes'], ['1', 'No'], ['Not_to_answer', 'Prefer not to answer']],
         label='30. Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,
     )
