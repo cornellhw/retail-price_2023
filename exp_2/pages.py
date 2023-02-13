@@ -358,6 +358,11 @@ class SetPrice2(Page):
         else:
             return False
 
+    def error_message(self, values):
+        errors = [1 for f in values if not values[f]]
+        if errors:
+            return 'Number must be between 1 and 7'
+
     def before_next_page(self):
         # self.player.price_check()
         self.player.set_payoff2()
