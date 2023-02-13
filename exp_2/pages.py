@@ -365,7 +365,7 @@ class SetPrice2(Page):
     def vars_for_template(self):
         if self.player.test_times2 == 0:
             earn =  'XXX'
-            cost_bonus = 'XXX'
+            cost_bonus = self.player.cost_bonus
             profit_bonus =  'XXX'
             total_bonus =  'XXX'
             market_demand =  'XXX'
