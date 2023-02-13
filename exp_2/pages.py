@@ -316,7 +316,7 @@ class Res12(Page):
 class Res123(Page):
     def vars_for_template(self):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            next_info = 'Click the "Next" button to finish the post-experiment survey!'
+            next_info = 'Click the "Next" button to finish the post-experimental survey!'
         else:
             next_info = 'Click the "Next" button to continue with the experiment! '
         return {'is_reject': self.player.is_reject,
