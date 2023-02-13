@@ -49,7 +49,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     W = models.FloatField(label='Enter W here', max=10, initial=0)
-    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=1, max=10, initial=0)
+    R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=1, max=7, initial=0)
     C = models.FloatField(initial=0)
 
     purchase_success = models.IntegerField(initial=0)
