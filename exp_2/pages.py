@@ -450,9 +450,7 @@ class Survey2(Page):
 
 class Survey3(Page):
     form_model = 'player'
-    form_fields = ['age', 'gender', 'gender_string',
-                   'describe_white','describe_Middle','describe_Black', 'describe_American',
-                   'describe_Asian','describe_Native','describe_Hispanic','describe_Prefer','describe_other', 'describe_other_string',
+    form_fields = ['age', 'gender', 'gender_string','race','race_string',
                    'edu','major','major_string','parents','employment', 'employment_string',
                    'income','marital','children',
                    ]

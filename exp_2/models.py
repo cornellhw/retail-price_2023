@@ -249,16 +249,16 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
     )
     gender_string = models.StringField(label='', blank=True)
-    describe_white = models.StringField(initial='0', blank=True)
-    describe_Middle = models.StringField(initial='0', blank=True)
-    describe_Black = models.StringField(initial='0', blank=True)
-    describe_American = models.StringField(initial='0', blank=True)
-    describe_Asian = models.StringField(initial='0', blank=True)
-    describe_Native = models.StringField(initial='0', blank=True)
-    describe_Hispanic = models.StringField(initial='0', blank=True)
-    describe_other = models.StringField(initial='0', blank=True)
-    describe_other_string = models.StringField(initial='', blank=True)
-    describe_Prefer = models.StringField(initial='0', blank=True)
+    race = models.StringField(
+        choices=[['White', 'White'], ['Middle Eastern/North African', 'Middle Eastern or North African'],
+                 ['Black/African American', 'Black or African American'], ['American Indian', 'American Indian or Alaska Native'],
+                 ['Asian', 'Asian (including South Asian)'], ['Native Hawaiian', 'Native Hawaiian or Pacific Islander'],
+                 ['Hispanic/Latino', 'Hispanic/Latino'],['Not_to_answer', 'Prefer not to answer'],
+                 ['Other', 'Other']],
+        label='23. Which of the following best describes you?',
+        widget=widgets.RadioSelect,
+    )
+    race_string = models.StringField(label='', blank=True)
     edu = models.StringField(
         choices=[['No high school', 'Some or no high school'], ['High school', 'High school degree or equivalent'], ['College', 'Some college'], ['Associate', 'Associate’s degree or equivalent'],
                  ['Bachelor', 'Bachelor’s degree or equivalent'],['Graduate', 'Graduate degree or equivalent'],['Not_to_answer', 'Prefer not to answer']],
