@@ -172,21 +172,21 @@ class Player(BasePlayer):
         # initial='0'
     )
     take_advantage = models.StringField(
-        choices=[['0', 'Would take advantage of you'], ['1', 'Would try to be fair'],
+        choices=[['1', 'Would take advantage of you'], ['0', 'Would try to be fair'],
                  ['Not_to_answer', 'Prefer not to answer']],
         label='11. Do you think most people would try to take advantage of you if they got a chance, or would they try to be fair?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     try_to_be_helpful = models.StringField(
-        choices=[['0', 'Try to be helpful'], ['1', 'Just look out for themselves'],
+        choices=[['1', 'Try to be helpful'], ['0', 'Just look out for themselves'],
             ['Not_to_answer', 'Prefer not to answer']],
         label='12. Would you say that most of the time people try to be helpful, or that they are mostly just looking out for themselves?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
     trust = models.StringField(
-        choices=[['0', 'Most people can be trusted'], ['1', 'Cannot be too careful'],
+        choices=[['1', 'Most people can be trusted'], ['0', 'Cannot be too careful'],
         ['Not_to_answer', 'Prefer not to answer']],
     label='13. Generally speaking, would you say that most people can be trusted or that you can not be too careful in dealing with people?',
         widget=widgets.RadioSelect,
@@ -307,7 +307,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
     )
     children  = models.StringField(
-        choices=[['0', 'Yes'], ['1', 'No'], ['Not_to_answer', 'Prefer not to answer']],
+        choices=[['1', 'Yes'], ['0', 'No'], ['Not_to_answer', 'Prefer not to answer']],
         label='30. Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,
     )
