@@ -102,7 +102,7 @@ class Player(BasePlayer):
         choices=[['Multiple daily', 'Multiple times daily'], ['Daily', 'Daily'], ['Weekly', 'Weekly'], ['Monthly', 'Monthly'], ['Bi-Monthly', 'Bi-Monthly'],
                  ['Seasonally', 'Seasonally'], ['Never', 'Never'],
                  ['Not_to_answer', 'Prefer not to answer']],
-        label='1. How often do you drink the coffee?',
+        label='1. How often do you drink coffee?',
         widget=widgets.RadioSelect,
         # initial='0'
     )
