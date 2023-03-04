@@ -2,7 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
-      <change beforePath="$PROJECT_DIR$/exp_2/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2/pages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consent_group/templates/consent_group/passcode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/passcode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Info.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey3.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee3.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee4.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee5.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee6.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee7.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee8.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee9.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Survey_coffee9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Instructions.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +65,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/admin/Documents/GitHub/retail-price/exp_2/templates/exp_2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/admin/Documents/GitHub/retail-price/consent_group/templates/consent_group",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/consent_group/templates/consent_group" />
+      <recent name="$PROJECT_DIR$/exp_2_group/templates/exp_2_group" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/exp_2/templates/exp_2" />
       <recent name="$PROJECT_DIR$/consent/templates/consent" />
-      <recent name="$PROJECT_DIR$/exp_2_without/templates/exp_2_without" />
-      <recent name="$PROJECT_DIR$/exp_2_without/templates" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/_templates" />
@@ -86,13 +121,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00161" summary="description:new updates">
-      <created>1675108592955</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1675108592955</updated>
     </task>
     <task id="LOCAL-00162" summary="description:new updates">
       <created>1675109494921</created>
@@ -430,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676556898487</updated>
     </task>
-    <option name="localTasksCounter" value="210" />
+    <task id="LOCAL-00210" summary="description:new updates">
+      <created>1676557372770</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1676557372770</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

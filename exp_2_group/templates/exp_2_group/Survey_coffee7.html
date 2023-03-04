@@ -2,7 +2,7 @@
 {% load otree %}
 
 {% block title %}
-Coffee Tasting Evaluation<br>
+Coffee Evaluation<br>
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,28 @@ Coffee Tasting Evaluation<br>
 
 
         <p style="line-height: 2em;">
-7. On a scale of 0 to 10, where 0 is <u> not at all likely</u> and 10 is <u>extremely likely</u>, how likely would you be to <b>Drink this coffee again</b>?
+            {% if tasting_new == 0 %}
+            7. On a scale of 0 to 10, where 0 is <u> not at all likely</u> and 10 is <u>extremely likely</u>, how likely would you be to <b>{{next_is}}</b>?
+
+    <div class="controls">
+                    Not at all likely
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('0')"> 0 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('1')"> 1 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('2')"> 2 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('3')"> 3 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('4')"> 4 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('5')"> 5 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('6')"> 6 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('7')"> 7 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('8')"> 8 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('9')"> 9 </button>
+         <button type='button' id="lock" class="btn btn-light" name="coffee_drink" value="1" onclick="checkSubmit('10')"> 10 </button>
+        Extremely likely
+    </div>
+
+        <br><br>
+            {% else %}
+            7. On a scale of 0 to 10, where 0 is <u> not at all likely</u> and 10 is <u>extremely likely</u>, how likely would you be to <b>{{next_is}}</b>?
 
     <div class="controls">
                     Not at all likely
@@ -34,6 +55,7 @@ Coffee Tasting Evaluation<br>
 
 
         <br><br>
+        {% endif %}
      <button type="button" id="p" class="btn btn-primary" onclick="checkSubmit2()"> Next </button>
     <input type="hidden" name="coffee_drink" id="cd" > </input>
     </body>
@@ -61,3 +83,4 @@ Coffee Tasting Evaluation<br>
 
     </script>
 {% endblock %}
+

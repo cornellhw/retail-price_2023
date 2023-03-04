@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+<b>Please wait for password</b><br>
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+You have now completed the initial economic decision-making games and reviewed a summary of the main experiment. Please wait patiently for everyone else to finish. You will then relocate to Statler Hall 198, and we will provide you with a password to begin the Coffee Selection Stage of the main experiment.<br>
+
+        <p style="line-height: 2em;">
+            {% formfields %}
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

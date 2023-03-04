@@ -2,7 +2,7 @@
 {% load otree %}
 
 {% block title %}
-<b>Post-experiment survey</b><br>
+<b>Post-experimental survey</b><br>
 Tell us about your consumption habits, attitudes, and demographic characteristics.<br>
 {% endblock %}
 
@@ -17,20 +17,10 @@ Tell us about your consumption habits, attitudes, and demographic characteristic
         <p style="line-height: 2em;">
             {% formfield 'age' %}
             {% formfield 'gender' %}
-            {% formfield 'gender_string' %}<br>
-    23.Which of the following best describes you? Multiple answers may be chosen.<br>
-     <input type="radio"  name="describe_white" value="1"> White <br>
-     <input type="radio"  name="describe_Middle" value="1"> Middle Eastern or North African <br>
-     <input type="radio"  name="describe_Black" value="1"> Black or African American <br>
-     <input type="radio"  name="describe_American" value="1"> American Indian or Alaska Native <br>
-     <input type="radio"  name="describe_Asian" value="1"> Asian (including South Asian) <br>
-     <input type="radio"  name="describe_Native" value="1"> Native Hawaiian or Pacific Islander <br>
-     <input type="radio"  name="describe_Hispanic" value="1"> Hispanic/Latino <br>
-     <input type="radio"  name="describe_Prefer" value="1"> Prefer not to answer <br>
-     <input type="radio"  name="describe_other" value="1"> Other (please specify) <br>
-     <input  name="describe_other_string" value="">  <br><br>
-
-                {% formfield 'edu' %}
+            {% formfield 'gender_string' %}
+            {% formfield 'race' %}
+            {% formfield 'race_string' %}
+            {% formfield 'edu' %}
             {% formfield 'major' %}
             {% formfield 'major_string' %}
             {% formfield 'parents' %}

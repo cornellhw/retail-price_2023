@@ -19,7 +19,7 @@ class Constants(BaseConstants):
     name_in_url = 'consent_group'
     players_per_group = 2
     num_rounds = 1
-
+    passcode_first = ''
 
 class Subsession(BaseSubsession):
     pass
@@ -43,3 +43,4 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     consent = models.StringField(initial='')
+    passcode_1 = models.StringField(label="Please enter the password to start the experiment:",blank=True)

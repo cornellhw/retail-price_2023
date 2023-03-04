@@ -12,10 +12,10 @@ PARTICIPANT_FIELDS = ['consent', 'payoff_cem', 'payoff_trust']
 
 SESSION_CONFIGS = [
     dict(
-        name='exp_2',
-        display_name='exp_2',
+        name='exp_2_group',
+        display_name='exp_2_group',
         num_demo_participants=60,
-        app_sequence=[ 'consent', 'trust', 'cem','exp_2', ],
+        app_sequence=[ 'consent_group', 'trust2', 'cem','exp_2_group', ],
         a1=0.2,
         a2=0.2,
         u2=7,
