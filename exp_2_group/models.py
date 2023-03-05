@@ -77,7 +77,10 @@ class Group(BaseGroup):
                 self.coffee_like_group = p.coffee_like
                 self.cost_bonus_group = p.cost_bonus
                 self.earn_group = p.earn
-                self.total_bonus_group = p.total_bonus
+                # total_bonus = p.total_bonus
+                # payoff_cem = p.payoff_cem
+                # payoff_trust = p.payoff_trust
+                # payoff_total = p.payoff_total
 
         for p in self.get_players():
             if p.role_own == 'B':
@@ -88,20 +91,25 @@ class Group(BaseGroup):
                 p.earn = self.earn_group
                 p.total_bonus = self.total_bonus_group
 
+
     def get_value2(self):
         for p in self.get_players():
             if p.role_own == 'B':
-
                 self.payoff_cem_group = p.payoff_cem
                 self.payoff_trust_group = p.payoff_trust
                 self.payoff_total_group = p.payoff_total
+                profit_bonus = p.profit_bonus
+                total_bonus_group = p.total_bonus
+                earn = p.earn
 
         for p in self.get_players():
             if p.role_own == 'A':
-                p.payoff_cem = self.payoff_cem_group
-                p.payoff_trust =self.payoff_trust_group
-                p.payoff_total = self.payoff_total_group
-
+                p.profit_bonus = profit_bonus
+                # p.payoff_cem = self.payoff_cem_group
+                # p.payoff_trust = self.payoff_trust_group
+                # p.payoff_total = self.payoff_total_group
+                # p.total_bonus = total_bonus_group
+                # p.earn = earn
 
 class Player(BasePlayer):
     W = models.FloatField(label='Enter W here', max=10, initial=0)

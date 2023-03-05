@@ -61,12 +61,12 @@ class Survey1(Page):
                    'lie_acquaintances', 'lie_friends', 'lie_partner']
 
     def is_displayed(self):
-        self.group.get_value2()
-
+        # self.group.get_value2()
         return self.player.participant.vars['consent'].lower() == 'consent'
         # return True
     def before_next_page(self):
         self.player.set_payoff_final()
+
     def error_message(self, values):
         errors = [1 for f in values if 'string' not in f and not values[f]]
         if errors:
@@ -484,9 +484,14 @@ class SetPrice2(Page):
                 'coffee_not_used':coffee_not_used
                 }
 
+class Waiting2_0(Page):
+    def is_displayed(self):
+        self.player.set_payoff2()
+        return False
+
 class Waiting2(WaitPage):
     body_text = "You are waiting for the results for marketing price setting from the Marketing Manager."
-
+    after_all_players_arrive = 'get_value2'
     
 class Res2(Page):
     def is_displayed(self):
@@ -566,4 +571,4 @@ page_sequence += [Res123]
 page_sequence += [Waiting1,Res_market]
 
 page_sequence += [SetPrice2] * 100
-page_sequence += [Waiting2, Res2 , Survey1, Survey2, Survey3, Final, Final_not]
+page_sequence += [Waiting2_0, Waiting2, Res2 , Survey1, Survey2, Survey3, Final, Final_not]
