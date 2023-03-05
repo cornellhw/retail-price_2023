@@ -40,7 +40,7 @@ class Group(BaseGroup):
     R_group = models.FloatField(initial=0)
     is_reject_group = models.StringField(initial='')
     consent_group = models.StringField(initial='')
-    coffee_like_group = models.StringField(initial='')
+    coffee_quality_group = models.StringField(initial='')
     cost_bonus_group = models.FloatField(initial=0)
     earn_group = models.FloatField(initial=0)
     total_bonus_group = models.FloatField(initial=0)
@@ -74,7 +74,7 @@ class Group(BaseGroup):
             if p.role_own == 'A':
                 self.W_group = p.W
                 self.is_reject_group = p.is_reject
-                self.coffee_like_group = p.coffee_like
+                self.coffee_quality_group = p.coffee_quality
                 self.cost_bonus_group = p.cost_bonus
                 self.earn_group = p.earn
                 # total_bonus = p.total_bonus
@@ -86,7 +86,7 @@ class Group(BaseGroup):
             if p.role_own == 'B':
                 p.W = self.W_group
                 p.is_reject = self.is_reject_group
-                p.coffee_like = self.coffee_like_group
+                p.coffee_quality = self.coffee_quality_group
                 p.cost_bonus = self.cost_bonus_group
                 p.earn = self.earn_group
                 p.total_bonus = self.total_bonus_group

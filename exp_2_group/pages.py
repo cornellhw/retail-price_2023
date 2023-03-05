@@ -355,7 +355,7 @@ class Res1(Page):
     def is_displayed(self):
         if self.player.role_own == 'B':
             return False
-        return self.player.participant.vars['consent'].lower() == 'consent' and self.player.is_reject=='reject'
+        return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject=='reject'
 
     def before_next_page(self):
         self.player.show_res1 = 0
@@ -381,6 +381,7 @@ class Res12(Page):
     def is_displayed(self):
         if self.player.role_own == 'B':
             return False
+        print(self.player.show_res1)
         return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'reject' and self.player.show_res2
 
     def before_next_page(self):
@@ -421,6 +422,9 @@ class Res123(Page):
 class Waiting1(WaitPage):
     body_text = "You are waiting for the results for procurement price setting from the Procurement Manager."
     after_all_players_arrive = 'get_value'
+    def is_displayed(self):
+        if self.player.role_own == 'A':
+            return False
 
 class Res_market(Page):
     def vars_for_template(self):
@@ -490,7 +494,7 @@ class Waiting2_0(Page):
         return False
 
 class Waiting2(WaitPage):
-    body_text = "You are waiting for the results for marketing price setting from the Marketing Manager."
+    body_text = "You are waiting for the message confirmation and progress from the Marketing Manager."
     after_all_players_arrive = 'get_value2'
     
 class Res2(Page):
