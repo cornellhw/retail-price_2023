@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,13 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00164" summary="description:new updates">
-      <created>1675112100538</created>
-      <option name="number" value="00164" />
-      <option name="presentableId" value="LOCAL-00164" />
-      <option name="project" value="LOCAL" />
-      <updated>1675112100538</updated>
     </task>
     <task id="LOCAL-00165" summary="description:new updates">
       <created>1675112232622</created>
@@ -434,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678039048161</updated>
     </task>
-    <option name="localTasksCounter" value="213" />
+    <task id="LOCAL-00213" summary="description:new updates">
+      <created>1678040139679</created>
+      <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
+      <option name="project" value="LOCAL" />
+      <updated>1678040139679</updated>
+    </task>
+    <option name="localTasksCounter" value="214" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -64,8 +64,6 @@ class Survey1(Page):
         # self.group.get_value2()
         return self.player.participant.vars['consent'].lower() == 'consent'
         # return True
-    def before_next_page(self):
-        self.player.set_payoff_final()
 
     def error_message(self, values):
         errors = [1 for f in values if 'string' not in f and not values[f]]
@@ -422,19 +420,17 @@ class Res123(Page):
 class Waiting1(WaitPage):
     body_text = "You are waiting for the results for procurement price setting from the Procurement Manager."
     after_all_players_arrive = 'get_value'
-    def is_displayed(self):
-        if self.player.role_own == 'A':
-            return False
+
 
 class Res_market(Page):
     def vars_for_template(self):
         return {'is_reject': self.player.is_reject,
                 }
-
     def is_displayed(self):
         if self.player.role_own == 'A':
             return False
         return self.player.participant.vars['consent'].lower() == 'consent'
+
 
 class SetPrice2(Page):
     form_model = 'player'
@@ -508,6 +504,7 @@ class Res2(Page):
 
 
 
+
 class Survey(Page):
     form_model = 'player'
     form_fields = ['age', 'gender', 'coffee']
@@ -528,16 +525,20 @@ class Survey(Page):
 #
 #         return self.player.participant.vars['consent'].lower() == 'consent'
 
+
 class Final(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
     def vars_for_template(self):
-        return {'id': self.player.id_in_subsession,
+        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem']) * 0.02,2)
+        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust']) * 0.02,2)
+        self.player.payoff_total = round((float(self.player.total_bonus) + float(self.player.payoff_cem) + float(self.player.payoff_trust)),2)
+
+        return {'id': self.player.id_in_group,
                 'payoff_trust':self.player.payoff_trust,
                 'payoff_cem':self.player.payoff_cem,
-                'payoff_all':self.player.payoff_total}
-
+                'payoff_total': self.player.payoff_total}
 class Final_not(Page):
     def is_displayed(self):
         return self.group.is_reject_group != 'consent'

@@ -95,9 +95,9 @@ class Group(BaseGroup):
     def get_value2(self):
         for p in self.get_players():
             if p.role_own == 'B':
-                self.payoff_cem_group = p.payoff_cem
-                self.payoff_trust_group = p.payoff_trust
-                self.payoff_total_group = p.payoff_total
+                # self.payoff_cem_group = p.payoff_cem
+                # self.payoff_trust_group = p.payoff_trust
+                # self.payoff_total_group = p.payoff_total
                 profit_bonus = p.profit_bonus
                 total_bonus_group = p.total_bonus
                 earn = p.earn
@@ -108,8 +108,8 @@ class Group(BaseGroup):
                 # p.payoff_cem = self.payoff_cem_group
                 # p.payoff_trust = self.payoff_trust_group
                 # p.payoff_total = self.payoff_total_group
-                # p.total_bonus = total_bonus_group
-                # p.earn = earn
+                p.total_bonus = total_bonus_group
+                p.earn = earn
 
 class Player(BasePlayer):
     W = models.FloatField(label='Enter W here', max=10, initial=0)
@@ -467,13 +467,7 @@ class Player(BasePlayer):
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
         self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 2)
-
-        self.payoff_cem = round(float(self.participant.vars['payoff_cem']) * 0.02,2)
-        self.payoff_trust = round(float(self.participant.vars['payoff_trust']) * 0.02,2)
-        self.payoff_total = round((float(self.total_bonus) + float(self.payoff_cem) + float(self.payoff_trust)),2)
         return
-
-
 
 
     def set_payoff_final(self):
