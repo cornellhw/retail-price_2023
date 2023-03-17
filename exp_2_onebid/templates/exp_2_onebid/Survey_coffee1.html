@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Coffee Evaluation<br>
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+1. Of the five provided options, which coffee will you attempt to procure?
+{#<input type="text" name="coffee_like" ><br><br>#}
+    <div class="controls">
+         <input type="radio"  name="coffee_like" value="W7"> W7 <br>
+         <input type="radio"  name="coffee_like" value="T3"> T3 <br>
+         <input type="radio"  name="coffee_like" value="E6"> E6 <br>
+         <input type="radio"  name="coffee_like" value="R0"> R0 <br>
+         <input type="radio"  name="coffee_like" value="D5"> D5 <br>
+    </div>
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

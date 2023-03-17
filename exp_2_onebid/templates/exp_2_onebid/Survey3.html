@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+<b>Post-experimental survey</b><br>
+Tell us about your consumption habits, attitudes, and demographic characteristics.<br>
+{% endblock %}
+
+{% block content %}
+
+
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+            {% formfield 'age' %}
+            {% formfield 'gender' %}
+            {% formfield 'gender_string' %}
+            {% formfield 'race' %}
+            {% formfield 'race_string' %}
+            {% formfield 'edu' %}
+            {% formfield 'major' %}
+            {% formfield 'major_string' %}
+            {% formfield 'parents' %}
+            {% formfield 'employment' %}
+            {% formfield 'employment_string' %}
+            {% formfield 'income' %}
+            {% formfield 'marital' %}
+            {% formfield 'children' %}
+
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

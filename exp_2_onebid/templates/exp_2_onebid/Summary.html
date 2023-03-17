@@ -1,0 +1,57 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Experiment: Summary of Decisions
+{% endblock %}
+
+{% block content %}
+
+    <html>
+    <body>
+
+
+        <p style="line-height: 2em;">
+        A visual summary of the steps of this experiment is included below<br>
+            {% if tasting_new == 0 %}
+<h2>1. Coffee Selection Stage (General Manager)</h2>
+        ● You will be provided with a selection <u>5 different types of roasted coffee</u><br>
+        ● You will evaluate all coffees using the information provided<br>
+        ● You will select the option you want to attempt to procure<br>
+        ● You will answer some follow-up questions {{next_is}}<br><br>
+
+<h2>2. Coffee Sourcing Stage (General Manager)</h2>
+● You will have one chance to make the supplier a wholesale price offer <i><b>(W)</b></i> for <u>one pound your selected coffee</u><br>
+● After making each offer, you will learn if your offer is accepted<br><br>
+
+        <h2>3. Coffee Selling Stage (General Manager)</h2>
+● Your coffee quality assessment will be shared with you to assist you in setting a retail price<br>
+● You will set the retail price <i><b>(R)</b></i> for <u>one 8 oz cup of brewed coffee</u> made with your selected bean<br>
+● You will see the results of your retail price choice, and learn your final payment<br><br>
+
+        {% else %}
+<h2>1. Coffee Selection Stage (General Manager)</h2>
+        ● You will be provided with a selection <u>5 different types of roasted coffee</u><br>
+        ● You will taste and evaluate all coffees using the information provided<br>
+        ● You will select the option you want to attempt to procure<br>
+        ● You will answer some follow-up questions {{next_is}}<br><br>
+
+<h2>2. Coffee Sourcing Stage (General Manager)</h2>
+● You will have one chance to make the supplier a wholesale price offer <i><b>(W)</b></i> for <u>one pound your selected coffee</u><br>
+● After making each offer, you will learn if your offer is accepted<br><br>
+
+        <h2>3. Coffee Selling Stage (General Manager)</h2>
+● Your coffee quality assessment will be shared with you to assist you in setting a retail price<br>
+        ● You will set the retail price <i><b>(R)</b></i> for <u>one 8 oz cup of brewed coffee</u> made with your selected bean<br>
+● You will see the results of your retail price choice, and learn your final payment<br><br>
+        {% endif %}
+        </p>
+
+    </body>
+
+</html>
+
+
+    {% next_button %}
+
+{% endblock %}

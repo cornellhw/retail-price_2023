@@ -25,7 +25,7 @@ class Constants(BaseConstants):
     F=5
     tasting = 0
     passcode_second = ''
-    name_in_url = 'exp_2'
+    name_in_url = 'exp_2_onebid'
     players_per_group = None
     num_rounds = 1
 

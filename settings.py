@@ -12,10 +12,26 @@ PARTICIPANT_FIELDS = ['consent', 'payoff_cem', 'payoff_trust']
 
 SESSION_CONFIGS = [
     dict(
-        name='exp_2_group',
-        display_name='exp_2_group',
+        name='exp_2_single',
+        display_name='exp_2_single',
         num_demo_participants=60,
-        app_sequence=[ 'consent_group', 'trust2', 'cem','exp_2_group', ],
+        app_sequence=['consent', 'trust', 'cem', 'exp_2_single', ],
+        a1=0.2,
+        a2=0.2,
+        u2=7,
+        l2=1,
+        F=5,
+        miu=6,
+        sigma=0.5,
+        tasting=0,
+        passcode_first='',
+        passcode_second=''
+    ),
+    dict(
+        name='exp_2_onebid',
+        display_name='exp_2_onebid',
+        num_demo_participants=60,
+        app_sequence=[ 'consent', 'trust', 'cem','exp_2_onebid', ],
         a1=0.2,
         a2=0.2,
         u2=7,
@@ -26,6 +42,22 @@ SESSION_CONFIGS = [
         tasting = 0,
         passcode_first = '',
         passcode_second = ''
+    ),
+    dict(
+        name='exp_2_notest',
+        display_name='exp_2_notest',
+        num_demo_participants=60,
+        app_sequence=['consent', 'trust', 'cem', 'exp_2_notest', ],
+        a1=0.2,
+        a2=0.2,
+        u2=7,
+        l2=1,
+        F=5,
+        miu=6,
+        sigma=0.5,
+        tasting=0,
+        passcode_first='',
+        passcode_second=''
     ),
 ]
 
