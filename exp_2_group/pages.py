@@ -353,6 +353,7 @@ class Res1(Page):
     def is_displayed(self):
         if self.player.role_own == 'B':
             return False
+        # self.player.set_payoff1()
         return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject=='reject'
 
     def before_next_page(self):
@@ -379,6 +380,7 @@ class Res12(Page):
     def is_displayed(self):
         if self.player.role_own == 'B':
             return False
+        # self.player.set_payoff1()
         print(self.player.show_res1)
         return self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'reject' and self.player.show_res2
 

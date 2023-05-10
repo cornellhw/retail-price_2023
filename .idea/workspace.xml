@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
-      <change afterPath="$PROJECT_DIR$/retail-price.otreezip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/retail-price.otreezip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
-    </task>
-    <task id="LOCAL-00169" summary="description:new updates">
-      <created>1675475013885</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1675475013886</updated>
     </task>
     <task id="LOCAL-00170" summary="description:new updates">
       <created>1675475573635</created>
@@ -430,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679147303001</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="description:new updates">
+      <created>1679187516134</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1679187516134</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -487,6 +491,11 @@
           <url>file://$PROJECT_DIR$/consent/models.py</url>
           <line>32</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/exp_2_group/models.py</url>
+          <line>394</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

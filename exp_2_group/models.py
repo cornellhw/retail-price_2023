@@ -408,6 +408,7 @@ class Player(BasePlayer):
 
     def set_payoff1(self):
         print('set_payoff1')
+        print('test round', self.test_round)
         if self.W >= self.C:
             self.is_reject = 'accepted'
             self.cost_bonus = round(self.session.config['a1'] * (10 - self.W) * 20,1)
