@@ -13,7 +13,7 @@ PARTICIPANT_FIELDS = ['consent', 'payoff_cem', 'payoff_trust']
 SESSION_CONFIGS = [
     dict(
         name='exp_2_group',
-        display_name='exp_2_single',
+        display_name='exp_2_group',
         num_demo_participants=60,
         app_sequence=['consent_group', 'trust2', 'cem', 'exp_2_group', ],
         a1=0.2,
