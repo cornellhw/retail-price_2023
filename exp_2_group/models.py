@@ -420,7 +420,7 @@ class Player(BasePlayer):
         if self.test_round == 0:
             self.prob = self.fz(self.W)
             self.show_res1 = 1
-        elif self.test_round ==1:
+        elif self.test_round == 1:
             w1 = float(self.logger_W_final.split(',')[0])
             self.show_res2 = 1
             if self.W <= w1:
