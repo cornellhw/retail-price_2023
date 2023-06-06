@@ -11,7 +11,7 @@ from otree.api import (
 import random
 import math
 from scipy.stats import norm
-
+author ='HW'
 doc = """
 Simple coffee experiment
 """
@@ -34,19 +34,17 @@ class Subsession(BaseSubsession):
     pass
 
 class Group(BaseGroup):
-    dist = stats.truncnorm((Constants.lower - Constants.miu) / Constants.sigma,
-                    (Constants.upper - Constants.miu) / Constants.sigma,
-                    loc=Constants.miu, scale=Constants.sigma)
-
-    def init_setting(self):
-        for p in self.get_players():
-            # p.C = round(random.random()*8+2,2)  # uniform
-            # print(self.dist.rvs(1))
-            p.C = float(round(float(self.dist.rvs(1)), 2))  # normal
-        return
-
+    pass
 
 class Player(BasePlayer):
+    C = models.FloatField()
+
+    dist = stats.truncnorm((Constants.lower - Constants.miu) / Constants.sigma,
+                           (Constants.upper - Constants.miu) / Constants.sigma,
+                           loc=Constants.miu, scale=Constants.sigma)
+
+    def init_setting(self):
+        self.C = float(round(float(self.dist.rvs(1)), 2))  # normal
 
     W = models.FloatField(label='Enter W here', max=10, initial=0)
     R = models.FloatField(label='How much would you like to set for the retailing price for one unit of this coffee sample (points)?', min=1, max=7, initial=0)
@@ -385,19 +383,6 @@ class Player(BasePlayer):
 
     def set_payoff_final(self):
         self.total_bonus = round(self.session.config['F'] + self.cost_bonus + self.profit_bonus, 2)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
