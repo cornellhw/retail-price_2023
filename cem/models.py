@@ -153,7 +153,7 @@ class Player(BasePlayer):
 
         # set payoff as global variable
         # ------------------------------------------------------------------------------------------------------------
-        self.participant.vars['cem_payoff'] = self.payoff
+        self.participant.vars['payoff_cem'] = self.payoff
 
     # determine consistency
     # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -180,3 +180,6 @@ class Player(BasePlayer):
         # set switching point to row number of first 'B' choice
         if self.inconsistent == 0:
             self.switching_row = sum(self.participant.vars['cem_choices_made']) + 1
+
+    def formatted_payoff(self):
+        return str(int(self.payoff)) + ' points'

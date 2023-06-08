@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/retail-price.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/retail-price.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cem/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cem/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cem/templates/cem/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/cem/templates/cem/Instructions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cem/templates/cem/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/cem/templates/cem/Results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_single/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Consent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Res2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/SetPrice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/SetPrice2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,22 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/pythonprojects/retail-price",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/pythonprojects/retail-price&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -108,14 +111,9 @@
       <option name="presentableId" value="Default" />
       <updated>1664986913014</updated>
       <workItem from="1686002027542" duration="10669000" />
-      <workItem from="1686064541926" duration="8766000" />
-    </task>
-    <task id="LOCAL-00172" summary="description:new updates">
-      <created>1675487425585</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1675487425585</updated>
+      <workItem from="1686064541926" duration="12203000" />
+      <workItem from="1686151813654" duration="32404000" />
+      <workItem from="1686237419961" duration="15135000" />
     </task>
     <task id="LOCAL-00173" summary="description:new updates">
       <created>1675525419361</created>
@@ -453,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683827372067</updated>
     </task>
-    <option name="localTasksCounter" value="221" />
+    <task id="LOCAL-00221" summary="description:new updates">
+      <created>1686094331601</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1686094331601</updated>
+    </task>
+    <option name="localTasksCounter" value="222" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,11 +518,6 @@
           <url>file://$PROJECT_DIR$/consent/models.py</url>
           <line>32</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/exp_2_group/models.py</url>
-          <line>394</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
