@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cem/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cem/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cem/templates/cem/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/cem/templates/cem/Instructions.html" afterDir="false" />
@@ -113,7 +114,7 @@
       <workItem from="1686002027542" duration="10669000" />
       <workItem from="1686064541926" duration="12203000" />
       <workItem from="1686151813654" duration="32404000" />
-      <workItem from="1686237419961" duration="15135000" />
+      <workItem from="1686237419961" duration="15459000" />
     </task>
     <task id="LOCAL-00173" summary="description:new updates">
       <created>1675525419361</created>
