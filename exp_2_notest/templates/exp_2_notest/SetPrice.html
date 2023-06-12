@@ -26,20 +26,25 @@ choice. This is your <b>{{ round }}</b> of three such opportunities. Please ente
 
 {% formfield 'W' label="Enter W here" %} <br>
 
-<input id="lock" class="btn btn-primary" name="lockin" value="Finalize your choice W" onclick="checkSubmit()"> </input> <br>
+<input id="lock" class="btn btn-primary" name="lockin" value="Test your current choice" onclick="checkSubmit2()"> </input> <br>
 
 Supplier cost is normally distributed with an average cost of $6 per pound and standard deviation of $0.5.<br> <br>
 
+Probability of acceptance of your offer: If you finalize this choice of <i><b>W</b></i>, your offer has a {{ prob }}% likelihood of being accepted by the supplier.<br> <br>
 
 <b>If your offer of W is accepted</b>, then<br>
-            -You would earn a <u>cost savings bonus of</u> $\(0.2 * (10 - W) * 20\)<br>
+-You would earn a <u>cost savings bonus of {{ optimal_cost_bonus }}</u><br>
 -<b>Assuming marketing makes a good decision,</b><br>
-&nbsp;&nbsp;&nbsp;&nbsp;-You should expect to earn a <u>revenue sharing bonus of $\(11.43\) </u><br>
-&nbsp;&nbsp;&nbsp;&nbsp;-Your firm’s profit would be $\(57.17 - W\)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-Your total payment for today’s coffee experiment would be $\(5 + 0.2 * (10 - W) * 20 + 11.43\) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;-You should expect to earn a <u>revenue sharing bonus of {{optimal_profit_bonus}} </u><br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Your firm’s profit would be {{ optimal_earn }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Your total payment for today’s coffee experiment would be {{ optimal_total_bonus }}<br>
 
 
 
+
+
+<button type="button" name="lockin" value="Finalize your choice W" class="btn btn-primary" onclick="checkSubmit()">Finalize your choice W
+</button><br>
 
 <script>
         function checkSubmit() {
@@ -68,11 +73,9 @@ Supplier cost is normally distributed with an average cost of $6 per pound and s
             form.submit();
         }
 
-</script>
-            </p>
-    </body>
 
-</html>
+</script>
+
 
 {#    {% next_button %}#}
 

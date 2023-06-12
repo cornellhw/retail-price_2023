@@ -1,6 +1,7 @@
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
+from decimal import Decimal as D
 
 class Consent(Page):
     form_model = 'player'
@@ -225,47 +226,38 @@ class SetPrice(Page):
     form_fields = ['W', 'lockin']
 
     def is_displayed(self):
-        if self.player.participant.vars['consent'].lower() != 'consent' :
-            return False
-        if self.player.lockin.lower() != 'lockin':
-            return True
-        else:
-            return False
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
+        return self.player.lockin.lower() != 'lockin'
 
     def before_next_page(self):
         self.player.set_payoff1()
 
     def vars_for_template(self):
         if self.player.test_times == 0:
-            prob = 'XXX'
-            optimal_cost_bonus= 'XXX'
-            optimal_profit_bonus = 'XXX'
-            optimal_total_bonus = 'XXX'
-            optimal_earn = 'XXX'
+            return {
+                'prob': 'XXX',
+                'optimal_cost_bonus': 'XXX',
+                'optimal_profit_bonus': 'XXX',
+                'optimal_total_bonus': 'XXX',
+                'optimal_earn': 'XXX',
+                'round': ['first', 'second', 'third'][self.player.test_round],
+                'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
+            }
 
-        else:
-            prob = self.player.prob*100
-            optimal_cost_bonus = self.player.optimal_cost_bonus
-            optimal_profit_bonus = self.player.optimal_profit_bonus
-            optimal_total_bonus = self.player.optimal_total_bonus
-            optimal_earn = self.player.optimal_earn
-        return {'prob': prob if isinstance(prob, float) else prob[0],
-                'optimal_cost_bonus' : optimal_cost_bonus,
-                'optimal_profit_bonus': optimal_profit_bonus if isinstance( optimal_profit_bonus, float) else  optimal_profit_bonus[0],
-                'optimal_total_bonus': optimal_total_bonus,
-                'optimal_earn': optimal_earn,
-                }
+        return {
+            'prob': self.player.prob * 100,
+            'optimal_cost_bonus': self.player.optimal_cost_bonus,
+            'optimal_profit_bonus': self.player.optimal_profit_bonus,
+            'optimal_total_bonus': self.player.optimal_total_bonus,
+            'optimal_earn': self.player.optimal_earn,
+            'round': ['first', 'second', 'third'][self.player.test_round],
+            'round_n': ['1st', '2nd', '3rd'][self.player.test_round],
+        }
 
 
 class Res1(Page):
     def vars_for_template(self):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            next_info = 'Click the "Next" button to finish the post-experimental survey!'
+            next_info = 'Click the "Next" button to make the supplier another offer!'
         else:
             next_info = 'Click the "Next" button to continue with the experiment!'
         return {'is_reject': self.player.is_reject,
@@ -282,6 +274,56 @@ class Res1(Page):
         self.player.logger_W += '| '
         self.player.logger_T += str(self.player.test_times)+','
         self.player.test_times = 0
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            self.player.lockin = '-1'
+
+class Res12(Page):
+    def vars_for_template(self):
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            next_info = 'Click the "Next" button to make the supplier another offer!'
+        else:
+            next_info = 'Click the "Next" button to continue with the experiment! '
+        return {'is_reject': self.player.is_reject,
+                'cost_bonus': self.player.cost_bonus,
+                'next_info': next_info
+                }
+
+    def is_displayed(self):
+        print(self.player.show_res1)
+        return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected') \
+            and self.player.show_res2
+
+    def before_next_page(self):
+        self.player.test_round += 1
+        self.player.logger_W += '| '
+        self.player.logger_T += str(self.player.test_times)+','
+        self.player.test_times = 0
+
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            self.player.lockin = '-1'
+
+
+class Res123(Page):
+    def vars_for_template(self):
+        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+            next_info = 'Click the "Next" button to finish the post-experimental survey!'
+        else:
+            next_info = 'Click the "Next" button to continue with the experiment! '
+        return {'is_reject': self.player.is_reject,
+                'cost_bonus': self.player.cost_bonus,
+                'next_info': next_info
+                }
+
+    def is_displayed(self):
+        return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected') \
+            and self.player.show_res3
+
+    def before_next_page(self):
+        self.player.test_round += 1
+        self.player.logger_W += '| '
+        self.player.logger_T += str(self.player.test_times)+','
+        self.player.test_times = 0
+
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
 
@@ -309,6 +351,7 @@ class SetPrice2(Page):
     def before_next_page(self):
         # self.player.price_check()
         self.player.set_payoff2()
+        self.player.set_payoff()
 
     def vars_for_template(self):
         if self.player.test_times2 == 0:
@@ -374,7 +417,7 @@ class Survey1(Page):
         return self.player.participant.vars['consent'].lower() == 'consent'
         # return True
     def before_next_page(self):
-        self.player.set_payoff_final()
+        self.player.set_payoff()
     def error_message(self, values):
         errors = [1 for f in values if 'string' not in f and not values[f]]
         if errors:
@@ -415,17 +458,24 @@ class Survey3(Page):
 
 class Final(Page):
     def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
+        return self.player.participant.vars.get('consent', '').lower() == 'consent'
 
     def vars_for_template(self):
-        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem']) * 0.02,2)
-        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust']) * 0.02,2)
-        self.player.payoff_total = round((float(self.player.total_bonus) + float(self.player.payoff_cem) + float(self.player.payoff_trust)),2)
+        self.player.payoff_cem   = self.player.participant.vars.get('payoff_cem', 0) * 0.02
+        self.player.payoff_trust = self.player.participant.vars.get('payoff_trust', 0) * 0.02
 
-        return {'id': self.player.id_in_group,
-                'payoff_trust':self.player.payoff_trust,
-                'payoff_cem':self.player.payoff_cem,
-                'payoff_all': self.player.payoff_total}
+        # need to be updated latted in both the cem and trust files, then can delete those two lines
+        return {
+            'id': self.player.id_in_group,
+            'payoff_trust': self.player.payoff_trust,
+            'payoff_cem': self.player.payoff_cem,
+            'payoff_all': self.player.participant.payoff_plus_participation_fee() + self.player.payoff_cem +   self.player.payoff_trust,
+
+        }
+
+
+
+
 
 
 page_sequence = []
@@ -451,7 +501,10 @@ page_sequence += [
 
 page_sequence += [SetPrice] * 100
 page_sequence += [Res1]
-
+page_sequence += [SetPrice] * 100
+page_sequence += [Res12]
+page_sequence += [SetPrice] * 100
+page_sequence += [Res123]
 
 page_sequence += [SetPrice2] * 100
 page_sequence += [Res2, Survey1, Survey2, Survey3, Final,]
