@@ -4,22 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:new updates">
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0612 updates, other single player games">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_notest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Consent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Final.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/SetPrice.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_onebid/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Consent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Final.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Res2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/SetPrice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/SetPrice2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,14 +118,8 @@
       <workItem from="1686064541926" duration="12203000" />
       <workItem from="1686151813654" duration="32404000" />
       <workItem from="1686237419961" duration="18177000" />
-      <workItem from="1686580456505" duration="11922000" />
-    </task>
-    <task id="LOCAL-00174" summary="description:new updates">
-      <created>1675530223580</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1675530223581</updated>
+      <workItem from="1686580456505" duration="13210000" />
+      <workItem from="1686665975656" duration="10129000" />
     </task>
     <task id="LOCAL-00175" summary="description:new updates">
       <created>1675536462714</created>
@@ -462,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686253970709</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="description:0612 updates, other single player games">
+      <created>1686600163434</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1686600163434</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +515,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="description:letter" />
     <MESSAGE value="description:new updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:new updates" />
+    <MESSAGE value="description:0612 updates, other single player games" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0612 updates, other single player games" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

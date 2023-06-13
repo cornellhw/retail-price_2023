@@ -15,7 +15,7 @@ dict(
         name='exp_2_onebid',
         display_name='exp_2_onebid',
         num_demo_participants=1,
-        app_sequence=['consent_group',  'cem', 'exp_2_onebid', ],
+        app_sequence=['consent_group', 'trust', 'cem', 'exp_2_onebid', ],
         a1=0.2,
         a2=0.2,
         u2=7,
@@ -32,7 +32,7 @@ dict(
         name='exp_2_notest',
         display_name='exp_2_notest',
         num_demo_participants = 1,
-        app_sequence=['consent_group','cem', 'exp_2_notest', ],
+        app_sequence=['consent_group','trust','cem', 'exp_2_notest', ],
         a1=0.2,
         a2=0.2,
         u2=7,
@@ -48,7 +48,7 @@ dict(
         name='exp_2_single',
         display_name='exp_2_single',
         num_demo_participants = 1,
-        app_sequence=['consent_group','cem', 'exp_2_single', ],
+        app_sequence=['consent_group','trust','cem','exp_2_single', ],
         a1=0.2,
         a2=0.2,
         u2=7,
@@ -64,8 +64,8 @@ dict(
     dict(
         name='exp_2_group',
         display_name='exp_2_group',
-        num_demo_participants=60,
-        app_sequence=['consent_group', 'trust2', 'cem', 'exp_2_group', ],
+        num_demo_participants=2,
+        app_sequence=['consent_group','trust2', 'cem', 'exp_2_group', ],
         a1=0.2,
         a2=0.2,
         u2=7,
@@ -75,7 +75,8 @@ dict(
         sigma=0.5,
         tasting=0,
         passcode_first='',
-        passcode_second=''
+        passcode_second='',
+        use_browser_bots= False
     ),
 ]
 

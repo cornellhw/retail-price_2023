@@ -90,9 +90,9 @@ class Player(BasePlayer):
     logger_W_final = models.LongStringField(initial='')
     logger_T = models.LongStringField(initial='')
 
-    payoff_trust = models.FloatField(initial=0)
+    payoff_trust = models.CurrencyField(initial=0)
     payoff_cem = models.CurrencyField(initial=0)
-    payoff_total = models.FloatField(initial=0)
+    payoff_total = models.CurrencyField(initial=0)
 
     show_res1 = models.IntegerField(initial=0)
     show_res2 = models.IntegerField(initial=0)

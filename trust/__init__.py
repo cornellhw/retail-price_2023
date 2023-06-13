@@ -1,70 +1,47 @@
 from otree.api import *
-
-
-
+import numpy as np
 
 doc = """
-This is a standard 2-player trust where the amount sent by player 1 gets
-tripled. The trust was first proposed by
-<a href="http://econweb.ucsd.edu/~jandreon/Econ264/papers/Berg%20et%20al%20GEB%201995.pdf" target="_blank">
-    Berg, Dickhaut, and McCabe (1995)
-</a>.
+This is a trust game with a twist: only one player is playing, and the amount sent back is determined by a random process. The sent back amount is generated from a normal distribution with a mean equal to the amount sent and a standard deviation of 25. If the generated amount falls below 0 or above the tripled sent amount, it is set to 0 or the tripled sent amount, respectively.
 """
-
 
 class C(BaseConstants):
     NAME_IN_URL = 'trust'
-    PLAYERS_PER_GROUP = 2
+    PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
     INSTRUCTIONS_TEMPLATE = 'trust/Instructions.html'
-    # Initial amount allocated to each player
     ENDOWMENT = cu(100)
     MULTIPLIER = 3
 
-
 class Subsession(BaseSubsession):
     pass
-
 
 class Group(BaseGroup):
     sent_amount = models.CurrencyField(
         min=0,
         max=C.ENDOWMENT,
-        doc="""Amount sent by P1""",
+        doc="Amount sent by P1",
         label="Please enter an amount from 0 to 100:",
     )
-    sent_back_amount = models.CurrencyField(doc="""Amount sent back by P2""", min=cu(0))
-
+    sent_back_amount = models.CurrencyField(doc="Amount sent back by system", min=cu(0))
 
 class Player(BasePlayer):
     pass
 
-
-# FUNCTIONS
-def sent_back_amount_max(group: Group):
-    return group.sent_amount * C.MULTIPLIER
-
-
 def set_payoffs(group: Group):
     p1 = group.get_player_by_id(1)
-    p2 = group.get_player_by_id(2)
+    # Generate a normally distributed random number for sent_back_amount, ensuring it's not less than 0 and does not exceed the tripled sent amount
+    generated_amount = np.random.normal(loc=group.sent_amount, scale=25)
+    bounded_amount = min(max(0, generated_amount), group.sent_amount * C.MULTIPLIER)
+    group.sent_back_amount = cu(bounded_amount)
     p1.payoff = C.ENDOWMENT - group.sent_amount + group.sent_back_amount
-    p2.payoff = group.sent_amount * C.MULTIPLIER - group.sent_back_amount
 
-
-# PAGES
 class Introduction(Page):
     @staticmethod
     def is_displayed(player: Player):
         return player.participant.vars['consent'].lower() == 'consent'
 
-
 class Send(Page):
-    """This page is only for P1
-    P1 sends amount (all, some, or none) to P2
-    This amount is tripled by experimenter,
-    i.e if sent amount by P1 is 5, amount received by P2 is 15"""
-
     form_model = 'group'
     form_fields = ['sent_amount']
 
@@ -72,43 +49,13 @@ class Send(Page):
     def is_displayed(player: Player):
         return player.id_in_group == 1 and player.participant.vars['consent'].lower() == 'consent'
 
-
-class SendBackWaitPage(WaitPage):
-    @staticmethod
-    def is_displayed(player: Player):
-        return player.participant.vars['consent'].lower() == 'consent'
-
-
-class SendBack(Page):
-    """This page is only for P2
-    P2 sends back some amount (of the tripled amount received) to P1"""
-
-    form_model = 'group'
-    form_fields = ['sent_back_amount']
-
-    @staticmethod
-    def is_displayed(player: Player):
-        return player.id_in_group == 2 and player.participant.vars['consent'].lower() == 'consent'
-
-
-    @staticmethod
-    def vars_for_template(player: Player):
-        group = player.group
-
-        tripled_amount = group.sent_amount * C.MULTIPLIER
-        return dict(tripled_amount=tripled_amount)
-
-
 class ResultsWaitPage(WaitPage):
     after_all_players_arrive = set_payoffs
     @staticmethod
     def is_displayed(player: Player):
         return player.participant.vars['consent'].lower() == 'consent'
 
-
 class Results(Page):
-    """This page displays the earnings of each player"""
-
     @staticmethod
     def vars_for_template(player: Player):
         group = player.group
@@ -122,8 +69,6 @@ class Results(Page):
 page_sequence = [
     Introduction,
     Send,
-    SendBackWaitPage,
-    SendBack,
     ResultsWaitPage,
     Results,
 ]
