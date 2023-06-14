@@ -363,7 +363,7 @@ class Player(BasePlayer):
 
         self.is_reject = 'accepted' if self.W >= self.C else 'rejected'
         self.cost_bonus = cu(round(self.session.config['a1'] * (10 - self.W) * 20, 1)) if self.W >= self.C else cu(0)
-        self.participant.vars['cost_bonus'] = self.cost_bonus
+
         if self.test_round == 0:
             self.prob = self.fz(self.W)
             self.show_res1 = 1
@@ -408,7 +408,7 @@ class Player(BasePlayer):
             (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 2)
 
         self.profit_bonus = cu(round(self.session.config['a2'] * self.R * sell_temp, 2))
-        self.participant.vars['profit_bonus'] = self.profit_bonus
+
         if self.lockin2 != 'lockin':
             self.test_times2 += 1
 

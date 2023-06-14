@@ -354,28 +354,30 @@ class SetPrice2(Page):
         self.player.set_payoff()
 
     def vars_for_template(self):
-        if self.player.test_times2 == 0:
-            earn =  'XXX'
-            cost_bonus = self.player.cost_bonus
-            profit_bonus =  'XXX'
-            total_bonus =  'XXX'
-            market_demand =  'XXX'
-            coffee_not_used =  'XXX'
 
+
+        if self.player.test_times2 == 0:
+            earn = 'XXX'
+            cost_bonus = self.player.cost_bonus
+            profit_bonus = 'XXX'
+            total_bonus_coffee = 'XXX'
+            market_demand = 'XXX'
+            coffee_not_used = 'XXX'
         else:
             earn = self.player.earn
             cost_bonus = self.player.cost_bonus
             profit_bonus = self.player.profit_bonus
-            total_bonus = self.player.total_bonus
+            total_bonus = self.cost_bonus + self.session.config['participation_fee']
             market_demand = self.player.market_demand
             coffee_not_used = self.player.coffee_not_used
-        return {'earn': earn,
-                'cost_bonus': cost_bonus,
-                'profit_bonus': profit_bonus,
-                'total_bonus': total_bonus,
-                'market_demand':market_demand,
-                'coffee_not_used':coffee_not_used
-                }
+        return {
+            'earn': earn,
+            'cost_bonus': cost_bonus,
+            'profit_bonus': profit_bonus,
+            'total_bonus': total_bonus,
+            'market_demand': market_demand,
+            'coffee_not_used': coffee_not_used
+        }
 
 class Res2(Page):
     def is_displayed(self):
@@ -466,6 +468,7 @@ class Final(Page):
             'id': self.player.id_in_group,
             'payoff_trust': self.participant.vars['payoff_trust'],
             'payoff_cem': self.participant.vars['payoff_cem'],
+            'total_bonus': self.participant.payoff_plus_participation_fee() - self.participant.vars['payoff_trust'] - self.participant.vars['payoff_cem'],
             'payoff_all': self.participant.payoff_plus_participation_fee(),
 
         }
