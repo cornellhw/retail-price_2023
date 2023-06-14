@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0614,update the single-player games,set the cem and trust bonus as global variances">
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0614,updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
@@ -16,15 +16,7 @@
       <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Res2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Final.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/Res2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/templates/exp_2_onebid/SetPrice2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_single/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,14 +148,7 @@
       <workItem from="1686580456505" duration="13210000" />
       <workItem from="1686665975656" duration="20229000" />
       <workItem from="1686703825138" duration="11115000" />
-      <workItem from="1686749173095" duration="5749000" />
-    </task>
-    <task id="LOCAL-00177" summary="description:new updates">
-      <created>1675960814244</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1675960814245</updated>
+      <workItem from="1686749173095" duration="20280000" />
     </task>
     <task id="LOCAL-00178" summary="description:new updates">
       <created>1675961303639</created>
@@ -501,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686751276768</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="description:0614,updates">
+      <created>1686755535905</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1686755535905</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +547,8 @@
     <MESSAGE value="description:0612 updates, other single player games" />
     <MESSAGE value="description:0613, add the Trust game in the single player condition: assume the sent_back_amount by the other participant is determined by normal distribution: mean: the sent back money, varriance: 25( due to 68–95–99.7 rule)" />
     <MESSAGE value="description:0614,update the single-player games,set the cem and trust bonus as global variances" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:0614,update the single-player games,set the cem and trust bonus as global variances" />
+    <MESSAGE value="description:0614,updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0614,updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

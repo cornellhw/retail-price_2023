@@ -17,12 +17,12 @@ You may now set the retail price <i><b>(R)</b></i> for a cup of coffee made from
 
     <input id="lock" class="btn btn-primary" name="lockin2" value="Test your current choice" onclick="checkSubmit2()">  </input> <br><br>
 Retail customers are willing to pay anywhere between $1 and $7 per cup, with equal possibility.<br><br>
-You have earned a <u>cost savings bonus of ${{ cost_bonus }}.</u><br> <br>
+You have earned a <u>cost savings bonus of {{  player.group.cost_bonus }}.</u><br> <br>
 If you choose this retail price <i><b>(R)</b></i>, then<br>
 - {{market_demand}}% of market demand would be satisfied, leaving {{coffee_not_used}} pounds of coffee unsold<br>
-- You would earn a <u>revenue sharing bonus of ${{ profit_bonus }}</u><br>
-- Your firm’s profit would be ${{ earn }}<br>
-- Your total payment for today’s coffee experiment would be ${{ total_bonus }}<br>
+- You would earn a <u>revenue sharing bonus of {{ profit_bonus }}</u><br>
+- Your firm’s profit would be {{ earn }}<br>
+- Your total payment for today’s coffee experiment would be {{ player.group.total_bonus_coffee }}<br>
 
     <button  type="button" name="lockin2" value="Finalize your choice R" class="btn btn-primary" onclick="checkSubmit()">Finalize your choice R</button>
 

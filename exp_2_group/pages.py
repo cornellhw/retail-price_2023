@@ -331,7 +331,7 @@ class SetPrice(Page):
             optimal_earn = self.player.optimal_earn
         return {'prob': prob if isinstance(prob, float) else prob[0],
                 'optimal_cost_bonus' : optimal_cost_bonus,
-                'optimal_profit_bonus': optimal_profit_bonus if isinstance( optimal_profit_bonus, float) else optimal_profit_bonus[0],
+                'optimal_profit_bonus': optimal_profit_bonus,
                 'optimal_total_bonus': optimal_total_bonus,
                 'optimal_earn': optimal_earn,
                 'round': ['first', 'second', 'third'][self.player.test_round],
@@ -462,31 +462,34 @@ class SetPrice2(Page):
     def before_next_page(self):
         # self.player.price_check()
         self.player.set_payoff2()
+        self.player.set_payoff()
 
     def vars_for_template(self):
         if self.player.test_times2 == 0:
-            earn =  'XXX'
-            cost_bonus = self.player.cost_bonus
-            profit_bonus =  'XXX'
-            total_bonus =  'XXX'
-            market_demand =  'XXX'
+            earn = 'XXX'
+            cost_bonus = 'XXX'
+            profit_bonus = 'XXX'
+            total_bonus_coffee = 'XXX'
+            market_demand = 'XXX'
             coffee_not_used = 'XXX'
 
         else:
             earn = self.player.earn
-            cost_bonus = self.player.cost_bonus
-            profit_bonus = self.player.profit_bonus
-            total_bonus = self.player.total_bonus
+            cost_bonus = self.player.group.cost_bonus
+            profit_bonus = self.player.group.profit_bonus
+            total_bonus_coffee = self.player.group.total_bonus_coffee
             market_demand = self.player.market_demand
             coffee_not_used = self.player.coffee_not_used
 
-        return {'earn': earn,
-                'cost_bonus': cost_bonus,
-                'profit_bonus': profit_bonus,
-                'total_bonus': total_bonus,
-                'market_demand':market_demand,
-                'coffee_not_used':coffee_not_used
-                }
+        return {
+            'earn': earn,
+            'cost_bonus': cost_bonus,
+            'profit_bonus': profit_bonus,
+            'total_bonus_coffee': total_bonus_coffee,
+            'market_demand': market_demand,
+            'coffee_not_used': coffee_not_used
+        }
+
 
 class Waiting2_0(Page):
     def is_displayed(self):
@@ -535,14 +538,17 @@ class Final(Page):
         return self.player.participant.vars['consent'].lower() == 'consent'
 
     def vars_for_template(self):
-        self.player.payoff_cem = round(float(self.player.participant.vars['payoff_cem']) * 0.02,2)
-        self.player.payoff_trust = round(float(self.player.participant.vars['payoff_trust']) * 0.02,2)
-        self.player.payoff_total = round((float(self.player.total_bonus) + float(self.player.payoff_cem) + float(self.player.payoff_trust)),2)
+        self.participant.payoff = self.group.cost_bonus + self.group.profit_bonus + self.participant.vars[
+            'payoff_trust'] + self.participant.vars['payoff_cem']
 
-        return {'id': self.player.id_in_group,
-                'payoff_trust':self.player.payoff_trust,
-                'payoff_cem':self.player.payoff_cem,
-                'payoff_total': self.player.payoff_total}
+        return {
+            'id': self.player.id_in_group,
+            'payoff_trust': self.participant.vars['payoff_trust'],
+            'payoff_cem': self.participant.vars['payoff_cem'],
+            'payoff_all': self.participant.payoff_plus_participation_fee(),
+
+        }
+
 class Final_not(Page):
     def is_displayed(self):
         return self.group.is_reject_group != 'consent'
