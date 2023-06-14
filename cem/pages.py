@@ -143,7 +143,7 @@ class Results(Page):
         index_to_pay = self.player.participant.vars['cem_index_to_pay']
         round_to_pay = indices.index(index_to_pay) + 1
         choice_to_pay = self.participant.vars['cem_choices'][round_to_pay - 1]
-        self.player.participant.vars['payoff_cem'] = self.player.payoff
+        self.player.participant.vars['payoff_cem'] = self.player.payoff*0.02
 
         if Constants.one_choice_per_page:
             return {

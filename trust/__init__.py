@@ -63,7 +63,7 @@ class Results(Page):
 
     @staticmethod
     def is_displayed(player: Player):
-        player.participant.vars['payoff_trust'] = player.payoff
+        player.participant.vars['payoff_trust'] = player.payoff*0.02
         return player.participant.vars['consent'].lower() == 'consent'
 
 page_sequence = [

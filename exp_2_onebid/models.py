@@ -382,6 +382,6 @@ class Player(BasePlayer):
 
     def set_payoff(self):
         # Calculate the total_bonus without the participation fee
-        self.participant.payoff = self.cost_bonus + self.profit_bonus
-        # Set total_bonus as a player attribute
-        self.total_bonus = self.participant.payoff_plus_participation_fee()
+        self.participant.payoff = self.cost_bonus + self.profit_bonus + self.participant.vars['payoff_trust'] + self.participant.vars['payoff_cem']
+
+

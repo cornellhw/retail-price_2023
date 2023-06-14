@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0612 updates, other single player games">
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0613, add the Trust game in the single player condition: assume the sent_back_amount by the other participant is determined by normal distribution: mean: the sent back money, varriance: 25( due to 68–95–99.7 rule)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cem/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cem/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cem/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/cem/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
@@ -17,10 +19,17 @@
       <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_notest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_notest/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/templates/exp_2_notest/Final.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_onebid/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_onebid/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_single/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Res2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/SetPrice2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trust/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Results.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +72,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -82,7 +91,29 @@
       <recent name="$PROJECT_DIR$/exp_1c/templates" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.pages">
+    <configuration name="pages" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="retail-price" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exp_2_single" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exp_2_single/pages.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="task1" type="PythonConfigurationType" factoryName="Python">
       <module name="retail-price" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,6 +136,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.task1" />
+      <item itemvalue="Python.pages" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.pages" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -119,14 +159,9 @@
       <workItem from="1686151813654" duration="32404000" />
       <workItem from="1686237419961" duration="18177000" />
       <workItem from="1686580456505" duration="13210000" />
-      <workItem from="1686665975656" duration="10129000" />
-    </task>
-    <task id="LOCAL-00175" summary="description:new updates">
-      <created>1675536462714</created>
-      <option name="number" value="00175" />
-      <option name="presentableId" value="LOCAL-00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1675536462714</updated>
+      <workItem from="1686665975656" duration="20229000" />
+      <workItem from="1686703825138" duration="11115000" />
+      <workItem from="1686749173095" duration="1799000" />
     </task>
     <task id="LOCAL-00176" summary="description:new updates">
       <created>1675921254613</created>
@@ -464,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686600163434</updated>
     </task>
-    <option name="localTasksCounter" value="224" />
+    <task id="LOCAL-00224" summary="description:0613, add the Trust game in the single player condition: assume the sent_back_amount by the other participant is determined by normal distribution: mean: the sent back money, varriance: 25( due to 68–95–99.7 rule)">
+      <created>1686686330396</created>
+      <option name="number" value="00224" />
+      <option name="presentableId" value="LOCAL-00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1686686330396</updated>
+    </task>
+    <option name="localTasksCounter" value="225" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +558,8 @@
     <MESSAGE value="description:letter" />
     <MESSAGE value="description:new updates" />
     <MESSAGE value="description:0612 updates, other single player games" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:0612 updates, other single player games" />
+    <MESSAGE value="description:0613, add the Trust game in the single player condition: assume the sent_back_amount by the other participant is determined by normal distribution: mean: the sent back money, varriance: 25( due to 68–95–99.7 rule)" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0613, add the Trust game in the single player condition: assume the sent_back_amount by the other participant is determined by normal distribution: mean: the sent back money, varriance: 25( due to 68–95–99.7 rule)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -528,5 +571,8 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/retail_price$pages.coverage" NAME="pages Coverage Results" MODIFIED="1686712725047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp_2_single" />
   </component>
 </project>

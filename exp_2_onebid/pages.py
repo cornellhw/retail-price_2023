@@ -461,15 +461,13 @@ class Final(Page):
         return self.player.participant.vars.get('consent', '').lower() == 'consent'
 
     def vars_for_template(self):
-        self.player.payoff_cem   = self.player.participant.vars.get('payoff_cem', 0) * 0.02
-        self.player.payoff_trust = self.player.participant.vars.get('payoff_trust', 0) * 0.02
 
-        # need to be updated latted in both the cem and trust files, then can delete those two lines
         return {
             'id': self.player.id_in_group,
-            'payoff_trust': self.player.payoff_trust,
-            'payoff_cem': self.player.payoff_cem,
-            'payoff_all': self.player.participant.payoff_plus_participation_fee() + self.player.payoff_cem +   self.player.payoff_trust,
+            'payoff_trust': self.participant.vars['payoff_trust'],
+            'payoff_cem': self.participant.vars['payoff_cem'],
+            'payoff_all': self.participant.payoff_plus_participation_fee(),
+
 
         }
 

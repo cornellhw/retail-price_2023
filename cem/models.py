@@ -151,9 +151,11 @@ class Player(BasePlayer):
         else:
             self.payoff = Constants.endowment + choice_to_pay[5]
 
+
         # set payoff as global variable
         # ------------------------------------------------------------------------------------------------------------
-        self.participant.vars['payoff_cem'] = self.payoff
+        self.participant.vars['payoff_cem'] = self.payoff*0.02
+
 
     # determine consistency
     # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -183,3 +185,6 @@ class Player(BasePlayer):
 
     def formatted_payoff(self):
         return str(int(self.payoff)) + ' points'
+
+
+
