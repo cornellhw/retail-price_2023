@@ -23,7 +23,8 @@ class C(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    pass
+    def group_by_arrival_time_method(self, waiting_players):
+        return [waiting_players]
 
 
 class Group(BaseGroup):

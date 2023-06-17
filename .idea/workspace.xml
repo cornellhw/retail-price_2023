@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0614,updates">
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0614,update the group game(adjust the currency / payment issues">
+      <change afterPath="$PROJECT_DIR$/RandomGrouping/MyPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RandomGrouping/Results.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RandomGrouping/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RandomGrouping/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RandomGrouping/pages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consent/templates/consent/ConsentWaitPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consent/templates/consent/ContinueExperiment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consent/templates/consent/WaitForAllPlayers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exp_2_single/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res_market.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trust2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -65,11 +71,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pythonprojects\retail-price" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/consent_group/templates/consent_group" />
       <recent name="$PROJECT_DIR$/exp_2_group/templates/exp_2_group" />
       <recent name="$PROJECT_DIR$/exp_2/templates/exp_2" />
-      <recent name="$PROJECT_DIR$/consent/templates/consent" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/_templates" />
@@ -148,14 +154,10 @@
       <workItem from="1686580456505" duration="13210000" />
       <workItem from="1686665975656" duration="20229000" />
       <workItem from="1686703825138" duration="11115000" />
-      <workItem from="1686749173095" duration="20280000" />
-    </task>
-    <task id="LOCAL-00178" summary="description:new updates">
-      <created>1675961303639</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1675961303639</updated>
+      <workItem from="1686749173095" duration="21887000" />
+      <workItem from="1686856647484" duration="3086000" />
+      <workItem from="1686925525313" duration="28369000" />
+      <workItem from="1687013744812" duration="4099000" />
     </task>
     <task id="LOCAL-00179" summary="description:new updates">
       <created>1675961914250</created>
@@ -493,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686755535905</updated>
     </task>
-    <option name="localTasksCounter" value="227" />
+    <task id="LOCAL-00227" summary="description:0614,updates">
+      <created>1686783611889</created>
+      <option name="number" value="00227" />
+      <option name="presentableId" value="LOCAL-00227" />
+      <option name="project" value="LOCAL" />
+      <updated>1686783611889</updated>
+    </task>
+    <option name="localTasksCounter" value="228" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,6 +571,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/retail_price$pages.coverage" NAME="pages Coverage Results" MODIFIED="1686753266753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp_2_single" />
+    <SUITE FILE_PATH="coverage/retail_price$pages.coverage" NAME="pages Coverage Results" MODIFIED="1686959936995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp_2_single" />
   </component>
 </project>

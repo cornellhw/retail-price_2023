@@ -54,6 +54,7 @@ class passcode(Page):
         if errors:
             return 'Your password is incorrect'
 
+
 class Survey1(Page):
     form_model = 'player'
     form_fields = ['coffee_howoften', 'coffee_where', 'coffee_where_string',
@@ -551,7 +552,7 @@ class Final(Page):
 
 class Final_not(Page):
     def is_displayed(self):
-        return self.group.is_reject_group != 'consent'
+        return self.player.participant.vars['consent'].lower() != 'consent'
 
 page_sequence = []
 

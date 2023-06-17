@@ -7,6 +7,7 @@ from otree.api import (
     BaseGroup,
     BasePlayer,
     cu,
+    WaitPage
 )
 
 import random
@@ -29,8 +30,41 @@ class Constants(BaseConstants):
     players_per_group = 2
     num_rounds = 3
 
+
+class ConsentWaitPage(WaitPage):
+    wait_for_all_groups = True
+
+    @staticmethod
+    def after_all_players_arrive(subsession):
+        # Get the initial groups
+        initial_groups = subsession.get_group_matrix()
+
+        # List to store players who gave their consent
+        players_with_consent = []
+
+        # Iterate over the initial groups
+        for group in initial_groups:
+            # Check if all players in the group gave their consent
+            if all(p.participant.vars['consent'].lower() == 'consent' for p in group):
+                # If all players gave their consent, add them to the list
+                players_with_consent.extend(group)
+
+        # Group players who gave their consent. Here we assume groups of 2
+        new_groups = [players_with_consent[i:i + 2] for i in range(0, len(players_with_consent), 2)]
+
+        # Note: if the number of consenting players is not a multiple of 2, the last group might be smaller than 2.
+        # You might want to handle this case differently depending on your game's rules.
+
+        # Set the new group matrix
+        subsession.set_group_matrix(new_groups)
+
+
 class Subsession(BaseSubsession):
-    pass
+    def creating_session(self):
+        players = sorted(self.get_players(), key=lambda p: (p.participant.vars['group_id'], p.participant.vars['id_in_group']))
+        group_matrix = [players[n:n+Constants.players_per_group] for n in range(0, len(players), Constants.players_per_group)]
+        self.set_group_matrix(group_matrix)
+
 
 class Group(BaseGroup):
     dist = stats.truncnorm((Constants.lower - Constants.miu) / Constants.sigma,
@@ -53,40 +87,29 @@ class Group(BaseGroup):
     total_bonus_coffee = models.CurrencyField(initial=0)
     profit_bonus = models.CurrencyField(initial=0)
     cost_bonus = models.CurrencyField(initial=0)
+
+
+    def get_players_with_consent(self):
+        # get players who gave their consent
+        return [p for p in self.get_players() if p.participant.vars['consent'].lower() == 'consent']
+
+
     def init_setting(self):
-        consent = True
-        for p in self.get_players():
-            # p.C = round(random.random()*8+2,2)  # uniform
-            # print(self.dist.rvs(1))
+        for p in self.get_players_with_consent():
             p.C = float(round(float(self.dist.rvs(1)), 2))  # normal
             print(p.participant.vars)
-        #     if p.participant.vars['consent'].lower() != 'consent':
-        #         consent= False
-        # if consent:
-        #     self.consent_group = 'Consent'
-        # else:
-        #     self.consent_group = 'Do not consent'
-        # for p in self.get_players():
-        #     p.participant.vars['consent'] = self.consent_group
-        #     print(p.participant.vars['consent'] )
         return
 
     def get_value(self):
-
-
-        for p in self.get_players():
+        for p in self.get_players_with_consent():
             if p.role_own == 'A':
                 self.W_group = p.W
                 self.is_reject_group = p.is_reject
                 self.coffee_quality_group = p.coffee_quality
                 self.cost_bonus_group = p.cost_bonus
                 self.earn_group = p.earn
-                # total_bonus = p.total_bonus
-                # payoff_cem = p.payoff_cem
-                # payoff_trust = p.payoff_trust
-                # payoff_total = p.payoff_total
 
-        for p in self.get_players():
+        for p in self.get_players_with_consent():
             if p.role_own == 'B':
                 p.W = self.W_group
                 p.is_reject = self.is_reject_group
@@ -95,25 +118,22 @@ class Group(BaseGroup):
                 p.earn = self.earn_group
                 p.total_bonus = self.total_bonus_group
 
-
     def get_value2(self):
-        for p in self.get_players():
+        for p in self.get_players_with_consent():
             if p.role_own == 'B':
-                # self.payoff_cem_group = p.payoff_cem
-                # self.payoff_trust_group = p.payoff_trust
-                # self.payoff_total_group = p.payoff_total
                 profit_bonus = p.profit_bonus
                 total_bonus_group = p.total_bonus
                 earn = p.earn
 
-        for p in self.get_players():
+        for p in self.get_players_with_consent():
             if p.role_own == 'A':
                 p.profit_bonus = profit_bonus
-                # p.payoff_cem = self.payoff_cem_group
-                # p.payoff_trust = self.payoff_trust_group
-                # p.payoff_total = self.payoff_total_group
                 p.total_bonus = total_bonus_group
                 p.earn = earn
+
+
+
+
 
 class Player(BasePlayer):
     W = models.FloatField(
