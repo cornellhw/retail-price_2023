@@ -383,7 +383,6 @@ class Res12(Page):
             return False
         # self.player.set_payoff1()
 
-        print(self.player.show_res1)
         return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'reject') and self.player.show_res2
 
     def before_next_page(self):
@@ -552,7 +551,8 @@ class Final(Page):
 
 class Final_not(Page):
     def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() != 'consent'
+        return self.player.participant.vars.get('consent', '') == 'Do not consent'
+
 
 page_sequence = []
 

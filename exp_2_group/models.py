@@ -31,39 +31,13 @@ class Constants(BaseConstants):
     num_rounds = 3
 
 
-class ConsentWaitPage(WaitPage):
-    wait_for_all_groups = True
-
-    @staticmethod
-    def after_all_players_arrive(subsession):
-        # Get the initial groups
-        initial_groups = subsession.get_group_matrix()
-
-        # List to store players who gave their consent
-        players_with_consent = []
-
-        # Iterate over the initial groups
-        for group in initial_groups:
-            # Check if all players in the group gave their consent
-            if all(p.participant.vars['consent'].lower() == 'consent' for p in group):
-                # If all players gave their consent, add them to the list
-                players_with_consent.extend(group)
-
-        # Group players who gave their consent. Here we assume groups of 2
-        new_groups = [players_with_consent[i:i + 2] for i in range(0, len(players_with_consent), 2)]
-
-        # Note: if the number of consenting players is not a multiple of 2, the last group might be smaller than 2.
-        # You might want to handle this case differently depending on your game's rules.
-
-        # Set the new group matrix
-        subsession.set_group_matrix(new_groups)
-
-
 class Subsession(BaseSubsession):
     def creating_session(self):
-        players = sorted(self.get_players(), key=lambda p: (p.participant.vars['group_id'], p.participant.vars['id_in_group']))
-        group_matrix = [players[n:n+Constants.players_per_group] for n in range(0, len(players), Constants.players_per_group)]
-        self.set_group_matrix(group_matrix)
+        if self.round_number == 1:
+            self.group_randomly(fixed_id_in_group=True)
+        else:
+            self.group_like_round(1)
+
 
 
 class Group(BaseGroup):
@@ -434,7 +408,6 @@ class Player(BasePlayer):
         label='30. Do you have children under 18 years old living in your household?',
         widget=widgets.RadioSelect,
     )
-
 
     def init_role(self):
         self.role_own = ['B', 'A'][self.id_in_group % 2] # A: procurement; B: markeing

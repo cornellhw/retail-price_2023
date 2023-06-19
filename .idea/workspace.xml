@@ -4,22 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0614,update the group game(adjust the currency / payment issues">
-      <change afterPath="$PROJECT_DIR$/RandomGrouping/MyPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomGrouping/Results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomGrouping/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomGrouping/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomGrouping/pages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consent/templates/consent/ConsentWaitPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consent/templates/consent/ContinueExperiment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consent/templates/consent/WaitForAllPlayers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exp_2_single/db.sqlite3" afterDir="false" />
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0617">
+      <change afterPath="$PROJECT_DIR$/consent_group2/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/_builtin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/_builtin/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/pages.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/templates/consent/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Consent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/templates/consent/ConsentWaitPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Final_not.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/templates/consent/ContinueExperiment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/templates/consent/WaitForAllPlayers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/templates/consent/passcode.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/passcode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final_not.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trust2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/__init__.py" afterDir="false" />
     </list>
@@ -78,10 +79,11 @@
       <recent name="$PROJECT_DIR$/exp_2/templates/exp_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pythonprojects\retail-price\consent_group2\templates" />
+      <recent name="D:\pythonprojects\retail-price\exp_2_group\templates\exp_2_group" />
+      <recent name="D:\pythonprojects\retail-price\consent\templates\consent" />
       <recent name="$PROJECT_DIR$/_templates" />
       <recent name="$PROJECT_DIR$/exp_1c" />
-      <recent name="$PROJECT_DIR$/venv" />
-      <recent name="$PROJECT_DIR$/exp_1c/templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pages">
@@ -157,14 +159,8 @@
       <workItem from="1686749173095" duration="21887000" />
       <workItem from="1686856647484" duration="3086000" />
       <workItem from="1686925525313" duration="28369000" />
-      <workItem from="1687013744812" duration="4099000" />
-    </task>
-    <task id="LOCAL-00179" summary="description:new updates">
-      <created>1675961914250</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1675961914250</updated>
+      <workItem from="1687013744812" duration="13896000" />
+      <workItem from="1687108283082" duration="12612000" />
     </task>
     <task id="LOCAL-00180" summary="description:new updates">
       <created>1675962214175</created>
@@ -502,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686783611889</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="description:0617">
+      <created>1687018187777</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1687018187777</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,14 +560,15 @@
     <MESSAGE value="description:0613, add the Trust game in the single player condition: assume the sent_back_amount by the other participant is determined by normal distribution: mean: the sent back money, varriance: 25( due to 68–95–99.7 rule)" />
     <MESSAGE value="description:0614,update the single-player games,set the cem and trust bonus as global variances" />
     <MESSAGE value="description:0614,updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:0614,updates" />
+    <MESSAGE value="description:0617" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0617" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/consent/models.py</url>
-          <line>32</line>
+          <line>45</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

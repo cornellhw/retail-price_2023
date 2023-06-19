@@ -24,8 +24,8 @@ class C(BaseConstants):
 
 class Subsession(BaseSubsession):
     def group_by_arrival_time_method(self, waiting_players):
-        return [waiting_players]
-
+        if len(waiting_players) >= 2:
+            return [waiting_players[:2]]
 
 class Group(BaseGroup):
     sent_amount = models.CurrencyField(
@@ -58,6 +58,7 @@ class Introduction(Page):
     @staticmethod
     def is_displayed(player: Player):
         return player.participant.vars['consent'].lower() == 'consent'
+
 
 
 class Send(Page):
