@@ -32,12 +32,7 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    def creating_session(self):
-        if self.round_number == 1:
-            self.group_randomly(fixed_id_in_group=True)
-        else:
-            self.group_like_round(1)
-
+    pass
 
 
 class Group(BaseGroup):

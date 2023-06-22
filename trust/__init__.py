@@ -20,7 +20,7 @@ class Group(BaseGroup):
     sent_amount = models.CurrencyField(
         min=0,
         max=C.ENDOWMENT,
-        doc="Amount sent by P1",
+        doc="Amount sent by Player",
         label="Please enter an amount from 0 to 100:",
     )
     sent_back_amount = models.CurrencyField(doc="Amount sent back by system", min=cu(0))

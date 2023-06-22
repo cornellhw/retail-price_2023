@@ -21,11 +21,24 @@ class C(BaseConstants):
     ENDOWMENT = cu(100)
     MULTIPLIER = 3
 
-
 class Subsession(BaseSubsession):
+    def creating_session(self):
+        players = self.get_players()
+        players = [p for p in players if p.participant.vars.get('consent', '') == 'Consent']
+        # Sort players by their group_id
+        players.sort(key=lambda p: p.participant.vars['group_id'])
+        # Group them by their group_id
+        groups = []
+        for i in range(0, len(players), Constants.players_per_group):
+            groups.append(players[i:i + Constants.players_per_group])
+        self.set_group_matrix(groups)
+        print(self.get_group_matrix())
+
     def group_by_arrival_time_method(self, waiting_players):
-        if len(waiting_players) >= 2:
-            return [waiting_players[:2]]
+        consented_players = [p for p in waiting_players if p.participant.vars.get('consent') == 'Consent']
+        if len(consented_players) >= Constants.players_per_group:
+            return [consented_players[:Constants.players_per_group]]
+
 
 class Group(BaseGroup):
     sent_amount = models.CurrencyField(
@@ -41,7 +54,10 @@ class Player(BasePlayer):
     pass
 
 
+
 # FUNCTIONS
+
+
 def sent_back_amount_max(group: Group):
     return group.sent_amount * C.MULTIPLIER
 
@@ -51,6 +67,8 @@ def set_payoffs(group: Group):
     p2 = group.get_player_by_id(2)
     p1.payoff = C.ENDOWMENT - group.sent_amount + group.sent_back_amount
     p2.payoff = group.sent_amount * C.MULTIPLIER - group.sent_back_amount
+
+
 
 
 # PAGES

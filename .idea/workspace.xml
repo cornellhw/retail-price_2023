@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0617">
-      <change afterPath="$PROJECT_DIR$/consent_group2/pages.py" afterDir="false" />
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0618 fixed the bugs of consent and do not consent grouping logic">
+      <change afterPath="$PROJECT_DIR$/final_not_page/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final_not_page/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final_not_page/pages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final_not_page/templates/FinalNotPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trust2/Final_not.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trust2/cem/Final_not.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/_builtin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/_builtin/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/pages.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/templates/consent/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Consent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/templates/consent/ConsentWaitPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Final_not.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/templates/consent/ContinueExperiment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/templates/consent/WaitForAllPlayers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/templates/consent/passcode.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/passcode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent_group2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Consent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trust2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -61,7 +57,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/pythonprojects/retail-price&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/pythonprojects/retail-price/trust2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,18 +68,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pythonprojects\retail-price\trust2" />
+      <recent name="D:\pythonprojects\retail-price\trust2\cem" />
       <recent name="D:\pythonprojects\retail-price" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/consent_group/templates/consent_group" />
-      <recent name="$PROJECT_DIR$/exp_2_group/templates/exp_2_group" />
-      <recent name="$PROJECT_DIR$/exp_2/templates/exp_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pythonprojects\retail-price\final_not_page\templates" />
+      <recent name="D:\pythonprojects\retail-price\beforetrust2\templates" />
       <recent name="D:\pythonprojects\retail-price\consent_group2\templates" />
       <recent name="D:\pythonprojects\retail-price\exp_2_group\templates\exp_2_group" />
       <recent name="D:\pythonprojects\retail-price\consent\templates\consent" />
-      <recent name="$PROJECT_DIR$/_templates" />
-      <recent name="$PROJECT_DIR$/exp_1c" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pages">
@@ -160,14 +156,10 @@
       <workItem from="1686856647484" duration="3086000" />
       <workItem from="1686925525313" duration="28369000" />
       <workItem from="1687013744812" duration="13896000" />
-      <workItem from="1687108283082" duration="12612000" />
-    </task>
-    <task id="LOCAL-00180" summary="description:new updates">
-      <created>1675962214175</created>
-      <option name="number" value="00180" />
-      <option name="presentableId" value="LOCAL-00180" />
-      <option name="project" value="LOCAL" />
-      <updated>1675962214175</updated>
+      <workItem from="1687108283082" duration="13237000" />
+      <workItem from="1687274233458" duration="31023000" />
+      <workItem from="1687353411388" duration="15653000" />
+      <workItem from="1687443864226" duration="960000" />
     </task>
     <task id="LOCAL-00181" summary="description:new updates">
       <created>1675962599684</created>
@@ -505,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687018187777</updated>
     </task>
-    <option name="localTasksCounter" value="229" />
+    <task id="LOCAL-00229" summary="description:0618 fixed the bugs of consent and do not consent grouping logic">
+      <created>1687133081336</created>
+      <option name="number" value="00229" />
+      <option name="presentableId" value="LOCAL-00229" />
+      <option name="project" value="LOCAL" />
+      <updated>1687133081336</updated>
+    </task>
+    <option name="localTasksCounter" value="230" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +560,8 @@
     <MESSAGE value="description:0614,update the single-player games,set the cem and trust bonus as global variances" />
     <MESSAGE value="description:0614,updates" />
     <MESSAGE value="description:0617" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:0617" />
+    <MESSAGE value="description:0618 fixed the bugs of consent and do not consent grouping logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0618 fixed the bugs of consent and do not consent grouping logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -575,6 +575,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/retail_price$pages.coverage" NAME="pages Coverage Results" MODIFIED="1686959936995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp_2_single" />
+    <SUITE FILE_PATH="coverage/retail_price$pages.coverage" NAME="pages Coverage Results" MODIFIED="1687307907642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp_2_single" />
   </component>
 </project>

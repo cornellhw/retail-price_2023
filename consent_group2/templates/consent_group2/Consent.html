@@ -59,8 +59,20 @@ Clicking the “I consent” button indicates that <b>you have read and understo
 
 
         <input id="cons" class="btn btn-primary" name="consent" value="Consent" onclick="checkSubmit2()">  </input>
+<!-- <input id="cons" class="btn btn-primary" name="consent" value="Do not Consent" onclick="checkSubmit3()">  </input> <br><br> -->
+<!-- Uncomment this line and change the CSS classes -->
+<span class="not-consent">Do not Consent</span>
 
-        <input id="cons" class="btn btn-primary" name="consent" value="Do not Consent" onclick="checkSubmit3()">  </input> <br><br>
+<!-- Add these CSS styles -->
+<style>
+    .not-consent {
+        display: inline-block;
+        background-color: grey;
+        color: white;
+        padding: 10px;
+        margin-left: 10px;
+    }
+</style>
 
 </div>
 
