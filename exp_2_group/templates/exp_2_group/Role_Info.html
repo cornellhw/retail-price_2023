@@ -2,31 +2,18 @@
 {% load otree %}
 
 {% block title %}
-<b>Marketing & Procurement manager page <br></b>
-Role Assignment and Matching
-
+    <b>Marketing & Procurement manager page</b><br>
+    Role Assignment and Matching
 {% endblock %}
 
 {% block content %}
+    <div class="container my-4">
+        <ul>
+            <li>Your participant ID number is: {{ID_number}}</li>
+            <li>You are assigned to act as the firm’s {{role}}.</li>
+            <li>You are matched with ID number {{ID_match}} to conduct the following experiment.</li>
+        </ul>
 
-
-
-    <html>
-    <body>
-
-
-        <p style="line-height: 2em;">
-Your participant ID number is: {{ID_number}}<br>
-You are assigned to act as the firm’s {{role}}.<br>
-You are matched with ID number {{ID_match}} to conduct the following experiment.<br>
-
-
-
-    </body>
-
-</html>
-
-
-    {% next_button %}
-
+        {% next_button %}
+    </div>
 {% endblock %}

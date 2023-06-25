@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-
 <html>
 <head>
 <meta charset="UTF-8">
@@ -16,29 +15,24 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 </head>
     <body>
-
-
-        <p style="line-height: 2em;">
-            If the <u>Supplier</u> <b>accepts</b> your offer, your coffee will be offered for sale at the chain’s retail locations.
- <br><br>
-
-        </p>
-
-        <u><b>Your total payment in words</b></u>: You will earn your fixed wage of $5 plus two additional bonuses: a cost savings bonus is equal to a portion of the difference between your sourcing budget and your wholesale offer, and a revenue sharing bonus which is a portion of the revenue earned from retail sales. <br> <br>
-
-        <u>Your fixed wage</u>: $5 <br>
-        <u>Your cost savings bonus</u>: $\(0.2 * (10 - W) * 20\)  <br>
-        <u>Your revenue sharing bonus </u>: $\(0.2 * R * \left[1-\frac{R-1}{6}\right] * 28\)   <br>
-        <u>Your total payment for the coffee experiment</u>: $\(5 + 0.2 * (10 - W) * 20 + 0.2 * R * \left[1-\frac{R-1}{6}\right] * 28\) <br> <br>
-        <b> We provide you with a calculator for testing purposes, that displays both bonuses and your total payment for today’s work for any choice of <i><b>R</b></i> and <i><b>W</b></i> that you might consider. </b>
-
-
+        <div class="container my-4">
+            <p>If the <u>Supplier</u> <b>accepts</b> your offer, your coffee will be offered for sale at the chain’s retail locations.</p>
+            <br>
+            <p><u><b>Your total payment in words</b></u>: You will earn your fixed wage of $5 plus two additional bonuses: a cost savings bonus is equal to a portion of the difference between your sourcing budget and your wholesale offer, and a revenue sharing bonus which is a portion of the revenue earned from retail sales.</p>
+            <br>
+            <ul>
+                <li><u>Your fixed wage</u>: $5</li>
+                <li><u>Your cost savings bonus</u>: $\(0.2 * (10 - W) * 20\)</li>
+                <li><u>Your revenue sharing bonus</u>: $\(0.2 * R * \left[1-\frac{R-1}{6}\right] * 28\)</li>
+                <li><u>Your total payment for the coffee experiment</u>: $\(5 + 0.2 * (10 - W) * 20 + 0.2 * R * \left[1-\frac{R-1}{6}\right] * 28\)</li>
+            </ul>
+            <br>
+            <p><b> We provide you with a calculator for testing purposes, that displays both bonuses and your total payment for today’s work for any choice of <i><b>R</b></i> and <i><b>W</b></i> that you might consider. </b></p>
+        </div>
     </body>
-
 </html>
 
-
-    {% next_button %}
+{% next_button %}
 
 {% endblock %}
 

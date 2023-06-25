@@ -3,42 +3,53 @@
 
 {% block title %}
     Experimental Introduction
-
 {% endblock %}
 
 {% block content %}
 
-    <html>
-    <body>
+<html>
+<head>
+    <style>
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p, li {
+            line-height: 2em;
+            margin-bottom: 20px;
+        }
+        ul {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
 
-
-    <p style="line-height: 2em;">
     <h2>Welcome to our experiment:</h2>
-    We invite you to be part of an online research study. Please read the instruction carefully before starting the
-    experiment. The total time taken today is estimated to be about 60 minutes. We will ask you to answer several
-    questions. The study's overall objective is to better understand the behavioral implications of how procurement and
-    marketing takes place in a retail firm.<br><br>
+    <p>We invite you to be part of an online research study. Please read the instructions carefully before starting the
+    experiment. The total time taken today is estimated to be about 60 minutes.</p>
+
+    <ul>
+        <li>We will ask you to answer several questions.</li>
+        <li>The study's overall objective is to better understand the behavioral implications of how procurement and marketing takes place in a retail firm.</li>
+    </ul>
 
     <h2>Context:</h2>
-    For the duration of this experiment, you will act as either the Procurement Manager or the Marketing Manager for a firm's chain of coffee shops. The Procurement Manager is responsible for your firm's sourcing decisions. The Marketing Manager is responsible for your firm's marketing decisions. Both of which directly affect the chain’s
-    profit and your payment for today’s work.<br><br>
+    <p>For the duration of this experiment, you will act as either the Procurement Manager or the Marketing Manager for a firm's chain of coffee shops. The Procurement Manager is responsible for your firm's sourcing decisions. The Marketing Manager is responsible for your firm's marketing decisions. Both roles directly affect the chain’s
+    profit and your payment for today’s work.</p>
 
-    <h2>Experimental Mechanics:
-    </h2>
-
-    The Procurement Manager begins the experiment with a sourcing budget of 10 dollars. They may use this money to source an input product
+    <h2>Experimental Mechanics:</h2>
+    <ul>
+        <li>The Procurement Manager begins the experiment with a sourcing budget of 10 dollars. They may use this money to source an input product
     (one pound of roasted coffee) from a supplier of their choice at a wholesale price <i><b>(W)</b></i> chosen by the PM. If one of the PM's offers is accepted by the supplier, your firm will
     process the roasted coffee into 28 standard 8oz servings of brewed
-    coffee. This brewed coffee will be offered for sale by your chain of coffee shops.<br><br>
-    The Marketing Manager is solely responsible for setting the retail price <i><b>(R)</b></i> for a cup of coffee. How <i><b>W</b></i> and <i><b>R</b></i> are chosen is up to the appropriate manager, but both should be chosen carefully.<br><br>
-
-    </p>
-
-    </body>
-
-    </html>
-
+    coffee. This brewed coffee will be offered for sale by your chain of coffee shops.</li>
+        <li>The Marketing Manager is solely responsible for setting the retail price <i><b>(R)</b></i> for a cup of coffee. How <i><b>W</b></i> and <i><b>R</b></i> are chosen is up to the appropriate manager, but both should be chosen carefully.</li>
+    </ul>
 
     {% next_button %}
+
+</body>
+</html>
 
 {% endblock %}

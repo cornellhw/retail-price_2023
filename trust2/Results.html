@@ -24,12 +24,18 @@
             chose to return {{ group.sent_back_amount }}
             thus you now have:
             ({{ tripled_amount }})-({{ group.sent_back_amount }})=<strong>{{ player.payoff }}</strong>
+
         </p>
 
     {{ endif }}
+        <p>
+        You will receive {{ player.participant.vars.payoff_trust }} in this part of the experiment.
+
+        </p>
+
 
     <p>{{ next_button }}</p>
 
-    {{ include C.INSTRUCTIONS_TEMPLATE }}
+
 
 {{ endblock }}

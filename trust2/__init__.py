@@ -22,22 +22,7 @@ class C(BaseConstants):
     MULTIPLIER = 3
 
 class Subsession(BaseSubsession):
-    def creating_session(self):
-        players = self.get_players()
-        players = [p for p in players if p.participant.vars.get('consent', '') == 'Consent']
-        # Sort players by their group_id
-        players.sort(key=lambda p: p.participant.vars['group_id'])
-        # Group them by their group_id
-        groups = []
-        for i in range(0, len(players), Constants.players_per_group):
-            groups.append(players[i:i + Constants.players_per_group])
-        self.set_group_matrix(groups)
-        print(self.get_group_matrix())
-
-    def group_by_arrival_time_method(self, waiting_players):
-        consented_players = [p for p in waiting_players if p.participant.vars.get('consent') == 'Consent']
-        if len(consented_players) >= Constants.players_per_group:
-            return [consented_players[:Constants.players_per_group]]
+    pass
 
 
 class Group(BaseGroup):
@@ -137,6 +122,7 @@ class Results(Page):
     @staticmethod
     def is_displayed(player: Player):
         player.participant.vars['payoff_trust'] = player.payoff * 0.02
+        realmoney = player.payoff * 0.02
         return player.participant.vars['consent'].lower() == 'consent'
 
 page_sequence = [

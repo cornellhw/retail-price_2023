@@ -4,20 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0618 fixed the bugs of consent and do not consent grouping logic">
-      <change afterPath="$PROJECT_DIR$/final_not_page/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final_not_page/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final_not_page/pages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/final_not_page/templates/FinalNotPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trust2/Final_not.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trust2/cem/Final_not.html" afterDir="false" />
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0622">
+      <change afterPath="$PROJECT_DIR$/survey/_builtin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/pages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/templates/survey/Final.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/templates/survey/Survey.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/templates/survey/Survey1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/templates/survey/Survey2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/templates/survey/Survey3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent_group2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomGrouping/MyPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomGrouping/Results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomGrouping/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/survey/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomGrouping/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomGrouping/pages.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cem/templates/cem/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/cem/templates/cem/Results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group2/templates/consent_group2/Consent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exp_2_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Final.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Info.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res1.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Res123.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Role_Info.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Role_Info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/SetPrice2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/templates/exp_2_group/Welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_not_page/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_not_page/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_not_page/pages.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_not_page/templates/FinalNotPage.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trust/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Instructions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/Introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Introduction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/Results.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/Send.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Send.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trust2/SendBack.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/SendBack.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trust2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -57,7 +85,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/pythonprojects/retail-price/trust2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/pythonprojects/retail-price/survey/templates/survey&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,18 +96,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pythonprojects\retail-price\survey\templates\survey" />
+      <recent name="D:\pythonprojects\retail-price" />
       <recent name="D:\pythonprojects\retail-price\trust2" />
       <recent name="D:\pythonprojects\retail-price\trust2\cem" />
-      <recent name="D:\pythonprojects\retail-price" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/consent_group/templates/consent_group" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pythonprojects\retail-price\survey\templates\survey" />
       <recent name="D:\pythonprojects\retail-price\final_not_page\templates" />
       <recent name="D:\pythonprojects\retail-price\beforetrust2\templates" />
       <recent name="D:\pythonprojects\retail-price\consent_group2\templates" />
       <recent name="D:\pythonprojects\retail-price\exp_2_group\templates\exp_2_group" />
-      <recent name="D:\pythonprojects\retail-price\consent\templates\consent" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pages">
@@ -159,14 +187,8 @@
       <workItem from="1687108283082" duration="13237000" />
       <workItem from="1687274233458" duration="31023000" />
       <workItem from="1687353411388" duration="15653000" />
-      <workItem from="1687443864226" duration="960000" />
-    </task>
-    <task id="LOCAL-00181" summary="description:new updates">
-      <created>1675962599684</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1675962599684</updated>
+      <workItem from="1687443864226" duration="12913000" />
+      <workItem from="1687650608724" duration="13174000" />
     </task>
     <task id="LOCAL-00182" summary="description:new updates">
       <created>1675972717412</created>
@@ -504,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687133081336</updated>
     </task>
-    <option name="localTasksCounter" value="230" />
+    <task id="LOCAL-00230" summary="description:0622">
+      <created>1687473774778</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1687473774778</updated>
+    </task>
+    <option name="localTasksCounter" value="231" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +590,8 @@
     <MESSAGE value="description:0614,updates" />
     <MESSAGE value="description:0617" />
     <MESSAGE value="description:0618 fixed the bugs of consent and do not consent grouping logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:0618 fixed the bugs of consent and do not consent grouping logic" />
+    <MESSAGE value="description:0622" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0622" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

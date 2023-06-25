@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Congratulations, you have finished the experiment.
+{% endblock %}
+
+{% block content %}
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+    <p style="line-height: 2em;">
+    <ul>
+        <li>Your experiment ID is: {{id}}</li>
+        <li>Your coffee experiment payment is: {{total_bonus_coffee}}</li>
+        <li>Your trust game payment is: {{payoff_trust}}</li>
+        <li>Your certainty equivalent game payment is: {{payoff_cem}}</li>
+        <li><b>Your total payment is: {{payoff_all}}</b></li>
+    </ul>
+    </p>
+    <p><font size ='4'>Please <b>DO NOT</b> close this page as we wait for other participants to finish.</font></p><br>
+    <p>After everyone is done, we will confirm your total payment, and you will receive payment in cash rounded UP to the nearest whole dollar.</p>
+</body>
+</html>
+{% endblock %}

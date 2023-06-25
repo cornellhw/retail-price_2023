@@ -1,8 +1,28 @@
-{{ block title }}Trust Game{{ endblock }}
-{{ block content }}
+{% extends "global/Page.html" %}
+{% load otree %}
 
-    {{ include C.INSTRUCTIONS_TEMPLATE }}
+{% block title %}
+    Instructions
+{% endblock %}
 
-    {{ next_button }}
+{% block content %}
 
-{{ endblock }}
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+        <h3>Instructions</h3>
+        <p>You have been randomly and anonymously paired with another participant. One of you will be selected at random to be Participant A, the other will be Participant B. You will learn your role prior to making any decisions.</p>
+
+        <ul>
+            <li>Initially, Participant A receives {{ C.ENDOWMENT }}, while Participant B receives nothing.</li>
+            <li>Participant A can choose to send some or all of their {{ C.ENDOWMENT }} to Participant B.</li>
+            <li>Before Participant B receives the amount, it will be multiplied by {{ C.MULTIPLIER }}.</li>
+            <li>After receiving the multiplied amount, Participant B can choose to send some or all of it back to Participant A.</li>
+        </ul>
+
+        <p>At the end of the experiment, your final points from this game will be converted to a dollar payment using the following exchange rate: <b>1 Dollar point = 0.02 dollars.</b></p>
+
+    </div>
+</div>
+{% next_button %}
+{% endblock %}

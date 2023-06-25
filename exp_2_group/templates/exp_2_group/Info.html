@@ -2,37 +2,30 @@
 {% load otree %}
 
 {% block title %}
-Market Research Information：
-
-
+    Market Research Information
 {% endblock %}
 
 {% block content %}
+    <div class="container my-4">
+        <h2 class="mb-3">Market Research Information:</h2>
 
-    <html>
-    <body>
+        <p>Your chain’s <strong>market research division</strong> is tasked with providing you with the information necessary to make good wholesale and retail pricing decisions for your company.</p>
 
+        <h3>Supplier Cost Information:</h3>
+        <ul>
+            <li>The research division has found that the <em>average production cost</em> of all roasted coffee suppliers is normally distributed with an average cost of $6 per pound.</li>
+            <li>However, any particular supplier’s <em>actual production cost</em> is private information. Research reports that it is normally distributed with an average cost of $6 per pound and standard deviation of $0.5.</li>
+        </ul>
 
-        <p style="line-height: 2em;">
-        Your chain’s <b>market research division</b> is tasked with providing you with the information necessary to make good wholesale and retail pricing decisions for your company.<br>
+        <h3>Consumer Information:</h3>
+        <ul>
+            <li>Similarly, the research division has found that <em>on average</em> a retail customer is willing to pay 4 dollars per cup of high quality coffee. However, some customers are willing to pay much more, or less, than this amount.</li>
+            <li>Research reports that retail customers are willing to pay anywhere between 1 and 7 dollars per cup, with equal possibility.</li>
+            <li><em>Note:</em> Supplier cost is given per pound but consumer willingness to pay is given per cup. Your firm uses one pound of roasted beans produces 28 cups of retail-ready coffee.</li>
+        </ul>
 
-<h2>Supplier Cost Information:</h2>
-The research division has found that the <u>average production cost</u> of all roasted coffee suppliers is normally distributed with an average cost of $6 per pound. However, any particular supplier’s <u>actual production cost</u> is private information. Research reports that it is normally distributed with an average cost of $6 per pound and standard deviation of $0.5.<br><br>
+        <p>You should take this information into account when choosing a wholesale price <strong>(W)</strong> or a retail price <strong>(R)</strong>.</p>
 
-<h2>Consumer Information:</h2>
-        Similarly, the research division has found that <u>on average</u> a retail customer is willing to pay 4 dollars per cup of high quality coffee. However, some customers are willing to pay much more, or less, than this amount. Research reports that retail customers are willing to pay anywhere between 1 and 7 dollars per cup, with equal possibility. <br><br>
-
-        <u> Note:</u> Supplier cost is given per pound but consumer willingness to pay is given per cup. Your firm uses one pound of roasted beans produces 28 cups of retail-ready coffee. <br><br>
-
-        You should take this information into account when choosing a wholesale price <i><b>(W)</b></i> or a retail price <i><b>(R)</b></i>.
-
-        </p>
-
-    </body>
-
-</html>
-
-
-    {% next_button %}
-
+        {% next_button %}
+    </div>
 {% endblock %}
