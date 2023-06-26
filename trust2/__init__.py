@@ -61,7 +61,6 @@ class Send(Page):
         return player.participant.vars['consent'].lower() == 'consent'
 
 
-
 class Results(Page):
 
     @staticmethod
@@ -83,8 +82,6 @@ class Results(Page):
             endowment_points=endowment_points,
             payoff_points=payoff_points,
         )
-
-
 
 
 

@@ -243,8 +243,6 @@ class SetPrice(Page):
     form_model = 'player'
     form_fields = ['W', 'lockin']
 
-
-
     def is_displayed(self):
         return self.player.lockin.lower() != 'lockin'
 
@@ -274,8 +272,6 @@ class SetPrice(Page):
         }
 
 
-
-
 class Res1(Page):
     def vars_for_template(self):
         if self.player.is_reject == 'rejected' and self.player.test_round < 3:
@@ -286,8 +282,6 @@ class Res1(Page):
                 'cost_bonus': self.player.cost_bonus,
                 'next_info': next_info
                 }
-
-
 
 
     def is_displayed(self):
@@ -318,7 +312,6 @@ class Res12(Page):
 
 
     def is_displayed(self):
-        print(self.player.show_res1)
         return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected') \
             and self.player.show_res2
 
@@ -425,83 +418,15 @@ class Res2(Page):
         else:
             return False
 
-
-
-class Survey(Page):
-    form_model = 'player'
-    form_fields = ['age', 'gender', 'coffee']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class End(Page):
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-
-
-class Survey1(Page):
-    form_model = 'player'
-    form_fields = ['coffee_howoften', 'coffee_where', 'coffee_where_string',
-                   'door_unlocked', 'lend_money', 'lend_personal', 'lie_parents', 'lie_roommates',
-                   'lie_acquaintances', 'lie_friends', 'lie_partner']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
     def before_next_page(self):
+        self.player.set_payoff2()
         self.player.set_payoff()
 
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class Survey2(Page):
-    form_model = 'player'
-    form_fields = ['take_advantage', 'try_to_be_helpful', 'trust',
-                   'count_on_strangers', 'deal_with_strangers', 'recycle',
-                   'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class Survey3(Page):
-    form_model = 'player'
-    form_fields = ['age', 'gender', 'gender_string', 'race', 'race_string',
-                   'edu', 'major', 'major_string', 'parents', 'employment', 'employment_string',
-                   'income', 'marital', 'children',
-                   ]
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class Final(Page):
-    def is_displayed(self):
-        return self.player.participant.vars.get('consent', '').lower() == 'consent'
     def vars_for_template(self):
-
+        self.participant.payoff = self.player.cost_bonus + self.player.profit_bonus + self.participant.vars[
+            'payoff_trust'] + \
+                                  self.participant.vars['payoff_cem']
+        self.participant.vars['total_bonus_coffee'] =self.player.cost_bonus + self.player.profit_bonus + self.session.config['participation_fee']
         return {
             'id': self.player.id_in_group,
             'payoff_trust': self.participant.vars['payoff_trust'],
@@ -509,9 +434,6 @@ class Final(Page):
             'payoff_all': self.participant.payoff_plus_participation_fee(),
 
         }
-
-
-
 
 
 page_sequence = []
@@ -542,4 +464,4 @@ page_sequence += [SetPrice] * 100
 page_sequence += [Res123]
 
 page_sequence += [SetPrice2] * 100
-page_sequence += [Res2, Survey1, Survey2, Survey3, Final, ]
+page_sequence += [Res2]

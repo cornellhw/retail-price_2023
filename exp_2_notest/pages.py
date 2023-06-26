@@ -302,179 +302,41 @@ class Res12(Page):
         if self.player.is_reject == 'rejected' and self.player.test_round<3:
             self.player.lockin = '-1'
 
-
 class Res123(Page):
     def vars_for_template(self):
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
+        self.total_bonus_coffee = self.cost_bonus + self.session.config['participation_fee']
+        self.participant.vars['total_bonus_coffee'] = self.total_bonus_coffee
+        self.participant.payoff = self.player.cost_bonus + self.participant.vars['payoff_trust'] + \
+                                  self.participant.vars['payoff_cem']
+        if self.player.is_reject == 'rejected' and self.player.test_round < 3:
             next_info = 'Click the "Next" button to finish the post-experimental survey!'
         else:
             next_info = 'Click the "Next" button to continue with the experiment! '
-        return {'is_reject': self.player.is_reject,
-                'cost_bonus': self.player.cost_bonus,
-                'next_info': next_info
-                }
-
-    def is_displayed(self):
-        return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected') \
-            and self.player.show_res3
-
-    def before_next_page(self):
-        self.player.test_round += 1
-        self.player.logger_W += '| '
-        self.player.logger_T += str(self.player.test_times)+','
-        self.player.test_times = 0
-
-        if self.player.is_reject == 'rejected' and self.player.test_round<3:
-            self.player.lockin = '-1'
 
 
-class SetPrice2(Page):
-    form_model = 'player'
-    form_fields = ['R', 'lockin2']
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-    def is_displayed(self):
-        if self.player.participant.vars['consent'].lower() != 'consent':
-            return False
-        if self.player.is_reject == 'accepted':
-            if self.player.lockin2.lower() != 'lockin':
-                return True
-            else:
-                return False
-        else:
-            return False
-
-    def before_next_page(self):
-        # self.player.price_check()
-        self.player.set_payoff2()
-        self.player.set_payoff()
-
-    def vars_for_template(self):
-
-
-        if self.player.test_times2 == 0:
-            earn = 'XXX'
-            cost_bonus = self.player.cost_bonus
-            profit_bonus = 'XXX'
-            total_bonus_coffee = 'XXX'
-            market_demand = 'XXX'
-            coffee_not_used = 'XXX'
-        else:
-            earn = self.player.earn
-            cost_bonus = self.player.cost_bonus
-            profit_bonus = self.player.profit_bonus
-            total_bonus = self.cost_bonus + self.session.config['participation_fee']
-            market_demand = self.player.market_demand
-            coffee_not_used = self.player.coffee_not_used
-        return {
-            'earn': earn,
-            'cost_bonus': cost_bonus,
-            'profit_bonus': profit_bonus,
-            'total_bonus': total_bonus,
-            'market_demand': market_demand,
-            'coffee_not_used': coffee_not_used
-        }
-
-class Res2(Page):
-    def is_displayed(self):
-        if self.player.participant.vars['consent'].lower() != 'consent':
-            return False
-        if self.player.is_reject == 'accepted':
-            return True
-        else:
-            return False
-
-
-class Survey(Page):
-    form_model = 'player'
-    form_fields = ['age', 'gender', 'coffee']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-
-
-
-    def error_message(self, values):
-        errors = [1 for f in values if not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class End(Page):
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-
-
-class Survey1(Page):
-    form_model = 'player'
-    form_fields = ['coffee_howoften', 'coffee_where', 'coffee_where_string',
-                   'door_unlocked', 'lend_money', 'lend_personal', 'lie_parents', 'lie_roommates',
-                   'lie_acquaintances', 'lie_friends', 'lie_partner']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-    def before_next_page(self):
-        self.player.set_payoff()
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class Survey2(Page):
-    form_model = 'player'
-    form_fields = ['take_advantage', 'try_to_be_helpful', 'trust',
-                   'count_on_strangers', 'deal_with_strangers', 'recycle',
-                   'more_pay_fair_trade', 'frequency_not_buy', 'car', 'frequency_shoes']
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-class Survey3(Page):
-    form_model = 'player'
-    form_fields = ['age', 'gender', 'gender_string','race','race_string',
-                   'edu','major','major_string','parents','employment', 'employment_string',
-                   'income','marital','children',
-                   ]
-
-    def is_displayed(self):
-        return self.player.participant.vars['consent'].lower() == 'consent'
-        # return True
-
-    def error_message(self, values):
-        errors = [1 for f in values if 'string' not in f and not values[f]]
-        if errors:
-            return 'you should select your answer'
-
-
-class Final(Page):
-    def is_displayed(self):
-        return self.player.participant.vars.get('consent', '').lower() == 'consent'
-
-    def vars_for_template(self):
 
         return {
             'id': self.player.id_in_group,
             'payoff_trust': self.participant.vars['payoff_trust'],
             'payoff_cem': self.participant.vars['payoff_cem'],
-            'total_bonus': self.participant.payoff_plus_participation_fee() - self.participant.vars['payoff_trust'] - self.participant.vars['payoff_cem'],
             'payoff_all': self.participant.payoff_plus_participation_fee(),
-
+            'is_reject': self.player.is_reject,
+            'cost_bonus': self.player.cost_bonus,
+            'next_info': next_info
         }
 
+    def is_displayed(self):
+        return (self.player.participant.vars['consent'].lower() == 'consent' or self.player.is_reject == 'rejected') \
+               and self.player.show_res3
 
+    def before_next_page(self):
+        self.player.test_round += 1
+        self.player.logger_W += '| '
+        self.player.logger_T += str(self.player.test_times) + ','
+        self.player.test_times = 0
 
+        if self.player.is_reject == 'rejected' and self.player.test_round < 3:
+            self.player.lockin = '-1'
 
 
 
@@ -505,6 +367,4 @@ page_sequence += [Res12]
 page_sequence += [SetPrice] * 100
 page_sequence += [Res123]
 
-page_sequence = [page for page in page_sequence if page not in (SetPrice2, Res2)]
 
-page_sequence += [Survey1, Survey2, Survey3, Final]
