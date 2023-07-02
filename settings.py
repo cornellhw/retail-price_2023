@@ -64,7 +64,7 @@ dict(
     dict(
         name='exp_2_group',
         display_name='exp_2_group',
-        num_demo_participants=2,
+        num_demo_participants=6,
         app_sequence=['consent_group2','trust2', 'cem', 'exp_2_group','survey'],
         a1=0.2,
         a2=0.2,

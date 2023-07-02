@@ -450,9 +450,11 @@ class Waiting2(WaitPage):
     
 class Res2(Page):
     def is_displayed(self):
-        if self.player.participant.vars['consent'].lower() != 'consent':
-            return False
-        if self.player.is_reject == 'accepted':
+        # Set total_bonus_coffee for all participants
+        self.group.total_bonus_coffee = self.group.cost_bonus + self.group.profit_bonus + self.session.config['participation_fee']
+        self.participant.vars['total_bonus_coffee'] = self.group.total_bonus_coffee
+
+        if self.player.participant.vars['consent'].lower() == 'consent':
             return True
         else:
             return False
@@ -461,16 +463,13 @@ class Res2(Page):
         self.participant.payoff = self.group.cost_bonus + self.group.profit_bonus + self.participant.vars[
             'payoff_trust'] + self.participant.vars['payoff_cem']
 
-        self.group.total_bonus_coffee = self.group.cost_bonus + self.group.profit_bonus + self.session.config['participation_fee']
-        self.participant.vars['total_bonus_coffee'] = self.group.total_bonus_coffee
-
         return {
             'id': self.player.id_in_group,
             'payoff_trust': self.participant.vars['payoff_trust'],
             'payoff_cem': self.participant.vars['payoff_cem'],
             'payoff_all': self.participant.payoff_plus_participation_fee(),
+            'total_bonus_coffee': self.participant.vars['total_bonus_coffee'],
         }
-
 
 page_sequence = []
 

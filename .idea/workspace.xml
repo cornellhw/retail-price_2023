@@ -4,31 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0626">
-      <change afterPath="$PROJECT_DIR$/survey_single/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/_builtin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/pages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/templates/survey_single/Final.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/templates/survey_single/Survey.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/templates/survey_single/Survey1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/templates/survey_single/Survey2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/templates/survey_single/Survey3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/survey_single/tests.py" afterDir="false" />
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0626 1928pm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent_group/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consent_group/templates/consent_group/Consent.html" beforeDir="false" afterPath="$PROJECT_DIR$/consent_group/templates/consent_group/Consent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_notest/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_onebid/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_single/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_single/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trust2/Instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Instructions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trust2/Introduction.html" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/Introduction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trust2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trust2/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +52,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -171,14 +151,11 @@
       <workItem from="1687353411388" duration="15653000" />
       <workItem from="1687443864226" duration="12913000" />
       <workItem from="1687650608724" duration="15626000" />
-      <workItem from="1687789481054" duration="16365000" />
-    </task>
-    <task id="LOCAL-00184" summary="description:new updates">
-      <created>1675981008271</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1675981008271</updated>
+      <workItem from="1687789481054" duration="16572000" />
+      <workItem from="1688077056362" duration="185000" />
+      <workItem from="1688077257520" duration="1516000" />
+      <workItem from="1688159744473" duration="776000" />
+      <workItem from="1688266114892" duration="5239000" />
     </task>
     <task id="LOCAL-00185" summary="description:new updates">
       <created>1675981646930</created>
@@ -516,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687795028736</updated>
     </task>
-    <option name="localTasksCounter" value="233" />
+    <task id="LOCAL-00233" summary="description:0626 1928pm">
+      <created>1687822148179</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1687822148179</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +560,8 @@
     <MESSAGE value="description:0622" />
     <MESSAGE value="description:0625" />
     <MESSAGE value="description:0626" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:0626" />
+    <MESSAGE value="description:0626 1928pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0626 1928pm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,6 +575,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/retail_price$pages.coverage" NAME="pages Coverage Results" MODIFIED="1687307907642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp_2_single" />
+    <SUITE FILE_PATH="coverage/retail_price$pages.coverage" NAME="pages Coverage Results" MODIFIED="1688160994618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exp_2_single" />
   </component>
 </project>
