@@ -157,7 +157,7 @@ class Player(BasePlayer):
     def set_payoff2(self):
         sell_temp = 28 * max(
             1 - (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 0)
-        self.earn = cu(round((self.R * sell_temp - self.W), 2))
+        self.earn = max(round((self.R * sell_temp - self.W), 2), 0)
         self.market_demand = int(round(100 * (1 - (self.R - 1) / 6), 0))
         self.coffee_not_used = round(
             (self.R - self.session.config['l2']) / (self.session.config['u2'] - self.session.config['l2']), 2)

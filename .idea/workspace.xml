@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0626 1928pm">
+    <list default="true" id="cc8f282f-2ea2-4778-bc8d-5a6bc95bea17" name="Changes" comment="description:0701">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exp_2_group/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_group/pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_notest/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_notest/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_onebid/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_onebid/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_onebid/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Res2.html" beforeDir="false" afterPath="$PROJECT_DIR$/exp_2_single/templates/exp_2_single/Res2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,14 +159,7 @@
       <workItem from="1688077056362" duration="185000" />
       <workItem from="1688077257520" duration="1516000" />
       <workItem from="1688159744473" duration="776000" />
-      <workItem from="1688266114892" duration="5239000" />
-    </task>
-    <task id="LOCAL-00185" summary="description:new updates">
-      <created>1675981646930</created>
-      <option name="number" value="00185" />
-      <option name="presentableId" value="LOCAL-00185" />
-      <option name="project" value="LOCAL" />
-      <updated>1675981646931</updated>
+      <workItem from="1688266114892" duration="7062000" />
     </task>
     <task id="LOCAL-00186" summary="description:new updates">
       <created>1676232962075</created>
@@ -500,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687822148179</updated>
     </task>
-    <option name="localTasksCounter" value="234" />
+    <task id="LOCAL-00234" summary="description:0701">
+      <created>1688271633418</created>
+      <option name="number" value="00234" />
+      <option name="presentableId" value="LOCAL-00234" />
+      <option name="project" value="LOCAL" />
+      <updated>1688271633418</updated>
+    </task>
+    <option name="localTasksCounter" value="235" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +565,8 @@
     <MESSAGE value="description:0625" />
     <MESSAGE value="description:0626" />
     <MESSAGE value="description:0626 1928pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="description:0626 1928pm" />
+    <MESSAGE value="description:0701" />
+    <option name="LAST_COMMIT_MESSAGE" value="description:0701" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

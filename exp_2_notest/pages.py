@@ -25,6 +25,7 @@ class Info(Page):
     def before_next_page(self):
         self.player.tast()
 
+
 class Summary(Page):
 
     def vars_for_template(self):
@@ -303,6 +304,7 @@ class Res12(Page):
             self.player.lockin = '-1'
 
 class Res123(Page):
+    cost_bonus = 0
     def vars_for_template(self):
         self.total_bonus_coffee = self.cost_bonus + self.session.config['participation_fee']
         self.participant.vars['total_bonus_coffee'] = self.total_bonus_coffee

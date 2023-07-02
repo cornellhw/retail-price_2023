@@ -411,9 +411,7 @@ class SetPrice2(Page):
 
 class Res2(Page):
     def is_displayed(self):
-        if self.player.participant.vars['consent'].lower() != 'consent':
-            return False
-        if self.player.is_reject == 'accepted':
+        if self.player.participant.vars['consent'].lower() == 'consent':
             return True
         else:
             return False
@@ -432,7 +430,7 @@ class Res2(Page):
             'payoff_trust': self.participant.vars['payoff_trust'],
             'payoff_cem': self.participant.vars['payoff_cem'],
             'payoff_all': self.participant.payoff_plus_participation_fee(),
-
+            'total_bonus_coffee': self.participant.vars['total_bonus_coffee'],
         }
 
 
