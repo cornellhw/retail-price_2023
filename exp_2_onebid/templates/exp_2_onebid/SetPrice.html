@@ -6,65 +6,65 @@ Procurement: Wholesale Price Setting
 {% endblock %}
 
 {% block content %}
-{{ formfield_errors 'lockin' }}
-
-You now have one opportunity to use your initial funding of $10 to make a wholesale price offer <i><b>(W)</b></i> to the supplier of your
-choice. Please enter your choice of wholesale price in the space. Testing
-functionality is provided to assist you in making a good choice.<br><br>
-
-
-{% formfield 'W' label="Enter W here" %} <br>
-
-
-<input id="lock" class="btn btn-primary" name="lockin" value="Test your current choice" onclick="checkSubmit2()"> </input> <br>
-
-Supplier cost is normally distributed with an average cost of $6 per pound and standard deviation of $0.5.<br> <br>
-
-Probability of acceptance of your offer: If you finalize this choice of <i><b>W</b></i>, your offer has a {{ prob }}% likelihood of being accepted by the supplier.<br> <br>
-
-<b>If your offer of W is accepted</b>, then<br>
--You would earn a <u>cost savings bonus of {{ optimal_cost_bonus }}</u><br>
--<b>Assuming marketing makes a good decision,</b><br>
-&nbsp;&nbsp;&nbsp;&nbsp;-You should expect to earn a <u>revenue sharing bonus of {{optimal_profit_bonus}} </u><br>
-&nbsp;&nbsp;&nbsp;&nbsp;-Your firm’s profit would be {{ optimal_earn }}<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-Your total payment for today’s coffee experiment would be {{ optimal_total_bonus }}<br>
-
-
-
-<button type="button" name="lockin" value="Finalize your choice W" class="btn btn-primary" onclick="checkSubmit()">Finalize your choice W
-</button><br>
-
+<html>
+<head>
+<meta charset="UTF-8">
 <script>
-        function checkSubmit() {
-            let form = document.getElementById('form');
-            let isValid = form.reportValidity();
-            if (!isValid) return;
-
-            let warnings = [];
-
-
-            if (warnings.length >= 0) {
-                warnings.push("Confirm your bid?")
-                let confirmed = window.confirm(warnings.join('\r\n'));
-                if (!confirmed) return;
-            }
-            document.getElementById('lock').value = 'lockin';
-
-            form.submit();
+    function checkSubmit() {
+        let form = document.getElementById('form');
+        let isValid = form.reportValidity();
+        if (!isValid) return;
+        let warnings = [];
+        if (warnings.length >= 0) {
+            warnings.push("Confirm your bid?")
+            let confirmed = window.confirm(warnings.join('\r\n'));
+            if (!confirmed) return;
         }
+        document.getElementById('lock').value = 'lockin';
+        form.submit();
+    }
 
-                function checkSubmit2() {
-            let form = document.getElementById('form');
-            let isValid = form.reportValidity();
-            if (!isValid) return;
-
-            form.submit();
-        }
-
-
+    function checkSubmit2() {
+        let form = document.getElementById('form');
+        let isValid = form.reportValidity();
+        if (!isValid) return;
+        form.submit();
+    }
 </script>
+</head>
+<body>
+    {{ formfield_errors 'lockin' }}
+    <p>
+        You now have the opportunity to use your initial funding of $10 to make a wholesale price offer <i><b>(W)</b></i> to the supplier of your
+        choice. This is your <b>{{ round }}</b> of three such opportunities. Please enter your choice of wholesale price in the space. Testing
+        functionality is provided to assist you in making a good choice.
+    </p>
 
+    {% formfield 'W' label="Enter W here" %}
+    <br>
 
-{#    {% next_button %}#}
+    <input id="lock" class="btn btn-primary" name="lockin" value="Test your current choice" onclick="checkSubmit2()">
+    </input>
+    <br>
 
+    <p>Supplier cost is normally distributed with an average cost of $6 per pound and standard deviation of $0.5.</p>
+
+    <p>Probability of acceptance of {{round_n}} offer: If you finalize this choice of <i><b>W</b></i>, your offer has a {{ prob }}% likelihood of being accepted by the supplier.</p>
+
+    <b>If your offer of W is accepted:</b>
+    <ul>
+        <li>You would earn a <u>cost savings bonus of {{ optimal_cost_bonus }}</u></li>
+        <li><b>Assuming marketing makes a good decision,</b>
+            <ul>
+                <li>You should expect to earn a <u>revenue sharing bonus of {{optimal_profit_bonus}} </u></li>
+                <li>Your firm’s profit would be {{ optimal_earn }}</li>
+                <li>Your total payment for today’s coffee experiment would be {{ optimal_total_bonus }}</li>
+            </ul>
+        </li>
+    </ul>
+
+    <button type="button" name="lockin" value="Finalize your choice W" class="btn btn-primary" onclick="checkSubmit()">Finalize your choice W</button>
+
+</body>
+</html>
 {% endblock %}

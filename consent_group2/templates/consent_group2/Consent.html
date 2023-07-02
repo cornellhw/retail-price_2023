@@ -49,6 +49,7 @@ Consent Form
 
 <body>
 <div class="scrollable-content">
+  <!-- Your content here -->
   <p>You are invited to participate in a research study about managerial decision-making. This study is being led by Professor Jacob Chestnut, SC Johnson College of Business, Cornell University.</p>
   <ul>
     <li><b>Purpose of the Study:</b> The purpose of this research study is to examine how people make decisions.</li>
@@ -66,7 +67,7 @@ Consent Form
   <p>Please press consent to begin the experiment.If you Do Not Consent, you may close this browser window.</p>
 
   <input id="cons" class="btn btn-primary" name="consent" value="Consent" onclick="checkSubmit2()">
-  <span class="btn btn-secondary btn-block">Do not Consent</span>
+  <span id="doNotCons" class="btn btn-secondary btn-block">Do not Consent</span>
 </div>
 
 <script>
@@ -77,6 +78,11 @@ Consent Form
     form.submit();
   }
 
+  window.onload = function() {
+    let btn = document.getElementById("doNotCons");
+    let originalWidth = btn.offsetWidth;
+    btn.style.width = (originalWidth * 1.5) + "px";
+  }
 
 </script>
 

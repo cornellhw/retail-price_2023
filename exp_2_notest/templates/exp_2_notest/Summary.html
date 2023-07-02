@@ -2,56 +2,62 @@
 {% load otree %}
 
 {% block title %}
-Experiment: Summary of Decisions
+    Experiment: Summary of Decisions
 {% endblock %}
 
 {% block content %}
+    <div class="container my-4">
+        <p>A visual summary of the steps of this experiment is included below.</p>
 
-    <html>
-    <body>
+        {% if tasting_new == 0 %}
+            <h2>1. Coffee Selection Stage (Procurement Manager)</h2>
+            <ul>
+                <li>You arrive.</li>
+                <li>You will be seated.</li>
+                <li>You will be provided with a selection of 5 different types of roasted coffee.</li>
+                <li>You will evaluate all coffees using the information provided.</li>
+                <li>You will select the option you want to attempt to procure.</li>
+                <li>You will answer some follow-up questions {{next_is}}.</li>
+            </ul>
 
+            <h2>2. Coffee Sourcing Stage (Procurement Manager)</h2>
+            <ul>
+                <li>You will make up to three consecutive wholesale price offers <i><b>(W)</b></i> for one pound of your selected coffee.</li>
+                <li>After making each offer, you will learn if your offer is accepted.</li>
+            </ul>
 
-        <p style="line-height: 2em;">
-        A visual summary of the steps of this experiment is included below<br>
-            {% if tasting_new == 0 %}
-<h2>1. Coffee Selection Stage (General Manager)</h2>
-        ● You will be provided with a selection <u>5 different types of roasted coffee</u><br>
-        ● You will evaluate all coffees using the information provided<br>
-        ● You will select the option you want to attempt to procure<br>
-        ● You will answer some follow-up questions {{next_is}}<br><br>
-
-<h2>2. Coffee Sourcing Stage (General Manager)</h2>
-● You will make up to three consecutive wholesale price offers <i><b>(W)</b></i> for <u>one pound your selected coffee</u><br>
-● After making each offer, you will learn if your offer is accepted<br><br>
-
-        <h2>3. Coffee Selling Stage (General Manager)</h2>
-● Your coffee quality assessment will be shared with you to assist you in setting a retail price<br>
-● You will set the retail price <i><b>(R)</b></i> for <u>one 8 oz cup of brewed coffee</u> made with your selected bean<br>
-● You will see the results of your retail price choice, and learn your final payment<br><br>
+            <h2>3. Coffee Selling Stage (Marketing Manager)</h2>
+            <ul>
+                <li>The PM's coffee quality assessment will be shared with you to assist you in setting a retail price.</li>
+                <li>You will set the retail price <i><b>(R)</b></i> for one 8 oz cup of brewed coffee made with your selected bean.</li>
+                <li>You will see the results of your retail price choice, and learn your final payment.</li>
+            </ul>
 
         {% else %}
-<h2>1. Coffee Selection Stage (General Manager)</h2>
-        ● You will be provided with a selection <u>5 different types of roasted coffee</u><br>
-        ● You will taste and evaluate all coffees using the information provided<br>
-        ● You will select the option you want to attempt to procure<br>
-        ● You will answer some follow-up questions {{next_is}}<br><br>
+            <h2>1. Coffee Selection Stage (Procurement Manager)</h2>
+            <ul>
+                <li>You arrive.</li>
+                <li>You will be seated.</li>
+                <li>You will be provided with a selection of 5 different types of roasted coffee.</li>
+                <li>You will taste and evaluate all coffees using the information provided.</li>
+                <li>You will select the option you want to attempt to procure.</li>
+                <li>You will answer some follow-up questions {{next_is}}.</li>
+            </ul>
 
-<h2>2. Coffee Sourcing Stage (General Manager)</h2>
-● You will make up to three consecutive wholesale price offers <i><b>(W)</b></i> for <u>one pound your selected coffee</u><br>
-● After making each offer, you will learn if your offer is accepted<br><br>
+            <h2>2. Coffee Sourcing Stage (Procurement Manager)</h2>
+            <ul>
+                <li>You will make up to three consecutive wholesale price offers <i><b>(W)</b></i> for one pound of your selected coffee.</li>
+                <li>After making each offer, you will learn if your offer is accepted.</li>
+            </ul>
 
-        <h2>3. Coffee Selling Stage (General Manager)</h2>
-● Your coffee quality assessment will be shared with you to assist you in setting a retail price<br>
-        ● You will set the retail price <i><b>(R)</b></i> for <u>one 8 oz cup of brewed coffee</u> made with your selected bean<br>
-● You will see the results of your retail price choice, and learn your final payment<br><br>
+            <h2>3. Coffee Selling Stage (Marketing Manager)</h2>
+            <ul>
+                <li>The PM's coffee quality assessment will be shared with you to assist you in setting a retail price.</li>
+                <li>You will set the retail price <i><b>(R)</b></i> for one 8 oz cup of brewed coffee made with your selected bean.</li>
+                <li>You will see the results of your retail price choice, and learn your final payment.</li>
+            </ul>
         {% endif %}
-        </p>
 
-    </body>
-
-</html>
-
-
-    {% next_button %}
-
+        {% next_button %}
+    </div>
 {% endblock %}
